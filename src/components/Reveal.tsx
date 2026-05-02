@@ -1,9 +1,17 @@
 "use client";
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode, type ElementType } from "react";
 
-export function Reveal({ children, delay = 0, as: Tag = "div", className = "" }: { children: ReactNode; delay?: number; as?: any; className?: string }) {
+interface RevealProps {
+  children: ReactNode;
+  delay?: number;
+  as?: ElementType;
+  className?: string;
+}
+
+export function Reveal({ children, delay = 0, as: Tag = "div", className = "" }: RevealProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [shown, setShown] = useState(false);
+
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
@@ -14,6 +22,7 @@ export function Reveal({ children, delay = 0, as: Tag = "div", className = "" }:
     io.observe(el);
     return () => io.disconnect();
   }, []);
+
   return (
     <Tag
       ref={ref}

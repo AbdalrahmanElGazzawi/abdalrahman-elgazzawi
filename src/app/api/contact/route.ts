@@ -30,7 +30,7 @@ export async function POST(req: Request) {
       await resend.emails.send({
         from: FROM,
         to: [TO],
-        replyTo: email,
+        reply_to: email,
         subject: `Portfolio: ${name}${organization ? ` (${organization})` : ""}`,
         html: `
           <h2 style="font-family:Georgia,serif;color:#0E0F12">New portfolio enquiry</h2>
@@ -45,11 +45,12 @@ export async function POST(req: Request) {
 
     // If neither configured, still 200 in dev so the form works visually
     return NextResponse.json({ ok: true });
-  } catch (e: any) {
-    return NextResponse.json({ error: e?.message || "Server error" }, { status: 500 });
+  } catch (e) {
+    return NextResponse.json({ error: (e instanceof Error ? e.message : null) || "Server error" }, { status: 500 });
   }
 }
 
 function escapeHtml(s: string) {
-  return s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;" }[c]!));
+  const map: Record<string, string> = { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;" };
+  return s.replace(/[&<>"']/g, (c) => map[c] ?? c);
 }

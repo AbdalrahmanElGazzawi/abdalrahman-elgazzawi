@@ -24,8 +24,8 @@ export function ContactForm() {
       const data = await res.json().catch(() => ({}));
       if (!res.ok) throw new Error(data.error || "Send failed");
       setStatus("ok"); (e.target as HTMLFormElement).reset();
-    } catch (err: any) {
-      setError(err?.message || "Send failed"); setStatus("error");
+    } catch (err) {
+      setError((err instanceof Error ? err.message : null) || "Send failed"); setStatus("error");
     }
   }
 
