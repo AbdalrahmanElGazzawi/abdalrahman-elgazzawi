@@ -3,20 +3,24 @@ import { navLinks } from "@/content/site";
 
 export function Nav() {
   return (
-    <nav className="sticky top-0 z-50 border-b border-hairline bg-bg/[.92] backdrop-blur supports-[backdrop-filter]:bg-bg/75">
-      <div className="container-page flex items-center justify-between py-4 text-[13px]">
-        <Link href="/" className="font-serif italic text-[18px] text-paper tracking-[0.02em]">
-          Abdalrahman ElGazzawi<span className="text-gold">.</span>
+    <nav className="sticky top-0 z-50 border-b border-hairline bg-bg/80 backdrop-blur supports-[backdrop-filter]:bg-bg/65">
+      <div className="container-page flex items-center justify-between py-3.5">
+        <Link href="/" className="font-serif text-[18px] tracking-[0.01em] flex items-center gap-2 group">
+          <span className="text-paper italic">Abdalrahman ElGazzawi</span>
+          <span className="text-gold transition-colors group-hover:text-gold-soft">.</span>
         </Link>
-        <ul className="hidden md:flex gap-7 list-none">
-          {navLinks.map((l) => (
-            <li key={l.href}>
-              <a href={l.href} className="text-muted hover:text-paper text-[12px] font-medium tracking-[0.08em] uppercase transition-colors">
-                {l.label}
-              </a>
-            </li>
-          ))}
-        </ul>
+        <div className="hidden md:flex items-center gap-7">
+          <ul className="flex gap-6 list-none">
+            {navLinks.map((l) => (
+              <li key={l.href}>
+                <a href={l.href} className="text-muted hover:text-paper text-[12px] tracking-[0.06em] uppercase transition-colors font-mono">{l.label}</a>
+              </li>
+            ))}
+          </ul>
+          <Link href="/contact" className="text-[12px] tracking-[0.1em] uppercase font-mono text-bg bg-gold hover:bg-gold-soft px-3.5 py-2 transition-colors">
+            Get in touch
+          </Link>
+        </div>
       </div>
     </nav>
   );

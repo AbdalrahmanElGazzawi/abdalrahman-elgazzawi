@@ -1,170 +1,221 @@
+// Single source of truth for all content. Edit here, push, deploy.
+
 export const site = {
   name: "Abdalrahman ElGazzawi",
-  shortName: "Abdalrahman ElGazzawi",
   nickname: "Koge",
   role: "Esports Marketing Manager · Team Falcons",
-  tagline: "Esports & Gaming Operator",
-  taglineSub: "Commercial Strategy · Partnerships · Marketing · Operations",
-  bio: "Commercial operator across the esports lifecycle. 10+ years across MENA and global markets. Currently building Falcons' commercial stack — pricing methodology, agency framework, deal pipeline.",
-  location: "Riyadh · Cairo",
-  yearsLine: "10+ years across esports & gaming.",
-  opsLine: "Operating across MENA & global markets.",
+  positioning: "I build commercial operating systems for esports organizations.",
   email: "a.faroukbiz2@gmail.com",
   phone: "+966 53 296 2163",
   linkedin: "https://linkedin.com/in/elgazzwi",
   linkedinDisplay: "linkedin.com/in/elgazzwi",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://abdalrahman-elgazzawi.vercel.app",
   ogImage: "/api/og",
+  location: "Riyadh · Cairo",
 };
 
-export const numbers = [
-  { n: "10+",  l: "Years across\nthe esports lifecycle" },
-  { n: "200",  l: "Talents priced\nin the Falcons rate book" },
-  { n: "778+", l: "Deliverables shipped\nat Esports World Cup" },
-  { n: "78+",  l: "Brands pitched\nacross 5 agencies" },
-  { n: "5M+",  l: "Viewers reached\nby campaigns delivered" },
-];
-
-export const range = [
-  { num: "I",   title: "Commercial Strategy",      body: "Pricing methodology, rate-card design, market audit, revenue modeling, sponsorship valuation." },
-  { num: "II",  title: "Partnerships & Accounts",  body: "Brand onboarding, contract negotiation, agency management, sponsorship activation." },
-  { num: "III", title: "Marketing & Activations",  body: "Talent campaigns, broadcast and social workstreams, sponsor delivery, community ecosystems." },
-  { num: "IV",  title: "Operations & Delivery",    body: "Agile sprints, JIRA workflows, vendor management, cross-functional coordination, technical QA." },
-];
-
-export const falconsPillars = [
-  { tag: "Methodology",  title: "Source of Truth v1.0",      body: "Authored canonical 15-section pricing methodology — 200 talents, S/1/2/3/4 tiers, calibrated against FaZe / Cloud9 / T1 / NRG / 100T / Karmine / NAVI / Fnatic via Newzoo, Nielsen, Shikenso, Influencity, WME/CAA agency practice." },
-  { tag: "Framework v5.0", title: "Agency Partner Pack",     body: "Architected 140-page commercial governance: 4-phase Brand Investment Model (SAR 25K → 10M+), 13 counterparty tracks, Approval Matrix, Clause Library, Activation/Renewal/Crisis Playbooks. KSA law, SCCA Riyadh." },
-  { tag: "Mandates OS",   title: "Pipeline · ~SAR 2.3M",     body: "Built bilingual (Arabic + English) hub-and-spoke pipeline tool tracking active mandates by game, type, and execution status — Player Campaigns, Sponsor Mandates, IP, Team Campaigns, Event Appearances." },
-  { tag: "Closed Deal",   title: "Sony INZONE × Falcons",    body: "Closed USD 11.2K Sony INZONE sponsorship via Ruder Finn Atteline — 5 creators (Abu Najd, Madv, Spyerfrog, Oden, xsma333), 12 deliverables, full INZONE product seeding, KSA discount-code mechanic." },
-];
-
-export const axes = [
-  "Engagement", "Audience", "Seasonality", "Content Type",
-  "Language", "Authority", "Rights", "Multi-Platform", "Floor",
-];
-
-export const phases = [
-  { num: "I",   floor: "SAR 25K+",  title: "Advertising",                body: "Single-asset placements. Rate-card driven. CPM/CPC floor rates. The on-ramp for emerging brands and short-cycle tactical buys." },
-  { num: "II",  floor: "SAR 250K+", title: "Sponsorship",                body: "Multi-asset, multi-month. Tiered architecture. Rights bundle, asset inventory, performance bonuses. Where most ecosystem-active brands land." },
-  { num: "III", floor: "SAR 1.5M+", title: "Partnership",                body: "Co-marketing depth. Year-round integration. Standard partnership inventory. Strategic alignment between brand and Falcons IP." },
-  { num: "IV",  floor: "SAR 10M+",  title: "Equity / Title / Naming",    body: "Title sponsorship, naming rights, equity participation. The C-suite tier. Multi-year, deep co-investment, strategic territory." },
-];
-
-export const closedDeal = {
-  tag: "Closed",
-  title: "Sony INZONE × Team Falcons",
-  via: "via Ruder Finn Atteline · Dec 2025",
-  stats: [
-    { k: "USD 11.2K", v: "deal value to Falcons" },
-    { k: "5",         v: "creators activated" },
-    { k: "12",        v: "deliverables shipped" },
-    { k: "20%",       v: "KSA discount-code mechanic" },
-  ],
-  creators: "Abu Najd · Madv · Spyerfrog · Oden · xsma333",
+export const hero = {
+  eyebrow: "Esports commercial systems · 2026",
+  headline: ["Esports revenue,", "made defensible."],
+  sub: "Commercial operating systems for elite esports — pricing methodology, sponsorship architecture, agency governance, partner pipeline, activation delivery, and proof.",
+  meta: "Riyadh · Cairo · MENA & global gaming markets",
+  cta: { primary: { label: "View flagship case study", href: "/case-studies/team-falcons-commercial-stack" },
+         secondary: { label: "Contact", href: "/contact" },
+         tertiary: { label: "Download résumé", href: "/downloads/Abdalrahman_ElGazzawi_Resume_2026.pdf" } },
 };
 
-export const pipeline = [
-  { tag: "Multi-Division",   title: "GameSir × NODWIN",         body: "Apex + FGC + COD multi-division proposal · v5 master working book" },
-  { tag: "Partnership",      title: "HADO × Team Falcons",      body: "Multi-iteration pricing workbook · phase 1 proposal in review" },
-  { tag: "Sponsorship Deck", title: "Falcons Philippines M5",   body: "M5 World Champions sponsorship deck · MLBB ecosystem" },
-  { tag: "Sponsorship Deck", title: "Falcons Vega SEA · MLBB",  body: "First-of-its-kind female roster commercial deck · SEA market" },
-  { tag: "Creator Brief",    title: "Madv × INZONE / NVIDIA AR", body: "Creator briefs and AR scripts for tier-1 endemic activations" },
+// 8-stage commercial OS map (used in HeroCommandMap SVG)
+export const osStages = [
+  { code: "01", k: "Intake",     d: "Brief, audience, fit" },
+  { code: "02", k: "Rights",     d: "Talent, IP, scope" },
+  { code: "03", k: "Pricing",    d: "Methodology, math" },
+  { code: "04", k: "Approval",   d: "Matrix, sign-off" },
+  { code: "05", k: "Proposal",   d: "Deck, contract, pack" },
+  { code: "06", k: "Delivery",   d: "Activation, QA" },
+  { code: "07", k: "Proof",      d: "Reporting, attribution" },
+  { code: "08", k: "Renewal",    d: "Expand, defend" },
 ];
 
-export const ewc = {
-  role: "Senior Consultant",
-  blurb: "Account Management & Partnerships — owning commercial delivery for the world's largest esports event.",
-  owned: [
-    "Partnership operations across internal teams, agencies, tier-1 sponsors.",
-    "Brand and technical asset QA standards across marketing, social, broadcast.",
-    "Six-figure brand deals — co-managed end-to-end through close.",
-    "Sponsorship activation timelines and stakeholder alignment.",
-  ],
-  stats: [
-    { n: "778+", l: "partner deliverables shipped across marketing, social, broadcast" },
-    { n: "5M+",  l: "viewers reached by campaigns under direct management" },
-    { n: "78+",  l: "brands pitched in collaboration with five agency partners" },
-    { n: "20%",  l: "revenue growth driven by tightened account-management execution" },
+// Proof bar — 8 high-impact metrics
+export const proof = [
+  { n: "10+",       l: "Years across esports & gaming" },
+  { n: "200",       l: "Talents priced in the rate book" },
+  { n: "778+",      l: "EWC partner deliverables shipped" },
+  { n: "78+",       l: "Brands pitched across 5 agencies" },
+  { n: "5M+",       l: "Viewers reached by managed campaigns" },
+  { n: "~SAR 2.3M", l: "Active commercial pipeline tracked" },
+  { n: "USD 11.2K", l: "Sony INZONE × Falcons closed" },
+  { n: "SAR 17.6M", l: "Annual exposure surfaced in audit" },
+];
+
+// Core thesis flow — 8 nodes
+export const thesisFlow = [
+  "Audience","Talent","Rights","Pricing","Partner","Activation","Proof","Renewal",
+];
+
+// Featured case studies — 4 flagship
+export const caseStudies = [
+  {
+    slug: "team-falcons-commercial-stack",
+    eyebrow: "Flagship · 2026",
+    title: "Team Falcons Commercial Stack",
+    subtitle: "Pricing, rights, agency governance, and pipeline control for elite esports commercial operations.",
+    role: "Esports Marketing Manager",
+    timeframe: "Jan 2026 — Present",
+    tags: ["Pricing methodology","Agency framework","Mandates OS","Pipeline control"],
+    outcome: "End-to-end commercial operating system — methodology, framework, and pipeline tool — codified into one defensible stack.",
+    artifacts: ["Pricing Source of Truth v1.0","200-talent rate book","140-page Agency Partner Framework v5.0","4-phase Brand Investment Model","13 counterparty tracks","Bilingual Mandates OS","Falcons Pricing OS"],
+  },
+  {
+    slug: "falcons-pricing-os",
+    eyebrow: "Product · 2026",
+    title: "Falcons Pricing OS",
+    subtitle: "From spreadsheet logic to an internal quote-lifecycle product.",
+    role: "Product owner & engineer",
+    timeframe: "Mar 2026 — Present",
+    tags: ["Next.js","Supabase","Postgres RLS","Quote lifecycle"],
+    outcome: "Internal web app turning a 15-section methodology into a live quote engine with role-scoped permissions.",
+    artifacts: ["Roster module","Quote builder","Client portal","Sales activity log","Admin tooling","Postgres RLS — admin/sales/finance/viewer roles","Formula-based pricing logic"],
+  },
+  {
+    slug: "sony-inzone-team-falcons",
+    eyebrow: "Closed deal · Dec 2025",
+    title: "Sony INZONE × Team Falcons",
+    subtitle: "Closed and activated a creator-led KSA sponsorship via Ruder Finn Atteline.",
+    role: "Commercial lead",
+    timeframe: "Q4 2025",
+    tags: ["KSA market","Creator activation","Discount mechanic","Brand seeding"],
+    outcome: "USD 11.2K closed, 5 creators, 12 deliverables, full product seeding, KSA discount-code mechanic linking campaign to retail conversion.",
+    artifacts: ["Scoped via methodology","Contracted on Framework v5","Activated through Mandates OS","Performance-tracked end-to-end"],
+  },
+  {
+    slug: "esports-world-cup",
+    eyebrow: "Senior Consultant · 2024",
+    title: "Esports World Cup — Commercial Delivery",
+    subtitle: "High-volume partner delivery across marketing, social, and broadcast for the world's largest esports event.",
+    role: "Senior Consultant — SPORTFIVE",
+    timeframe: "Apr 2024 — Dec 2024",
+    tags: ["Account management","Sponsor delivery","Brand & technical QA","78+ brands"],
+    outcome: "778+ partner deliverables shipped · 5M+ viewers reached · 78+ brands pitched · 6 clients onboarded · 20% revenue growth.",
+    artifacts: ["End-to-end sponsorship activation","Brand & technical QA standards","Six-figure brand deal management","Cross-team commercial delivery"],
+  },
+];
+
+// Pricing engine — formula + 9 axes (visualized as radial in component)
+export const pricingEngine = {
+  formula: { left: "Final Price", right: "MAX(SocialPrice, AuthorityFloor) × ConfidenceCap × (1 + RightsUplift)" },
+  bases: ["CPM","CPE","Comparables","Authority","Tier baseline"],
+  axes: [
+    { n: "01", k: "Engagement",     d: "Real audience interaction over follower vanity." },
+    { n: "02", k: "Audience",       d: "Geography, language, and value-segment fit." },
+    { n: "03", k: "Seasonality",    d: "Tournament cycles, launches, regional moments." },
+    { n: "04", k: "Content Type",   d: "Reel, post, stream, IRL, story, full video." },
+    { n: "05", k: "Language",       d: "Arabic, English, regional uplift logic." },
+    { n: "06", k: "Authority",      d: "Earned credibility within a vertical or game." },
+    { n: "07", k: "Rights",         d: "Usage windows, exclusivity, edit rights." },
+    { n: "08", k: "Multi-Platform", d: "Cross-channel package economics." },
+    { n: "09", k: "Floor",          d: "Authority-derived minimum to defend." },
   ],
 };
 
-export const bdCards = [
-  { logo: "/img/logo-truegaming.png", title: "True Gaming", role: "Project Manager & Business Development", dates: "AUG 2023 — APR 2024", bullets: [
-    "Streamlined creative and technical pipelines using JIRA workflows.",
-    "Led activations for Nvidia, Microsoft, ASUS — product positioning, brand integrity, on-ground execution.",
-    "Sprint cadence and stakeholder alignment for technical-partner campaigns.",
-  ]},
-  { logo: "/img/logo-vanguard.png", title: "Vanguard", role: "Esports Specialist — Gamers8", dates: "MAY 2023 — JUL 2023", bullets: [
-    "Qualified Gamers8 partner proposals on technical feasibility and audience fit.",
-    "Designed interactive zone concepts to optimize player journey at MENA's flagship festival.",
-    "Bridged commercial pitch and technical delivery for sponsor activations.",
-  ]},
+// 4-phase Brand Investment Model — interactive tier component
+export const tiers = [
+  { phase: "I",   floor: "SAR 25K+",  name: "Advertising",
+    what: "Single-asset placements at rate-card.",
+    who:  "Emerging brands, tactical short-cycle buys, on-ramp partners.",
+    logic: "CPM/CPC floor rates feed a defensible price per impression or interaction.",
+    bundle: "Single-channel placement · 30-day window · standard usage rights.",
+    governance: "Lightweight approval. Sales-tier sign-off. Standard templates." },
+  { phase: "II",  floor: "SAR 250K+", name: "Sponsorship",
+    what: "Multi-asset, multi-month commercial agreement.",
+    who:  "Brand teams active across the ecosystem, mid-funnel investment.",
+    logic: "Tiered architecture — rights bundle + asset inventory + performance bonuses.",
+    bundle: "Cross-channel package · season-long · talent + content + activation.",
+    governance: "Director sign-off. Activation playbook attached. Renewal review at 60 days." },
+  { phase: "III", floor: "SAR 1.5M+", name: "Partnership",
+    what: "Year-round co-marketing depth and strategic alignment.",
+    who:  "Strategic brands integrating with Falcons IP across the calendar.",
+    logic: "Standard partnership inventory · co-marketing calendar · joint-KPI structure.",
+    bundle: "Always-on integration · multi-team scope · joint-press · co-content.",
+    governance: "C-suite sign-off. Quarterly partnership review. Crisis playbook activated by default." },
+  { phase: "IV",  floor: "SAR 10M+",  name: "Equity / Title / Naming",
+    what: "Title sponsorship, naming rights, or equity participation.",
+    who:  "Strategic territory partners. Multi-year, board-level commitment.",
+    logic: "Strategic-territory pricing — exclusivity premium + multi-year commit + governance share.",
+    bundle: "Naming · presence · category exclusivity · co-investment structure.",
+    governance: "Board approval. Legal-led structuring. Multi-year governance cadence." },
 ];
 
-export const advisory = [
-  { num: "01", title: "GLG (Gerson Lehrman Group)", meta: "Council Member — Gaming, Esports & AI · 2025 — Present", body: "Advise institutional investors and tech vendors on MENA esports market trends, commercial models, Saudi Vision 2030 gaming-investment opportunities.", logo: null },
-  { num: "02", title: "Mobalytics", meta: "Gaming Specialist — Content & SEO · 2022", body: "Produced deep-dive Lost Ark guides; supported SEO-driven publishing workflows lifting content performance and organic reach.", logo: "/img/logo-mobalytics.png" },
-  { num: "03", title: "Telecom Egypt — RA'AD Esports", meta: "Esports Specialist — Operations · 2021", body: "Established team performance KPIs/KRIs; improved budget utilization through tighter vendor coordination and process redesign.", logo: "/img/logo-telecom-egypt.png" },
+// 13 counterparty tracks (referenced in framework section)
+export const counterpartyTracks = [
+  "Direct Brand","Creative Agency","Media Agency","PR Agency","Talent-Rep","Publisher",
+  "Broadcaster","Government","Tech / Endemic","Telco","Federation","Distributor","Strategic Investor",
 ];
 
-export const earlier = [
-  { yr: "2015 — 2017", org: "S2 Games",      role: "QA Tester / Prime Beta Tester",   note: "Led a 10-person testing squad; bug-tracking workflows on pre-release titles. Learned the technical floor of how games actually ship." },
-  { yr: "2017 — 2018", org: "Wanyoo (Cairo)", role: "Business Development Specialist", note: "Built esports-stakeholder relationships; ROI frameworks for professional players. First commercial muscle." },
-  { yr: "2020 — 2021", org: "Sevan Jewelry", role: "Marketing Operations Specialist",  note: "Digital campaigns supporting 100+ sales; community growth across non-gaming verticals. Adjacent rep at brand & ops." },
-];
-
+// Operating principles — senior tone
 export const principles = [
-  { n: "01", title: "Defensibility over speed.",        body: "Every rate, every recommendation, every commercial position should trace back to a source. If I can't show the math, I haven't done the work yet." },
-  { n: "02", title: "Methodology, then motion.",        body: "Build the engine first — the rate book, the playbook, the framework. Then ship at speed. Without methodology, fast becomes expensive." },
-  { n: "03", title: "Half technical, half commercial.", body: "Writing SQL, designing pricing logic, and closing six-figure deals are the same job. The product is whatever the client buys, end-to-end." },
+  { n: "01", title: "Defensibility over speed.",
+    body: "Every rate, recommendation, and commercial position should trace back to source logic. If the math cannot be shown, the work is not finished." },
+  { n: "02", title: "Methodology, then motion.",
+    body: "Build the engine first — pricing, rights, playbook, governance, pipeline. Then move fast without creating commercial debt." },
+  { n: "03", title: "Half technical, half commercial.",
+    body: "Writing SQL, designing pricing logic, managing stakeholders, and closing deals are not separate muscles. They are one operating system." },
 ];
 
-export const stack = [
-  { lab: "Delivery & PM",     items: "JIRA · Confluence · Trello · Notion · Slack · Discord" },
-  { lab: "Commercial & Ops",  items: "Excel / Sheets · Salesforce-class CRMs · Zoho · MS 365 · Google Workspace" },
-  { lab: "Product & Data",    items: "SQL · Postgres / Supabase · Next.js · Vercel · GitHub · Markdown / Notion docs" },
-  { lab: "Esports-Specific",  items: "Newzoo · Nielsen Esports · Shikenso · Influencity · StreamElements" },
+// Career arc — compressed timeline
+export const arc = "QA → BD → Marketing → Operations → Strategy → Commercial Systems";
+
+export const experience = [
+  { role: "Esports Marketing Manager", company: "Team Falcons", years: "2026 — Present", impact: "Authored full commercial stack — pricing, framework, mandates OS, internal pricing app.",
+    proof: ["200-talent rate book","Pricing OS shipped to production"], current: true },
+  { role: "Senior Consultant", company: "SPORTFIVE — EWC / Saudi Esports Federation", years: "2024", impact: "Owned commercial delivery for the world's largest esports event.",
+    proof: ["778+ deliverables, 5M+ viewers","78+ brands pitched, 20% revenue growth"] },
+  { role: "Project Manager & BD", company: "True Gaming", years: "2023 — 2024", impact: "Activated Nvidia, Microsoft, ASUS through JIRA-cadenced delivery.",
+    proof: ["Tier-1 endemic activations","Sprint-cadence stakeholder ops"] },
+  { role: "Esports Specialist — Gamers8", company: "Vanguard", years: "2023", impact: "Qualified Gamers8 sponsor proposals and shaped player-zone concepts.",
+    proof: ["Technical-feasibility filtering","Interactive-zone design"] },
+  { role: "Esports Specialist — Operations", company: "RA'AD Esports / Telecom Egypt", years: "2021", impact: "Built KPI/KRI structure and tightened vendor coordination.",
+    proof: ["Performance scorecards","Budget-utilization gains"] },
+  { role: "Council Member — Gaming, Esports & AI", company: "GLG", years: "2025 — Present", impact: "Advise institutional investors on MENA esports market structure.",
+    proof: ["Vision 2030 gaming intelligence","Investor briefings"] },
+  { role: "Gaming Specialist — Content & SEO", company: "Mobalytics", years: "2022", impact: "Lifted SEO performance through deep-dive game guides.",
+    proof: ["Lost Ark vertical","Organic-reach growth"] },
+  { role: "Earlier — QA / BD / Marketing", company: "S2 Games · Wanyoo · Sevan Jewelry", years: "2015 — 2021", impact: "Range-building across the lifecycle — QA, BD, marketing ops.",
+    proof: ["10-person QA squad lead","ROI frameworks for pro players"] },
 ];
 
-export const brandLogos = [
-  { src: "/img/brand-aramco.png",          alt: "Saudi Aramco" },
-  { src: "/img/brand-telecom-egypt.png",   alt: "Telecom Egypt" },
-  { src: "/img/brand-saudi-eleagues.png",  alt: "Saudi eLeagues" },
-  { src: "/img/logo-truegaming.png",       alt: "True Gaming" },
-  { src: "/img/logo-vanguard.png",         alt: "Vanguard" },
-  { src: "/img/brand-arabhardware.png",    alt: "ArabHardware" },
-  { src: "/img/logo-mobalytics.png",       alt: "Mobalytics" },
+// Brands & partners — categorized by involvement level
+export const brandInvolvement = [
+  { tier: "Closed / directly managed", color: "gold",
+    items: ["Sony INZONE","Team Falcons","Ruder Finn Atteline","True Gaming","SPORTFIVE","Esports World Cup","Saudi Esports Federation"] },
+  { tier: "Delivered / supported", color: "green",
+    items: ["Nvidia","Microsoft","ASUS","Lenovo Legion","Saudi Aramco","Gamers8","Mobalytics","Telecom Egypt"] },
+  { tier: "Pitched / pipeline / strategy", color: "neutral",
+    items: ["GameSir","NODWIN","STC","Mobily","HADO","Saudi eLeagues","ArabHardware"] },
+  { tier: "Ecosystem affiliations", color: "neutral",
+    items: ["GLG (Gerson Lehrman Group)","Egyptian Esports Federation","Egypt Football Association","Vanguard","S2 Games","Wanyoo"] },
 ];
 
-export const brandFlags = [
-  { kind: "efa" as const, l1: "EGYPT FA",          l2: "Football Association" },
-  { kind: "eef" as const, l1: "EGYPTIAN E-SPORTS", l2: "Federation" },
-];
-
-export const brandText = [
-  { lab: "Tech · Endemic · Telco",            list: "Nvidia · Microsoft · ASUS · Sony INZONE · STC · Mobily · Lenovo Legion · GameSir · NODWIN" },
-  { lab: "Esports Ecosystem & Federations",   list: "Saudi Esports Federation · Egyptian Esports Federation · Egypt Football Association · SPORTFIVE · Esports World Cup · Gamers8 · Team Falcons · Ruder Finn Atteline · True Gaming · Vanguard · GLG · Mobalytics · S2 Games · Wanyoo · HADO" },
-];
-
-export const education = [
-  { h: "B.A., Communication & Media Studies", sub: "Universitat Autònoma de Barcelona · AAST" },
-  { h: "Diploma, Marketing",                  sub: "DM Arts Academy" },
-];
-
-export const certs = "Business Development Consulting (2025) · Account Management — Maintaining Relationships · Negotiation Skills · Basic Tournament Administration";
-
-export const languages = [
-  { name: "Arabic",  level: "Native", pct: 100 },
-  { name: "English", level: "Fluent", pct: 92 },
-  { name: "Spanish", level: "Basic",  pct: 40 },
+// Contact — segmented CTAs
+export const contactCtas = [
+  { audience: "For esports organizations", q: "Need pricing, rights, or commercial operating systems?",
+    body: "Source-of-truth methodology, agency framework, mandates OS, internal pricing tooling.",
+    subject: "Esports org — commercial systems enquiry" },
+  { audience: "For brands & agencies", q: "Need a defensible MENA esports sponsorship model?",
+    body: "Tiered architecture, KSA market read, activation that connects to retail conversion.",
+    subject: "Brand / agency — MENA sponsorship enquiry" },
+  { audience: "For employers", q: "Hiring for commercial, partnerships, or revenue operations?",
+    body: "Senior commercial leadership across the esports lifecycle. Hybrid technical-commercial.",
+    subject: "Employer enquiry — senior commercial role" },
 ];
 
 export const navLinks = [
-  { href: "#falcons",     label: "Falcons" },
-  { href: "#methodology", label: "Methodology" },
-  { href: "#pipeline",    label: "Pipeline" },
-  { href: "#work",        label: "Work" },
-  { href: "#brands",      label: "Brands" },
-  { href: "#contact",     label: "Contact" },
+  { href: "/#case-studies", label: "Case studies" },
+  { href: "/#methodology",  label: "Methodology" },
+  { href: "/#tiers",        label: "Tiers" },
+  { href: "/#experience",   label: "Experience" },
+  { href: "/about",         label: "About" },
+  { href: "/contact",       label: "Contact" },
 ];
+
+export const confidentialityNote = "Selected details are simplified or sanitized for confidentiality. Internal rates, partner negotiations, and private pipeline data are intentionally omitted from this public portfolio.";
