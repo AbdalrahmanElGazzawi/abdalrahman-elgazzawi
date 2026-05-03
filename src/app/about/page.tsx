@@ -79,7 +79,31 @@ export default function About() {
           </div>
         </section>
 
-        <section className="border-t border-hairline py-16">
+        
+        <section className="border-t border-hairline py-16 sm:py-20">
+          <div className="container-page">
+            <div className="eyebrow">// Selected moments</div>
+            <h2 className="mt-3 font-serif text-display-s">From the field.</h2>
+            <p className="mt-4 text-muted text-[14px] sm:text-[15px] leading-[1.7] max-w-prose">
+              A handful of the rooms, stages, venues, and booths from across the career — EWC, LEAP Expo, RA'AD venue, TrueGaming Awards.
+            </p>
+            <div className="mt-10 grid grid-cols-2 md:grid-cols-3 gap-3">
+              {[
+                { src: "/img/photos/ewc-stage-2.jpg",   alt: "Esports World Cup — broadcast stage" },
+                { src: "/img/photos/ewc-stage-1.jpg",   alt: "Esports World Cup — arena view" },
+                { src: "/img/photos/leap-booth.jpg",    alt: "LEAP Expo — TrueGaming booth, Riyadh" },
+                { src: "/img/photos/tg-awards.jpg",     alt: "TrueGaming Awards Event — venue & sponsor integration" },
+                { src: "/img/photos/raad-venue-1.jpg",  alt: "RA'AD Esports venue at sporting club" },
+                { src: "/img/photos/raad-venue-2.jpg",  alt: "RA'AD venue + PMPL bootcamp setup" },
+              ].map((p) => (
+                <figure key={p.src} className="relative aspect-[4/3] overflow-hidden ring-1 ring-hairline lift">
+                  <Image src={p.src} alt={p.alt} fill sizes="(max-width: 768px) 50vw, 33vw" className="object-cover" />
+                </figure>
+              ))}
+            </div>
+          </div>
+        </section>
+<section className="border-t border-hairline py-16">
           <div className="container-page max-w-[820px]">
             <ConfidentialityNote />
           </div>

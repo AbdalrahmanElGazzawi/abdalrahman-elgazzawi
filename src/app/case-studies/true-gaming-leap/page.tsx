@@ -41,6 +41,7 @@ const cs: CaseStudy = {
   proves:
     "Agency-side delivery muscle — the discipline to run multiple tier-1 brand activations simultaneously through JIRA cadence, capture leads cleanly at expo scale, and convert them into recurring agency clients.",
   visual: <TrueGamingDiagram />,
+  heroImage: { src: "/img/photos/leap-booth.jpg", alt: "LEAP Expo — TrueGaming booth, Riyadh" },
 };
 
 export const metadata = {

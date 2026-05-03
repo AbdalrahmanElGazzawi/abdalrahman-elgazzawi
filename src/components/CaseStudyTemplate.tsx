@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { ReactNode } from "react";
 import { Nav } from "./Nav";
 import { Footer } from "./Footer";
@@ -11,6 +12,7 @@ export interface CaseStudy {
   process: string[]; impact: { n: string; l: string }[];
   proves: string;
   visual?: ReactNode;
+  heroImage?: { src: string; alt: string };
 }
 
 export function CaseStudyPage({ cs, prev, next }: {
@@ -37,6 +39,18 @@ export function CaseStudyPage({ cs, prev, next }: {
             </div>
           </div>
         </header>
+
+        {/* HERO IMAGE (optional) */}
+        {cs.heroImage && (
+          <section className="border-b border-hairline bg-deep/30">
+            <div className="container-page py-8 sm:py-10">
+              <div className="relative aspect-[16/7] sm:aspect-[16/6] w-full overflow-hidden ring-1 ring-hairline">
+                <Image src={cs.heroImage.src} alt={cs.heroImage.alt} fill priority sizes="(max-width: 1280px) 100vw, 1280px" className="object-cover" />
+              </div>
+              <div className="mt-3 text-[11px] font-mono text-muted tracking-[0.06em]">// {cs.heroImage.alt}</div>
+            </div>
+          </section>
+        )}
 
         {/* CONTEXT + PROBLEM */}
         <section className="border-t border-hairline py-16 sm:py-20">

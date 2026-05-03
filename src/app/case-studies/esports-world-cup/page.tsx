@@ -41,6 +41,7 @@ const cs: CaseStudy = {
   proves:
     "I can hold the commercial spine of a global-scale esports event — volume, standards, multi-agency coordination, brand discipline — and convert it into measurable revenue lift, not just impressions.",
   visual: <EWCDiagram />,
+  heroImage: { src: "/img/photos/ewc-stage-2.jpg", alt: "Esports World Cup — broadcast stage and arena" },
 };
 
 export const metadata = {
