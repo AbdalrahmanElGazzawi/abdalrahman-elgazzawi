@@ -41,7 +41,6 @@ const cs: CaseStudy = {
   proves:
     "Earliest evidence of shipping esports infrastructure end-to-end — not just running campaigns, but designing the physical and operational systems competitive esports actually needs to function.",
   visual: <RaadDiagram />,
-  heroImage: { src: "/img/photos/raad-venue-1.jpg", alt: "RA'AD Esports — venue + bootcamp infrastructure" },
 };
 
 export const metadata = {

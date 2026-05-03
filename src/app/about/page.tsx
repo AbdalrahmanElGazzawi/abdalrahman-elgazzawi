@@ -49,15 +49,8 @@ export default function About() {
         </section>
 
         <section className="border-t border-hairline py-16 sm:py-20 bg-deep/30">
-          <div className="container-page grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-            <div className="lg:col-span-5">
-              <div className="relative aspect-[4/3] max-w-[460px]">
-                <Image src="/img/contact.jpg" alt="Abdalrahman ElGazzawi at the desk — operating mode" fill sizes="(max-width: 768px) 320px, 460px" className="object-cover" />
-                <div aria-hidden className="absolute inset-0 ring-1 ring-hairline pointer-events-none" />
-              </div>
-              <div className="text-[11px] font-mono text-muted mt-3 tracking-[0.06em]">// Operating mode</div>
-            </div>
-            <div className="lg:col-span-7">
+          <div className="container-page max-w-[820px]">
+            <div>
               <div className="eyebrow">// Background</div>
               <h2 className="mt-3 font-serif text-display-s">From QA to commercial systems.</h2>
               <p className="mt-6 text-paper text-[15px] sm:text-[16px] leading-[1.7] max-w-prose">
@@ -75,31 +68,6 @@ export default function About() {
                 <span><span className="text-gold">●</span> Spanish — Basic</span>
               </div>
               <div className="mt-3 text-[12px] font-mono text-muted">B.A. Communication & Media Studies — Universitat Autònoma de Barcelona / AAST</div>
-            </div>
-          </div>
-        </section>
-
-        
-        <section className="border-t border-hairline py-16 sm:py-20">
-          <div className="container-page">
-            <div className="eyebrow">// Selected moments</div>
-            <h2 className="mt-3 font-serif text-display-s">From the field.</h2>
-            <p className="mt-4 text-muted text-[14px] sm:text-[15px] leading-[1.7] max-w-prose">
-              A handful of the rooms, stages, venues, and booths from across the career — EWC, LEAP Expo, RA'AD venue, TrueGaming Awards.
-            </p>
-            <div className="mt-10 grid grid-cols-2 md:grid-cols-3 gap-3">
-              {[
-                { src: "/img/photos/ewc-stage-2.jpg",   alt: "Esports World Cup — broadcast stage" },
-                { src: "/img/photos/ewc-stage-1.jpg",   alt: "Esports World Cup — arena view" },
-                { src: "/img/photos/leap-booth.jpg",    alt: "LEAP Expo — TrueGaming booth, Riyadh" },
-                { src: "/img/photos/tg-awards.jpg",     alt: "TrueGaming Awards Event — venue & sponsor integration" },
-                { src: "/img/photos/raad-venue-1.jpg",  alt: "RA'AD Esports venue at sporting club" },
-                { src: "/img/photos/raad-venue-2.jpg",  alt: "RA'AD venue + PMPL bootcamp setup" },
-              ].map((p) => (
-                <figure key={p.src} className="relative aspect-[4/3] overflow-hidden ring-1 ring-hairline lift">
-                  <Image src={p.src} alt={p.alt} fill sizes="(max-width: 768px) 50vw, 33vw" className="object-cover" />
-                </figure>
-              ))}
             </div>
           </div>
         </section>
