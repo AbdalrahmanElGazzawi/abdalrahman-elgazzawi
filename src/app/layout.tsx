@@ -6,7 +6,7 @@ import { site } from "@/content/site";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", weight: ["300","400","500","600","700"], display: "swap" });
-const fraunces = Fraunces({ subsets: ["latin"], variable: "--font-fraunces", weight: ["300","400","500","600","700"], style: ["normal","italic"], axes: ["opsz","SOFT"], display: "swap" });
+const fraunces = Fraunces({ subsets: ["latin"], variable: "--font-fraunces", weight: ["300","400","500","600","700"], style: ["normal","italic"], display: "swap" });
 const jbm = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jbm", weight: ["400","500","600"], display: "swap" });
 
 export const metadata: Metadata = {
