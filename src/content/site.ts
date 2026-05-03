@@ -279,6 +279,23 @@ export const federationAdvisory = {
   ],
 };
 
+// Selected projects archive — historical work beyond the 7 case studies
+// Each is a real artifact from the operator's career. Public-safe summaries.
+export const selectedProjects = [
+  { era: "Falcons · 2026",   title: "Activation OS — SOP suite",        body: "Standard operating procedures for partner-led activations from brief to delivery to reporting.", tag: "Internal SOP" },
+  { era: "Falcons · 2026",   title: "200 Ideas Themed Deck",            body: "Library of 200 partner-activation concepts themed by category, game, and brand-fit. Used as a sales-conversation accelerator.", tag: "Concept library" },
+  { era: "Falcons · 2026",   title: "Player Marketing Engine",          body: "Spreadsheet-driven framework for orchestrating per-player content cadence, sponsor obligations, and performance reporting.", tag: "Operating model" },
+  { era: "Falcons · 2026",   title: "Roster Announcement collateral",   body: "End-to-end visual + copy package for major roster reveals — cohesive across web, social, broadcast.", tag: "Collateral" },
+  { era: "Independent · 2026", title: "Egypt Digital Football Control Tower", body: "Strategic brief + operating model proposing an integrated commercial control tower for Egyptian football's digital surface.", tag: "Strategy brief" },
+  { era: "SPORTFIVE · 2024", title: "EWC 2024 Closing Ceremony Marcom Plan", body: "Communications plan for the closing ceremony of the world's largest esports event — coordinated marketing, social, broadcast workstreams.", tag: "Marcom plan" },
+  { era: "SPORTFIVE · 2024", title: "Saudi eLeague — End-of-Sponsorship reporting", body: "Wrapped sponsor-side reporting and renewal-conversation foundation for the ALJ × Saudi eLeague cycle.", tag: "Sponsor reporting" },
+  { era: "SPORTFIVE · 2024", title: "SEF IP commercial roadmap",        body: "Commercialisation plan for Saudi Esports Federation Major IP — accelerating sponsor acquisition.", tag: "Roadmap" },
+  { era: "True Gaming · 2024", title: "TrueGaming Awards Event SOP",     body: "Venue selection, logistics, sponsor integration, and full project tracking on JIRA — a reusable agency event playbook.", tag: "Event SOP" },
+  { era: "True Gaming · 2024", title: "LEAP Expo booth strategy",        body: "Booth design + lead-capture flow for Riyadh's flagship tech expo. 147 contacts, 6 new clients converted.", tag: "Booth + leads" },
+  { era: "Telecom Egypt · 2021", title: "HSC Sponsorship Package",       body: "Personal-initiative sponsorship package for Heliopolis Sporting Club — one of Egypt's most prestigious sporting institutions.", tag: "Sponsorship pkg" },
+  { era: "Telecom Egypt · 2021", title: "Esports vs Traditional Marketing — mind map", body: "Mind-map deliverable comparing esports marketing to traditional team marketing — used to onboard non-endemic stakeholders.", tag: "Strategy artifact" },
+];
+
 export const navLinks = [
   { href: "/#case-studies", label: "Case studies" },
   { href: "/#methodology",  label: "Methodology" },

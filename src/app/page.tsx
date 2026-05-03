@@ -10,6 +10,7 @@ import { OperatingPrinciples } from "@/components/OperatingPrinciples";
 import { FederationAdvisory } from "@/components/FederationAdvisory";
 import { ExperienceTimeline } from "@/components/ExperienceTimeline";
 import { BrandInvolvementGrid } from "@/components/BrandInvolvementGrid";
+import { SelectedProjects } from "@/components/SelectedProjects";
 import { ContactCTA } from "@/components/ContactCTA";
 import { Footer } from "@/components/Footer";
 
@@ -29,6 +30,7 @@ export default function Page() {
         <FederationAdvisory />
         <ExperienceTimeline />
         <BrandInvolvementGrid />
+        <SelectedProjects />
         <ContactCTA />
       </main>
       <Footer />
