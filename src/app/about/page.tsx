@@ -61,7 +61,10 @@ export default function About() {
               <div className="eyebrow">// Background</div>
               <h2 className="mt-3 font-serif text-display-s">From QA to commercial systems.</h2>
               <p className="mt-6 text-paper text-[15px] sm:text-[16px] leading-[1.7] max-w-prose">
-                Started in QA at S2 Games — learned the technical floor of how games actually ship. Moved through BD and esports operations across Cairo and Riyadh — Wanyoo, Telecom Egypt's RA'AD Esports, Vanguard for Gamers8, True Gaming for Nvidia / Microsoft / ASUS activations.
+                Originally from Damascus. Now operating between Riyadh and Cairo. Started inside the games as a competitor — Top 10 world Warzone wins, Rank 1 world Heroes of Newerth — before moving into the commercial side. The earliest commercial chapter was an internet café in Damascus.
+              </p>
+              <p className="mt-4 text-paper text-[15px] sm:text-[16px] leading-[1.7] max-w-prose">
+                QA at S2 Games taught the technical floor of how games actually ship. BD and operations across Cairo and Riyadh — Wanyoo, Telecom Egypt's RA'AD Esports (where I directed venue construction and stood up a PMPL bootcamp in under a week), Vanguard for Gamers8, True Gaming for Nvidia / Microsoft / ASUS / AstraNova activations.
               </p>
               <p className="mt-4 text-paper text-[15px] sm:text-[16px] leading-[1.7] max-w-prose">
                 Joined SPORTFIVE for the EWC commercial cycle — owned partner delivery at scale across 778+ deliverables, 78+ brands, five agencies. Now at Team Falcons authoring the commercial stack and shipping the internal tools that run it.

@@ -128,3 +128,105 @@ export function EWCDiagram() {
     </figure>
   );
 }
+
+export function GLGDiagram() {
+  return (
+    <figure aria-label="GLG advisory — topic coverage map">
+      <svg viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto block panel">
+        <rect x="0" y="0" width="800" height="360" fill="#101218" />
+        <text x="20" y="24" fontFamily="ui-monospace, monospace" fontSize="10" fill="#7E8088" letterSpacing="2">// GLG ADVISORY · TOPIC COVERAGE</text>
+        <text x="780" y="24" textAnchor="end" fontFamily="ui-monospace, monospace" fontSize="9" fill="#5BD394" letterSpacing="2">● COUNCIL MEMBER · 2025 — PRESENT</text>
+
+        {/* Center node — "Esports & Gaming SME" */}
+        <circle cx="400" cy="180" r="70" fill="#161922" stroke="#C9A961" strokeWidth="1.5" />
+        <text x="400" y="170" textAnchor="middle" fontFamily="ui-monospace, monospace" fontSize="9" fill="#C9A961" letterSpacing="2">SUBJECT-MATTER</text>
+        <text x="400" y="186" textAnchor="middle" fontFamily="Georgia, serif" fontStyle="italic" fontSize="18" fill="#F4F1EB">EXPERT</text>
+        <text x="400" y="204" textAnchor="middle" fontFamily="ui-monospace, monospace" fontSize="9" fill="#7E8088" letterSpacing="2">ESPORTS · GAMING · MENA</text>
+
+        {/* 6 topic spokes */}
+        {[
+          { x: 80,  y: 80,  k: "ESPORTS LEAGUES", d: "ESL · Faceit ecosystem" },
+          { x: 720, y: 80,  k: "COMPETITIVE FRANCHISES", d: "EA Sports FC · Madden" },
+          { x: 80,  y: 280, k: "MENA MARKET DYNAMICS", d: "KSA · Egypt · UAE" },
+          { x: 720, y: 280, k: "VISION-2030 GAMING", d: "Saudi gaming investment" },
+          { x: 400, y: 50,  k: "INVESTOR INTELLIGENCE", d: "Institutional briefings" },
+          { x: 400, y: 320, k: "COMMERCIAL MODELS", d: "Pricing · sponsorship" },
+        ].map((t) => (
+          <g key={t.k}>
+            <line x1="400" y1="180" x2={t.x} y2={t.y} stroke="#2A2D36" strokeDasharray="3 4" />
+            <rect x={t.x - 90} y={t.y - 18} width="180" height="36" fill="#161922" stroke="#2A2D36" />
+            <text x={t.x} y={t.y - 3} textAnchor="middle" fontFamily="ui-monospace, monospace" fontSize="9" fill="#C9A961" letterSpacing="1.5">{t.k}</text>
+            <text x={t.x} y={t.y + 11} textAnchor="middle" fontFamily="ui-monospace, monospace" fontSize="8" fill="#7E8088">{t.d}</text>
+          </g>
+        ))}
+      </svg>
+      <figcaption className="mt-3 text-[11px] font-mono text-muted">// Topic areas only. GLG client identities, project specifics, and consultation content are confidential under network terms.</figcaption>
+    </figure>
+  );
+}
+
+export function TrueGamingDiagram() {
+  return (
+    <figure aria-label="True Gaming — LEAP Expo + Awards SOP + brand activations">
+      <svg viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto block panel">
+        <rect x="0" y="0" width="800" height="360" fill="#101218" />
+        <text x="20" y="24" fontFamily="ui-monospace, monospace" fontSize="10" fill="#7E8088" letterSpacing="2">// TRUE GAMING · 2023 — 2024 · AGENCY-SIDE EXECUTION</text>
+
+        {/* Three pillars: LEAP · Awards · Brand activations */}
+        {[
+          { x: 60,  title: "LEAP EXPO",        rows: [{ k: "147", v: "contacts captured" }, { k: "6", v: "new clients onboarded" }, { k: "1", v: "booth strategy" }] },
+          { x: 300, title: "AWARDS EVENT SOP", rows: [{ k: "Venue", v: "selection & logistics" }, { k: "Sponsor", v: "integration via JIRA" }, { k: "PM", v: "complete delivery" }] },
+          { x: 540, title: "BRAND ACTIVATIONS", rows: [{ k: "Nvidia", v: "" }, { k: "Microsoft", v: "" }, { k: "ASUS · AstraNova", v: "" }] },
+        ].map((p) => (
+          <g key={p.title}>
+            <rect x={p.x} y="60" width="200" height="240" fill="#161922" stroke="#2A2D36" />
+            <line x1={p.x} y1="60" x2={p.x + 200} y2="60" stroke="#C9A961" strokeWidth="2" />
+            <text x={p.x + 100} y="86" textAnchor="middle" fontFamily="ui-monospace, monospace" fontSize="11" fill="#C9A961" letterSpacing="2">{p.title}</text>
+            {p.rows.map((row, ri) => (
+              <g key={ri}>
+                <text x={p.x + 16} y={130 + ri * 56} fontFamily="Georgia, serif" fontStyle="italic" fontSize={row.k.length > 10 ? "16" : "22"} fill="#F4F1EB">{row.k}</text>
+                {row.v && <text x={p.x + 16} y={150 + ri * 56} fontFamily="ui-monospace, monospace" fontSize="9" fill="#7E8088">{row.v}</text>}
+              </g>
+            ))}
+          </g>
+        ))}
+
+        <text x="400" y="335" textAnchor="middle" fontFamily="ui-monospace, monospace" fontSize="9" fill="#5C5E66" letterSpacing="2">JIRA-CADENCED · STAKEHOLDER-ALIGNED · RESPONSE-TIME OPTIMISED</text>
+      </svg>
+      <figcaption className="mt-3 text-[11px] font-mono text-muted">// Public summary of agency-side commercial work.</figcaption>
+    </figure>
+  );
+}
+
+export function RaadDiagram() {
+  return (
+    <figure aria-label="RA'AD Esports / Telecom Egypt — esports infrastructure">
+      <svg viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto block panel">
+        <rect x="0" y="0" width="800" height="360" fill="#101218" />
+        <text x="20" y="24" fontFamily="ui-monospace, monospace" fontSize="10" fill="#7E8088" letterSpacing="2">// RA'AD ESPORTS · TELECOM EGYPT · 2021</text>
+
+        {/* Three blocks: Venue · Bootcamp · Operations */}
+        {[
+          { x: 60,  title: "ESPORTS VENUE",   sub: "Sporting club", rows: ["Concept design","Sizing & layout","Construction planning"] },
+          { x: 300, title: "PMPL BOOTCAMP",   sub: "<7 days setup", rows: ["Telecom HQ deployment","Full infrastructure","Playoff-ready"] },
+          { x: 540, title: "OPERATIONS",      sub: "KPI/KRI built", rows: ["Performance scorecards","Vendor coordination","Budget utilisation"] },
+        ].map((p) => (
+          <g key={p.title}>
+            <rect x={p.x} y="60" width="200" height="240" fill="#161922" stroke="#C9A961" strokeWidth="1" />
+            <text x={p.x + 100} y="90" textAnchor="middle" fontFamily="ui-monospace, monospace" fontSize="11" fill="#C9A961" letterSpacing="2">{p.title}</text>
+            <text x={p.x + 100} y="108" textAnchor="middle" fontFamily="ui-monospace, monospace" fontSize="9" fill="#5BD394" letterSpacing="2">{p.sub}</text>
+            {p.rows.map((r, ri) => (
+              <g key={ri}>
+                <line x1={p.x + 20} y1={150 + ri * 36} x2={p.x + 30} y2={150 + ri * 36} stroke="#C9A961" />
+                <text x={p.x + 36} y={154 + ri * 36} fontFamily="ui-monospace, monospace" fontSize="10" fill="#F4F1EB">{r}</text>
+              </g>
+            ))}
+          </g>
+        ))}
+
+        <text x="400" y="335" textAnchor="middle" fontFamily="ui-monospace, monospace" fontSize="9" fill="#5C5E66" letterSpacing="2">EARLIEST EVIDENCE OF SHIPPING ESPORTS INFRASTRUCTURE END-TO-END</text>
+      </svg>
+      <figcaption className="mt-3 text-[11px] font-mono text-muted">// Public summary of national-telco esports build-out.</figcaption>
+    </figure>
+  );
+}

@@ -11,7 +11,7 @@ export function CaseStudyGrid() {
       accent="Outcomes shipped."
       sub="Four flagship engagements where commercial methodology, governance, and tooling met live deal flow. Public-safe summaries — full deal data sanitized."
     >
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-5">
         {caseStudies.map((cs) => (
           <Link key={cs.slug} href={`/case-studies/${cs.slug}`}
             className="group panel lift relative p-6 sm:p-7 flex flex-col">

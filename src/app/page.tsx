@@ -3,6 +3,7 @@ import { Hero } from "@/components/HeroCommandMap";
 import { MetricStrip } from "@/components/MetricStrip";
 import { ThesisFlow } from "@/components/ThesisFlow";
 import { CaseStudyGrid } from "@/components/CaseStudyGrid";
+import { CompetitiveCred } from "@/components/CompetitiveCred";
 import { PricingEngineDiagram } from "@/components/PricingEngineDiagram";
 import { CommercialTierTabs } from "@/components/CommercialTierTabs";
 import { OperatingPrinciples } from "@/components/OperatingPrinciples";
@@ -20,6 +21,7 @@ export default function Page() {
         <MetricStrip />
         <ThesisFlow />
         <CaseStudyGrid />
+        <CompetitiveCred />
         <PricingEngineDiagram />
         <CommercialTierTabs />
         <OperatingPrinciples />
