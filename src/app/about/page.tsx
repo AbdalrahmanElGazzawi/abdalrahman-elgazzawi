@@ -49,8 +49,15 @@ export default function About() {
         </section>
 
         <section className="border-t border-hairline py-16 sm:py-20 bg-deep/30">
-          <div className="container-page max-w-[820px]">
-            <div>
+          <div className="container-page grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+            <div className="lg:col-span-5">
+              <div className="relative aspect-[4/3] max-w-[460px]">
+                <Image src="/img/contact.jpg" alt="Abdalrahman ElGazzawi at the desk — operating mode" fill sizes="(max-width: 768px) 320px, 460px" className="object-cover" />
+                <div aria-hidden className="absolute inset-0 ring-1 ring-hairline pointer-events-none" />
+              </div>
+              <div className="text-[11px] font-mono text-muted mt-3 tracking-[0.06em]">// Operating mode</div>
+            </div>
+            <div className="lg:col-span-7">
               <div className="eyebrow">// Background</div>
               <h2 className="mt-3 font-serif text-display-s">From QA to commercial systems.</h2>
               <p className="mt-6 text-paper text-[15px] sm:text-[16px] leading-[1.7] max-w-prose">
