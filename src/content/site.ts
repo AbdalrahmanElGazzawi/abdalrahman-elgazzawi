@@ -248,10 +248,42 @@ export const contactCtas = [
     subject: "Employer enquiry — senior commercial role" },
 ];
 
+// Federation & ecosystem advisory — three trust-tier engagements
+export const federationAdvisory = {
+  intro: "Trust at the federation tier. Three engagements where the brief is commercial intelligence and structural design — not execution.",
+  items: [
+    {
+      org: "GLG (Gerson Lehrman Group)",
+      tag: "Council Member · 2025 — Present",
+      role: "Subject-matter expert",
+      body: "On-call for institutional investors and global enterprises. Topic coverage: esports leagues, competitive sports/fighting franchises, MENA gaming market dynamics.",
+      meta: "Paid expert engagements · client identities confidential under network terms",
+      colorClass: "gold",
+    },
+    {
+      org: "Egypt Football Association × FIFAe",
+      tag: "2026 cycle · co-author",
+      role: "Commercial + marketing architect",
+      body: "Co-authored the 2026 commercial plan, marketing plan, and master plan for Egypt's FIFAe presence. Federation-tier mandate at one of MENA's largest football institutions.",
+      meta: "Signed MA Agreement · 2026 cycle live",
+      colorClass: "green",
+    },
+    {
+      org: "Egyptian Esports Federation",
+      tag: "Advisory engagement · 2026",
+      role: "Strategic advisor",
+      body: "Advisory engagement on commercial packaging, partnership architecture, and ENC program activation. Non-executive, scope-disciplined, conflict-of-interest managed.",
+      meta: "Part-time advisory · package and partnership focus",
+      colorClass: "neutral",
+    },
+  ],
+};
+
 export const navLinks = [
   { href: "/#case-studies", label: "Case studies" },
   { href: "/#methodology",  label: "Methodology" },
   { href: "/#tiers",        label: "Tiers" },
+  { href: "/#federation",   label: "Advisory" },
   { href: "/#competitive",  label: "Esports-native" },
   { href: "/about",         label: "About" },
   { href: "/contact",       label: "Contact" },

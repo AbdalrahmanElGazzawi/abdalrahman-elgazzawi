@@ -7,6 +7,7 @@ import { CompetitiveCred } from "@/components/CompetitiveCred";
 import { PricingEngineDiagram } from "@/components/PricingEngineDiagram";
 import { CommercialTierTabs } from "@/components/CommercialTierTabs";
 import { OperatingPrinciples } from "@/components/OperatingPrinciples";
+import { FederationAdvisory } from "@/components/FederationAdvisory";
 import { ExperienceTimeline } from "@/components/ExperienceTimeline";
 import { BrandInvolvementGrid } from "@/components/BrandInvolvementGrid";
 import { ContactCTA } from "@/components/ContactCTA";
@@ -25,6 +26,7 @@ export default function Page() {
         <PricingEngineDiagram />
         <CommercialTierTabs />
         <OperatingPrinciples />
+        <FederationAdvisory />
         <ExperienceTimeline />
         <BrandInvolvementGrid />
         <ContactCTA />
