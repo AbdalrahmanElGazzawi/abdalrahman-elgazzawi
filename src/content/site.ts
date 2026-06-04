@@ -21,7 +21,7 @@ export const hero = {
   meta: "Riyadh · Cairo · MENA & global gaming markets",
   cta: { primary:   { label: "View case studies", href: "/#case-studies" },
          secondary: { label: "Contact", href: "/contact" },
-         tertiary:  { label: "Download résumé", href: "/downloads/Abdalrahman_ElGazzawi_Resume_2026.pdf" } },
+         tertiary:  { label: "Ways to collaborate", href: "/#collaborate" } },
 };
 
 // 8-stage commercial OS map (HeroCommandMap)
@@ -302,8 +302,43 @@ export const navLinks = [
   { href: "/#tiers",        label: "Tiers" },
   { href: "/#federation",   label: "Advisory" },
   { href: "/#competitive",  label: "Esports-native" },
+  { href: "/#collaborate",  label: "Collaborate" },
   { href: "/about",         label: "About" },
   { href: "/contact",       label: "Contact" },
 ];
+
+
+// Ways to collaborate — four shapes of engagement.
+// Full-time leads. Shape (not fees) shown. Rate cards on request.
+export const waysToCollaborate = {
+  intro: "Four shapes of engagement, full-time leads. Engagement shape shown openly; rate cards and terms shared in reply to direct inquiries.",
+  items: [
+    {
+      label: "Full-Time Roles",
+      eyebrow: "Primary",
+      shape: "Standard hiring process",
+      body: "Open to senior seats in commercial partnerships, brand marketing, account management, sponsorship activation, and commercial operations. MENA · GCC · Nordic · EU · US · Remote.",
+    },
+    {
+      label: "Fractional / Part-Time",
+      eyebrow: "2-3 days / week",
+      shape: "3-month minimum · Quarterly retainer",
+      body: "Senior commercial leadership for growth-stage gaming, esports, sports, or entertainment companies that need partnerships and campaign-operations leverage without a full headcount.",
+    },
+    {
+      label: "Project-Based",
+      eyebrow: "Bounded scope, fixed fee",
+      shape: "30-90 day engagements · Quoted per brief",
+      body: "Specific outcomes — sponsorship strategy, GTM build, commercial operating system, partnership pitch architecture, federation roadmap, or bilingual EN / AR campaign design.",
+    },
+    {
+      label: "Advisory & Board",
+      eyebrow: "Ongoing strategic counsel",
+      shape: "Quarterly retainer · Monthly cadence",
+      body: "MENA gaming market, esports partnerships, federation and publisher strategy, AI-augmented commercial operations. Council Member at GLG since 2025.",
+    },
+  ],
+  disclosure: "Rate cards and engagement terms shared in reply to direct inquiries. Fixed-fee for projects; retainer for fractional and advisory.",
+};
 
 export const confidentialityNote = "Selected details are simplified or sanitized for confidentiality. Internal rates, partner negotiations, GLG client identities, and private pipeline data are intentionally omitted from this public portfolio.";

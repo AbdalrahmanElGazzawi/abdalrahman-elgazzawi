@@ -8,6 +8,7 @@ import { PricingEngineDiagram } from "@/components/PricingEngineDiagram";
 import { CommercialTierTabs } from "@/components/CommercialTierTabs";
 import { OperatingPrinciples } from "@/components/OperatingPrinciples";
 import { FederationAdvisory } from "@/components/FederationAdvisory";
+import { WaysToCollaborate } from "@/components/WaysToCollaborate";
 import { ExperienceTimeline } from "@/components/ExperienceTimeline";
 import { BrandInvolvementGrid } from "@/components/BrandInvolvementGrid";
 import { SelectedProjects } from "@/components/SelectedProjects";
@@ -28,6 +29,7 @@ export default function Page() {
         <CommercialTierTabs />
         <OperatingPrinciples />
         <FederationAdvisory />
+        <WaysToCollaborate />
         <ExperienceTimeline />
         <BrandInvolvementGrid />
         <SelectedProjects />

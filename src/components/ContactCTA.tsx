@@ -7,7 +7,7 @@ export function ContactCTA() {
       <div className="container-page py-20 sm:py-24 lg:py-28">
         <div className="eyebrow mb-5">// Contact</div>
         <h2 className="font-serif text-display-s sm:text-display-m max-w-[26ch]">
-          Let's build the commercial layer<br /><span className="text-gold italic">behind your esports ambition.</span>
+          Let&apos;s build the commercial layer<br /><span className="text-gold italic">behind your esports ambition.</span>
         </h2>
 
         <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -32,7 +32,7 @@ export function ContactCTA() {
           <span className="text-muted">·</span>
           <Link href="/contact" className="text-paper hover:text-gold transition-colors">/contact (form)</Link>
           <span className="text-muted">·</span>
-          <Link href="/downloads" className="text-paper hover:text-gold transition-colors">/downloads</Link>
+          <Link href="/#collaborate" className="text-paper hover:text-gold transition-colors">/ways to collaborate</Link>
         </div>
       </div>
     </section>
