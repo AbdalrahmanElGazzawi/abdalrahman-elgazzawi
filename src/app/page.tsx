@@ -4,6 +4,17 @@ import {
   site, proof, caseStudies, brandInvolvement, principles,
   waysToCollaborate, federationAdvisory, heroImages,
 } from "@/content/site";
+import {
+  FalconsCommercialArt, PricingOSArt, SonyINZONEArt, GLGArt,
+} from "@/components/CaseArtwork";
+
+// Map slug → bespoke SVG art (for cards without real photos)
+const caseArt: Record<string, React.ReactNode | undefined> = {
+  "team-falcons-commercial-stack":  <FalconsCommercialArt />,
+  "falcons-pricing-os":             <PricingOSArt />,
+  "sony-inzone-team-falcons":       <SonyINZONEArt />,
+  "glg-advisory":                   <GLGArt />,
+};
 
 export default function Page() {
   return (
@@ -13,6 +24,7 @@ export default function Page() {
         <Hero />
         <TrustStrip />
         <SelectedWork />
+        <BroadcastReel />
         <Federation />
         <Brands />
         <HowIWork />
@@ -26,16 +38,16 @@ export default function Page() {
 
 function Nav() {
   return (
-    <header className="sticky top-0 z-50 bg-bg/85 backdrop-blur-md border-b border-hairline">
+    <header className="sticky top-0 z-50 bg-bg/80 backdrop-blur-md border-b border-hairline">
       <div className="container-page h-16 flex items-center justify-between">
-        <Link href="/" className="text-[18px] font-medium tracking-tight">
-          <span className="italic font-light">A.</span> ElGazzawi
+        <Link href="/" className="text-[18px] tracking-tight">
+          <span className="italic font-light text-gold">A.</span> <span className="font-light">ElGazzawi</span>
         </Link>
         <nav className="hidden md:flex items-center gap-8 text-[14px] tracking-wide text-muted">
           <a href="#work" className="hover:text-paper transition-colors">Work</a>
           <a href="#how" className="hover:text-paper transition-colors">How I work</a>
           <a href="#collaborate" className="hover:text-paper transition-colors">Collaborate</a>
-          <a href={`mailto:${site.email}`} className="inline-flex items-center rounded-full bg-paper text-bg px-4 py-2 text-[13px] hover:bg-gold transition-colors">Email me</a>
+          <a href={`mailto:${site.email}`} className="inline-flex items-center rounded-full bg-gold text-bg px-5 py-2 text-[13px] tracking-wide hover:bg-gold-soft transition-colors">Email me</a>
         </nav>
       </div>
     </header>
@@ -47,15 +59,15 @@ function Hero() {
     <section className="relative">
       <div className="container-page pt-24 md:pt-40 pb-24 md:pb-32">
         <p className="eyebrow mb-10">Commercial Partnerships · MENA</p>
-        <h1 className="text-[52px] md:text-[112px] leading-[0.98] tracking-[-0.025em] font-light max-w-[1000px]">
+        <h1 className="text-[52px] md:text-[120px] leading-[0.96] tracking-[-0.025em] font-light max-w-[1100px]">
           Commercial partnerships,<br/>campaign operations,<br/><em className="italic font-normal text-gold">sponsorship delivery</em>.
         </h1>
         <div className="mt-14 flex flex-wrap gap-3">
-          <a href={`mailto:${site.email}`} className="inline-flex items-center rounded-full bg-paper text-bg px-6 py-3 text-[15px] hover:bg-gold transition-colors">Email me</a>
-          <a href="#work" className="inline-flex items-center rounded-full border border-paper/15 px-6 py-3 text-[15px] hover:border-paper transition-colors">Selected work</a>
+          <a href={`mailto:${site.email}`} className="inline-flex items-center rounded-full bg-gold text-bg px-7 py-3.5 text-[15px] tracking-wide hover:bg-gold-soft transition-colors">Email me</a>
+          <a href="#work" className="inline-flex items-center rounded-full border border-paper/15 px-7 py-3.5 text-[15px] tracking-wide hover:border-paper transition-colors">Selected work</a>
         </div>
       </div>
-      <div className="container-page"><div className="h-px bg-gold/20" /></div>
+      <div className="container-page"><div className="h-px bg-gold/25" /></div>
     </section>
   );
 }
@@ -68,13 +80,13 @@ function TrustStrip() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-y-14 gap-x-8">
           {proof.map((m) => (
             <div key={m.l}>
-              <div className="text-[44px] md:text-[60px] leading-none tracking-[-0.02em] tab-nums font-light">{m.n}</div>
+              <div className="text-[44px] md:text-[60px] leading-none tracking-[-0.02em] tab-nums font-light text-gold">{m.n}</div>
               <div className="mt-4 text-[15px] text-muted leading-snug">{m.l}</div>
             </div>
           ))}
         </div>
       </div>
-      <div className="container-page"><div className="h-px bg-gold/20" /></div>
+      <div className="container-page"><div className="h-px bg-gold/25" /></div>
     </section>
   );
 }
@@ -92,23 +104,34 @@ function SelectedWork() {
         <div className="grid md:grid-cols-2 gap-6 md:gap-10">
           {caseStudies.map((c, i) => {
             const img = heroImages[c.slug];
+            const art = caseArt[c.slug];
             return (
               <Link key={c.slug} href={`/case-studies/${c.slug}`} className="group block">
-                <div className="relative aspect-[16/10] overflow-hidden rounded-[14px] border border-paper/10 bg-gold">
-                  <div className="absolute inset-0" style={{ background: `linear-gradient(135deg, #0B2340 0%, #14305C 55%, #1A1F2E 100%)` }} aria-hidden />
-                  {img && (
-                    <Image src={img} alt={c.title} fill sizes="(min-width: 768px) 50vw, 100vw"
-                      className="object-cover transition-transform duration-700 group-hover:scale-105" />
+                <div className="relative aspect-[16/10] overflow-hidden rounded-[14px] border border-paper/10 bg-deep">
+                  {img ? (
+                    <>
+                      <Image src={img} alt={c.title} fill sizes="(min-width: 768px) 50vw, 100vw"
+                        className="object-cover transition-transform duration-700 group-hover:scale-105" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" />
+                    </>
+                  ) : art ? (
+                    <div className="absolute inset-0">{art}</div>
+                  ) : (
+                    <div className="absolute inset-0" style={{ background: `linear-gradient(135deg, #1C1814 0%, #0F0D0B 100%)` }} />
                   )}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent pointer-events-none" />
-                  <div className="absolute top-5 left-5 italic text-bg/80 text-[18px]">0{i + 1}</div>
-                  <div className="absolute top-5 right-5 inline-flex items-center rounded-full bg-bg/90 text-paper text-[11px] px-3 py-1.5 tracking-[0.12em] uppercase">{c.timeframe}</div>
-                  <div className="absolute bottom-6 left-6 right-6">
-                    <h3 className="text-[24px] md:text-[32px] tracking-[-0.01em] leading-tight text-bg font-light">{c.title}</h3>
-                  </div>
+                  <div className="absolute top-5 left-5 italic text-paper/70 text-[18px]">0{i + 1}</div>
+                  <div className="absolute top-5 right-5 inline-flex items-center rounded-full bg-bg/85 text-paper text-[11px] px-3 py-1.5 tracking-[0.16em] uppercase">{c.timeframe}</div>
+                  {img && (
+                    <div className="absolute bottom-6 left-6 right-6">
+                      <h3 className="text-[24px] md:text-[32px] tracking-[-0.01em] leading-tight text-paper font-light">{c.title}</h3>
+                    </div>
+                  )}
                 </div>
                 <div className="pt-6">
                   <p className="text-[12px] uppercase tracking-[0.22em] text-muted">{c.eyebrow}</p>
+                  {!img && (
+                    <h3 className="mt-3 text-[22px] tracking-[-0.01em] text-paper font-light">{c.title}</h3>
+                  )}
                   <div className="mt-4 inline-flex items-center gap-1.5 text-[14px] tracking-wide text-paper group-hover:text-gold transition-colors">
                     Read case file <span className="transition-transform group-hover:translate-x-1" aria-hidden>→</span>
                   </div>
@@ -118,7 +141,58 @@ function SelectedWork() {
           })}
         </div>
       </div>
-      <div className="container-page"><div className="h-px bg-gold/20" /></div>
+      <div className="container-page"><div className="h-px bg-gold/25" /></div>
+    </section>
+  );
+}
+
+function BroadcastReel() {
+  return (
+    <section id="reel" className="bg-bg scroll-mt-20">
+      <div className="container-page py-24 md:py-32">
+        <p className="eyebrow mb-5">Broadcast & creator</p>
+        <h2 className="text-display-s sm:text-display-m max-w-[800px] font-light leading-[1.05]">
+          Campaigns and content I&apos;ve operated,<br/><em className="italic text-gold">live in market.</em>
+        </h2>
+        <div className="mt-14 grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* YouTube embed — Falcons CDL watch party */}
+          <div>
+            <div className="relative aspect-video overflow-hidden rounded-[14px] border border-hairline bg-deep">
+              <iframe
+                src="https://www.youtube.com/embed/qIXmQVjFM6o"
+                title="Team Falcons CDL Watch Party — Riyadh"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                loading="lazy"
+                className="absolute inset-0 w-full h-full"
+              />
+            </div>
+            <div className="mt-4 flex items-baseline justify-between gap-4">
+              <h3 className="italic text-[22px] text-paper font-normal leading-tight">Falcons CDL Watch Party — Riyadh</h3>
+              <span className="text-[12px] tracking-[0.16em] uppercase text-gold whitespace-nowrap">43K views · 6h 53m</span>
+            </div>
+            <p className="mt-2 text-[14px] text-muted">Falcons vs. OpTic — first Major final. Arabic-language community broadcast.</p>
+          </div>
+          {/* Sony INZONE placeholder — you drop the video file at /public/reels/inzone.mp4 */}
+          <div>
+            <div className="relative aspect-video overflow-hidden rounded-[14px] border border-hairline bg-deep">
+              <SonyINZONEArt />
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <span className="rounded-full bg-bg/85 text-paper text-[11px] px-4 py-2 tracking-[0.18em] uppercase">drop file at /public/reels/inzone.mp4</span>
+              </div>
+            </div>
+            <div className="mt-4 flex items-baseline justify-between gap-4">
+              <h3 className="italic text-[22px] text-paper font-normal leading-tight">Sony INZONE × Falcons</h3>
+              <span className="text-[12px] tracking-[0.16em] uppercase text-gold whitespace-nowrap">Closed · Q1 2026</span>
+            </div>
+            <p className="mt-2 text-[14px] text-muted">Creator-led bilingual EN/AR activation. End-to-end. Sony INZONE M3.</p>
+          </div>
+        </div>
+        <p className="mt-10 text-[13px] italic text-muted">
+          Instagram and TikTok originals available on request — drop video files at /public/reels/&lt;slug&gt;.mp4 to swap the placeholders above.
+        </p>
+      </div>
+      <div className="container-page"><div className="h-px bg-gold/25" /></div>
     </section>
   );
 }
@@ -142,7 +216,7 @@ function Federation() {
           ))}
         </div>
       </div>
-      <div className="container-page"><div className="h-px bg-gold/20" /></div>
+      <div className="container-page"><div className="h-px bg-gold/25" /></div>
     </section>
   );
 }
@@ -156,13 +230,14 @@ function Brands() {
   ];
   return (
     <section id="brands" className="bg-bg">
-      <div className="container-page py-16 md:py-20">
+      <div className="container-page py-16 md:py-24">
         <p className="eyebrow mb-10">Brands & partners</p>
-        <div className="mb-12 border-y border-hairline">
-          <div className="py-9 grid grid-cols-2 sm:grid-cols-4 gap-x-12 gap-y-6 items-center">
+        {/* BIG logo strip on a dark panel */}
+        <div className="mb-14 panel p-10 md:p-16">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-12 gap-y-10 items-center justify-items-center">
             {featured.map((l) => (
-              <div key={l.alt} className="relative h-7 sm:h-8 opacity-65 hover:opacity-100 transition-opacity">
-                <Image src={l.src} alt={l.alt} fill sizes="(min-width: 640px) 200px, 50vw" className="object-contain object-left" />
+              <div key={l.alt} className="relative h-12 md:h-16 w-full max-w-[200px] opacity-80 hover:opacity-100 transition-opacity">
+                <Image src={l.src} alt={l.alt} fill sizes="200px" className="object-contain" />
               </div>
             ))}
           </div>
@@ -173,14 +248,14 @@ function Brands() {
               <span className="text-[10px] tracking-[0.22em] uppercase text-gold">{cat.tier}</span>
               <ul className="mt-5 flex flex-wrap gap-1.5">
                 {cat.items.map((it) => (
-                  <li key={it} className="text-[13px] border border-hairline text-paper px-2.5 py-1.5 hover:border-gold/60 transition-colors">{it}</li>
+                  <li key={it} className="text-[13px] border border-hairline text-paper px-2.5 py-1.5 hover:border-gold/60 hover:text-gold transition-colors">{it}</li>
                 ))}
               </ul>
             </div>
           ))}
         </div>
       </div>
-      <div className="container-page"><div className="h-px bg-gold/20" /></div>
+      <div className="container-page"><div className="h-px bg-gold/25" /></div>
     </section>
   );
 }
@@ -203,7 +278,7 @@ function HowIWork() {
           ))}
         </div>
       </div>
-      <div className="container-page"><div className="h-px bg-gold/20" /></div>
+      <div className="container-page"><div className="h-px bg-gold/25" /></div>
     </section>
   );
 }
@@ -228,7 +303,7 @@ function Collaborate() {
         </div>
         <p className="mt-7 text-[13px] italic text-muted">{disclosure}</p>
       </div>
-      <div className="container-page"><div className="h-px bg-gold/20" /></div>
+      <div className="container-page"><div className="h-px bg-gold/25" /></div>
     </section>
   );
 }
@@ -242,7 +317,7 @@ function Contact() {
           Have a brief? <em className="italic text-gold">Email me directly.</em>
         </h2>
         <div className="mt-14">
-          <a href={`mailto:${site.email}`} className="text-[32px] md:text-[56px] tracking-[-0.02em] underline-offset-[8px] decoration-[1px] decoration-gold/30 hover:decoration-gold hover:text-gold transition-colors italic font-light">
+          <a href={`mailto:${site.email}`} className="text-[32px] md:text-[56px] tracking-[-0.02em] underline-offset-[8px] decoration-[1px] decoration-gold/40 hover:decoration-gold hover:text-gold transition-colors italic font-light">
             {site.email}
           </a>
         </div>

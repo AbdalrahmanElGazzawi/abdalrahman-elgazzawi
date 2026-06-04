@@ -2,14 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-:root { color-scheme: light; }
-html, body { background: #F4EFE5; color: #1A1614; }
+:root { color-scheme: dark; }
+html, body { background: #0F0D0B; color: #F0EAE0; }
 * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-::selection { background: #0B2340; color: #F4EFE5; }
+::selection { background: #C9A961; color: #0F0D0B; }
 
 .container-page { @apply max-w-content mx-auto px-6 sm:px-8 lg:px-12; }
 .eyebrow { @apply uppercase text-muted; font-size: 11px; letter-spacing: 0.32em; font-weight: 500; }
 .panel { @apply bg-panel border border-hairline rounded-[14px]; }
 .lift { @apply transition-all duration-300; }
-.lift:hover { @apply border-paper/40; box-shadow: 0 2px 24px -12px rgba(11,35,64,0.18); }
+.lift:hover { @apply border-gold/40; box-shadow: 0 2px 24px -12px rgba(201,169,97,0.18); }
 .tab-nums { font-variant-numeric: tabular-nums; }
