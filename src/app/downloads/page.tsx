@@ -1,42 +1,37 @@
-import Link from "next/link";
+// src/app/downloads/page.tsx
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
+import { Section } from "@/components/Section";
+import { downloads } from "@/content/site";
 
-export const metadata = { title: "Downloads" };
+export const metadata = {
+  title: "Downloads",
+  description: "CV downloads — general commercial and esports/gaming formats.",
+};
 
-const files = [
-  { href: "/downloads/Abdalrahman_ElGazzawi_Resume_2026.pdf",        title: "Résumé · 2026 (PDF)",          desc: "Two-page ATS-friendly résumé.",                                          size: "76 KB" },
-  { href: "/downloads/Abdalrahman_ElGazzawi_Resume_2026.docx",       title: "Résumé · 2026 (DOCX)",         desc: "Editable Word version of the résumé.",                                  size: "13 KB" },
-  { href: "/downloads/Abdalrahman_ElGazzawi_Portfolio_2026.pdf",     title: "Full Portfolio · 2026 (PDF)",  desc: "Long-form portfolio document — every project, every chapter.",          size: "1.3 MB" },
-  { href: "/downloads/Abdalrahman_ElGazzawi_Portfolio_OnePage.html", title: "Single-Page Portfolio (HTML)", desc: "Self-contained single-file HTML portfolio with embedded photos & logos.", size: "970 KB" },
-];
-
-export default function Downloads() {
+export default function DownloadsPage() {
   return (
     <>
       <Nav />
-      <main className="container-page py-20 sm:py-24">
-        <div className="label-eyebrow mb-6">For recruiters & partners</div>
-        <h1 className="font-serif text-display-sm font-medium">Downloads.</h1>
-        <div className="gold-rule mt-4 mb-6" />
-        <p className="text-muted text-[15px] max-w-[640px] mb-12">
-          Everything in one place — résumé, full portfolio document, single-page HTML. Right-click → Save As, or just open and print.
-        </p>
-        <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {files.map((f) => (
-            <li key={f.href}>
-              <a href={f.href} download className="block panel bg-deep border border-hairline border-l-[3px] border-l-gold p-6 hover:border-gold transition-colors">
-                <div className="text-gold text-[10px] font-bold tracking-[0.2em] uppercase">{f.size}</div>
-                <h3 className="font-serif italic text-[22px] mt-2">{f.title}</h3>
-                <p className="text-muted text-[13px] mt-2">{f.desc}</p>
-                <div className="text-gold text-[12px] font-semibold mt-4 tracking-[0.1em] uppercase">Download →</div>
+      <main>
+        <Section
+          eyebrow="Downloads"
+          title="Two formats,"
+          accent="one operator."
+          sub="Pick the framing that fits the role. ATS-friendly Word and PDF versions."
+          topRule={false}
+        >
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {downloads.map((d) => (
+              <a key={d.href} href={d.href} className="panel lift p-6 sm:p-8 block">
+                <div className="eyebrow">CV</div>
+                <div className="text-paper text-[22px] sm:text-[24px] font-bold mt-2 tracking-tight">{d.label}</div>
+                <div className="text-muted text-[14px] mt-2 leading-[1.6]">{d.description}</div>
+                <div className="mt-4 text-gold font-semibold text-[13px]">Download PDF ↓</div>
               </a>
-            </li>
-          ))}
-        </ul>
-        <div className="mt-12">
-          <Link href="/" className="text-gold hover:underline text-[13px] tracking-[0.08em] uppercase">← Back to portfolio</Link>
-        </div>
+            ))}
+          </div>
+        </Section>
       </main>
       <Footer />
     </>

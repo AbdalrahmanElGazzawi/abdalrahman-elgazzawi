@@ -1,27 +1,40 @@
 import Link from "next/link";
-import { navLinks } from "@/content/site";
+import { navLinks, site } from "@/content/site";
 
 export function Nav() {
   return (
-    <nav className="sticky top-0 z-50 border-b border-hairline bg-bg/80 backdrop-blur supports-[backdrop-filter]:bg-bg/65">
+    <nav className="sticky top-0 z-50 border-b border-hairline bg-bg/85 backdrop-blur supports-[backdrop-filter]:bg-bg/70">
       <div className="container-page flex items-center justify-between py-3.5">
-        <Link href="/" className="font-serif text-[18px] tracking-[0.01em] flex items-center gap-2 group">
-          <span className="text-paper italic">Abdalrahman ElGazzawi</span>
-          <span className="text-gold transition-colors group-hover:text-gold-soft">.</span>
+        <Link href="/" className="font-bold text-[16px] text-paper tracking-tight">
+          {site.name}<span className="text-gold">.</span>
         </Link>
-        <div className="hidden md:flex items-center gap-7">
-          <ul className="flex gap-6 list-none">
+
+        <div className="hidden md:flex items-center gap-5">
+          <ul className="flex gap-5 list-none">
             {navLinks.map((l) => (
               <li key={l.href}>
-                <a href={l.href} className="text-muted hover:text-paper text-[12px] tracking-[0.06em] uppercase transition-colors font-mono">{l.label}</a>
+                <a
+                  href={l.href}
+                  className="text-muted hover:text-paper text-[13px] font-medium transition-colors"
+                >
+                  {l.label}
+                </a>
               </li>
             ))}
           </ul>
-          <Link href="/contact" className="text-[12px] tracking-[0.1em] uppercase font-mono text-bg bg-gold hover:bg-gold-soft px-3.5 py-2 transition-colors">
-            Get in touch
-          </Link>
-        </div>
-      </div>
-    </nav>
-  );
-}
+
+          <div className="flex items-center gap-2">
+            <a
+              href={site.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp"
+              title="WhatsApp · +966 53 296 2163"
+              className="text-muted hover:text-paper border border-hairline p-2 transition-colors"
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.4-1.5-.9-.8-1.5-1.8-1.6-2.1-.2-.3 0-.4.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.5.1-.2 0-.4-.1-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.3 5.2 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 5L2 22l5.2-1.4c1.5.8 3.1 1.2 4.8 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z"/>
+              </svg>
+            </a>
+            <a
+         
