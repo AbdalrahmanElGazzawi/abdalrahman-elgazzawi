@@ -3,12 +3,12 @@
 @tailwind utilities;
 
 :root { color-scheme: light; }
-html, body { background: #FAF8F3; color: #0A0A0A; }
+html, body { background: #F4EFE5; color: #1A1614; }
 * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-::selection { background: #0B2340; color: #FAF8F3; }
+::selection { background: #0B2340; color: #F4EFE5; }
 
 .container-page { @apply max-w-content mx-auto px-6 sm:px-8 lg:px-12; }
-.eyebrow { @apply text-eyebrow font-sans uppercase text-muted font-medium; }
+.eyebrow { @apply uppercase text-muted; font-size: 11px; letter-spacing: 0.32em; font-weight: 500; }
 .panel { @apply bg-panel border border-hairline rounded-[14px]; }
 .lift { @apply transition-all duration-300; }
 .lift:hover { @apply border-paper/40; box-shadow: 0 2px 24px -12px rgba(11,35,64,0.18); }

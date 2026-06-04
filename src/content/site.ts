@@ -342,3 +342,16 @@ export const waysToCollaborate = {
 };
 
 export const confidentialityNote = "Selected details are simplified or sanitized for confidentiality. Internal rates, partner negotiations, GLG client identities, and private pipeline data are intentionally omitted from this public portfolio.";
+
+
+// Hero images per case-study slug (for homepage card backgrounds).
+// Drop more images at /public/work/<slug>.jpg as you have them.
+export const heroImages: Record<string, string | undefined> = {
+  "esports-world-cup":              "/work/ewc-honor.jpg",
+  "true-gaming-leap":               "/work/leap-nvidia.jpg",
+  "telecom-egypt-raad":             "/work/raad-facility.jpg",
+  "sony-inzone-team-falcons":       undefined,
+  "team-falcons-commercial-stack":  undefined,
+  "falcons-pricing-os":             undefined,
+  "glg-advisory":                   undefined,
+};
