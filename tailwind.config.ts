@@ -19,7 +19,7 @@ const config: Config = {
       fontFamily: {
         sans:  ["var(--font-inter)", "ui-sans-serif", "system-ui"],
         serif: ["var(--font-instrument)", "Georgia", "serif"],
-        mono:  ["var(--font-jbm)", "ui-monospace", "SFMono-Regular", "Menlo", "monospace"],
+        mono:  ["var(--font-inter)", "ui-sans-serif", "system-ui"],
       },
       fontSize: {
         "eyebrow":   ["11px", { lineHeight: "1.2", letterSpacing: "0.28em" }],
@@ -35,12 +35,8 @@ const config: Config = {
       },
       keyframes: {
         fadeUp:   { "0%": { opacity: "0", transform: "translateY(12px)" }, "100%": { opacity: "1", transform: "translateY(0)" } },
-        drawLine: { "0%": { strokeDashoffset: "1000" }, "100%": { strokeDashoffset: "0" } },
       },
-      animation: {
-        "fade-up":   "fadeUp 0.7s cubic-bezier(.2,.7,.2,1) both",
-        "draw-line": "drawLine 1.6s cubic-bezier(.4,0,.2,1) forwards",
-      },
+      animation: { "fade-up": "fadeUp 0.7s cubic-bezier(.2,.7,.2,1) both" },
     },
   },
   plugins: [],

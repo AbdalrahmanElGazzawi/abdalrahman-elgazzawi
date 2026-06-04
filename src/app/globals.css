@@ -8,13 +8,8 @@ html, body { background: #FAF8F3; color: #0A0A0A; }
 ::selection { background: #0B2340; color: #FAF8F3; }
 
 .container-page { @apply max-w-content mx-auto px-6 sm:px-8 lg:px-12; }
-.eyebrow { @apply text-eyebrow font-mono uppercase text-muted; }
+.eyebrow { @apply text-eyebrow font-sans uppercase text-muted font-medium; }
 .panel { @apply bg-panel border border-hairline rounded-[14px]; }
 .lift { @apply transition-all duration-300; }
 .lift:hover { @apply border-paper/40; box-shadow: 0 2px 24px -12px rgba(11,35,64,0.18); }
 .tab-nums { font-variant-numeric: tabular-nums; }
-.grid-bg {
-  background-image: linear-gradient(rgba(11,35,64,0.04) 1px, transparent 1px),
-                    linear-gradient(90deg, rgba(11,35,64,0.04) 1px, transparent 1px);
-  background-size: 32px 32px;
-}
