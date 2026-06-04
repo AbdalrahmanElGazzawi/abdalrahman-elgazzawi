@@ -4,7 +4,7 @@ import { getSupabaseAdmin } from "@/lib/supabase";
 
 export const runtime = "nodejs";
 
-const TO = process.env.CONTACT_TO_EMAIL || "a.faroukbiz2@gmail.com";
+const TO = process.env.CONTACT_TO_EMAIL || "abdghazzawi1@gmail.com";
 const FROM = process.env.CONTACT_FROM_EMAIL || "Portfolio <onboarding@resend.dev>";
 
 export async function POST(req: Request) {

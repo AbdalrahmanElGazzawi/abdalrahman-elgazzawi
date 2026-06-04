@@ -40,7 +40,7 @@ export default function PressPage() {
               <li><Link className="text-gold hover:underline" href="/img/contact.jpg">Headshot — desk</Link></li>
             </ul>
             <h2 className="font-serif italic text-[24px] text-paper mt-10 mb-3">Contact</h2>
-            <p className="text-paper text-[14px]">Email: <a className="text-gold hover:underline" href="mailto:a.faroukbiz2@gmail.com">a.faroukbiz2@gmail.com</a></p>
+            <p className="text-paper text-[14px]">Email: <a className="text-gold hover:underline" href="mailto:abdghazzawi1@gmail.com">abdghazzawi1@gmail.com</a></p>
           </aside>
         </div>
       </main>

@@ -58,7 +58,7 @@ export function ContactForm() {
         {status === "sending" ? "Sending…" : "Send message"}
       </button>
       {error && <div className="text-[13px] text-red-300">{error}</div>}
-      <p className="text-muted text-[11px] italic">Or reply by email directly: <a href="mailto:a.faroukbiz2@gmail.com" className="text-gold underline-offset-2 hover:underline">a.faroukbiz2@gmail.com</a></p>
+      <p className="text-muted text-[11px] italic">Or reply by email directly: <a href="mailto:abdghazzawi1@gmail.com" className="text-gold underline-offset-2 hover:underline">abdghazzawi1@gmail.com</a></p>
     </form>
   );
 }
