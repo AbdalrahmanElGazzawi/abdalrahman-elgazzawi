@@ -1,9 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { ReactNode } from "react";
-import { Nav } from "./Nav";
-import { Footer } from "./Footer";
 import { ConfidentialityNote } from "./ConfidentialityNote";
+import { site } from "@/content/site";
 
 export interface CaseStudy {
   eyebrow: string; title: string; outcome: string; role: string; timeframe: string; tags: string[];
@@ -15,6 +14,32 @@ export interface CaseStudy {
   heroImage?: { src: string; alt: string };
 }
 
+function Nav() {
+  return (
+    <header className="sticky top-0 z-50 bg-bg/85 backdrop-blur-md border-b border-hairline">
+      <div className="container-page h-16 flex items-center justify-between">
+        <Link href="/" className="text-[15px] font-medium tracking-tight font-sans">
+          <span className="font-serif italic text-[18px] mr-1">A.</span>
+          ElGazzawi <span className="text-dim mx-2">·</span>
+          <span className="text-muted text-[13px]">Koge</span>
+        </Link>
+        <Link href="/#case-studies" className="text-[12px] font-mono uppercase tracking-[0.06em] text-muted hover:text-paper">← All case studies</Link>
+      </div>
+    </header>
+  );
+}
+
+function Footer() {
+  return (
+    <footer className="border-t border-hairline">
+      <div className="container-page py-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <p className="text-[13px] text-muted">© {new Date().getFullYear()} {site.name}.</p>
+        <p className="text-[13px] text-muted"><span className="font-serif italic">Designed and built by Koge.</span><span className="mx-2 text-dim">·</span>Instrument Serif &amp; Inter.</p>
+      </div>
+    </footer>
+  );
+}
+
 export function CaseStudyPage({ cs, prev, next }: {
   cs: CaseStudy;
   prev?: { href: string; title: string };
@@ -24,14 +49,12 @@ export function CaseStudyPage({ cs, prev, next }: {
     <>
       <Nav />
       <main>
-        {/* HERO */}
         <header className="relative border-b border-hairline">
-          <div aria-hidden className="absolute inset-0 grid-bg opacity-50" />
           <div className="container-page relative py-16 sm:py-20 lg:py-24">
             <Link href="/#case-studies" className="text-[11px] font-mono tracking-[0.18em] uppercase text-muted hover:text-gold inline-flex items-center gap-1.5">← All case studies</Link>
-            <div className="mt-6 eyebrow">{cs.eyebrow}</div>
+            <div className="mt-6 eyebrow">// {cs.eyebrow}</div>
             <h1 className="mt-3 font-serif text-display-m sm:text-display-l leading-[0.98] max-w-[16ch]">{cs.title}</h1>
-            <p className="mt-7 text-paper/90 text-[17px] sm:text-[19px] leading-[1.55] max-w-[60ch] font-serif italic">{cs.outcome}</p>
+            <p className="mt-7 text-paper/85 text-[17px] sm:text-[19px] leading-[1.55] max-w-[60ch] font-serif italic">{cs.outcome}</p>
             <div className="mt-10 flex flex-wrap gap-x-10 gap-y-4 text-[12px] font-mono">
               <Meta k="Role" v={cs.role} />
               <Meta k="Timeframe" v={cs.timeframe} />
@@ -40,11 +63,10 @@ export function CaseStudyPage({ cs, prev, next }: {
           </div>
         </header>
 
-        {/* HERO IMAGE (optional) */}
         {cs.heroImage && (
-          <section className="border-b border-hairline bg-deep/30">
+          <section className="border-b border-hairline bg-deep/40">
             <div className="container-page py-8 sm:py-10">
-              <div className="relative aspect-[16/7] sm:aspect-[16/6] w-full overflow-hidden ring-1 ring-hairline">
+              <div className="relative aspect-[16/7] sm:aspect-[16/6] w-full overflow-hidden ring-1 ring-hairline rounded-[12px]">
                 <Image src={cs.heroImage.src} alt={cs.heroImage.alt} fill priority sizes="(max-width: 1280px) 100vw, 1280px" className="object-cover" />
               </div>
               <div className="mt-3 text-[11px] font-mono text-muted tracking-[0.06em]">// {cs.heroImage.alt}</div>
@@ -52,7 +74,6 @@ export function CaseStudyPage({ cs, prev, next }: {
           </section>
         )}
 
-        {/* CONTEXT + PROBLEM */}
         <section className="border-t border-hairline py-16 sm:py-20">
           <div className="container-page grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
             <div className="lg:col-span-4">
@@ -73,9 +94,8 @@ export function CaseStudyPage({ cs, prev, next }: {
           </div>
         </section>
 
-        {/* VISUAL ARTIFACT */}
         {cs.visual && (
-          <section className="border-t border-hairline py-12 sm:py-16">
+          <section className="border-t border-hairline py-12 sm:py-16 bg-deep/40">
             <div className="container-page">
               <div className="eyebrow mb-5">// Artifact</div>
               {cs.visual}
@@ -83,19 +103,18 @@ export function CaseStudyPage({ cs, prev, next }: {
           </section>
         )}
 
-        {/* SYSTEM BUILT */}
         <section className="border-t border-hairline py-16 sm:py-20">
           <div className="container-page">
             <div className="eyebrow">// 02 · System built</div>
             <h2 className="mt-3 font-serif text-display-s sm:text-display-m max-w-[20ch]">What was<br /><span className="text-gold italic">actually shipped.</span></h2>
             <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-px bg-hairline border border-hairline">
               {cs.systemSections.map((sec) => (
-                <div key={sec.title} className="bg-bg p-6 sm:p-7 lift">
+                <div key={sec.title} className="bg-panel p-6 sm:p-7 lift">
                   <div className="text-[10px] font-mono text-gold tracking-[0.18em] uppercase">{sec.eyebrow}</div>
                   <h3 className="mt-3 font-serif italic text-[22px] text-paper">{sec.title}</h3>
                   <ul className="mt-4 space-y-2.5 text-[14px]">
                     {sec.bullets.map((b) => (
-                      <li key={b} className="flex items-start gap-3 text-paper/85 leading-[1.6]">
+                      <li key={b} className="flex items-start gap-3 text-paper/80 leading-[1.6]">
                         <span aria-hidden className="text-gold mt-[7px] shrink-0">—</span><span>{b}</span>
                       </li>
                     ))}
@@ -106,7 +125,6 @@ export function CaseStudyPage({ cs, prev, next }: {
           </div>
         </section>
 
-        {/* PROCESS */}
         <section className="border-t border-hairline py-16 sm:py-20">
           <div className="container-page grid grid-cols-1 lg:grid-cols-12 gap-10">
             <div className="lg:col-span-4">
@@ -115,7 +133,7 @@ export function CaseStudyPage({ cs, prev, next }: {
             </div>
             <ol className="lg:col-span-8 space-y-5">
               {cs.process.map((p, i) => (
-                <li key={i} className="grid grid-cols-[60px_1fr] gap-5 items-start border-l-2 border-rule pl-5">
+                <li key={i} className="grid grid-cols-[60px_1fr] gap-5 items-start border-l-2 border-hairline pl-5">
                   <span className="font-mono text-[11px] text-gold tracking-[0.18em]">STEP {String(i + 1).padStart(2, "0")}</span>
                   <span className="text-paper text-[15px] leading-[1.7]">{p}</span>
                 </li>
@@ -124,14 +142,13 @@ export function CaseStudyPage({ cs, prev, next }: {
           </div>
         </section>
 
-        {/* IMPACT */}
-        <section className="border-t border-hairline py-16 sm:py-20 bg-deep/30">
+        <section className="border-t border-hairline py-16 sm:py-20 bg-deep/40">
           <div className="container-page">
             <div className="eyebrow">// 04 · Impact</div>
             <h2 className="mt-3 font-serif text-display-s sm:text-display-m">By the numbers.</h2>
             <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-px bg-hairline border border-hairline">
               {cs.impact.map((m) => (
-                <div key={m.l} className="bg-bg p-6 sm:p-7">
+                <div key={m.l} className="bg-panel p-6 sm:p-7">
                   <div className="font-serif italic text-gold text-[28px] sm:text-[34px] tab-nums leading-none">{m.n}</div>
                   <div className="mt-3 text-muted text-[12px] sm:text-[13px] leading-[1.5]">{m.l}</div>
                 </div>
@@ -140,7 +157,6 @@ export function CaseStudyPage({ cs, prev, next }: {
           </div>
         </section>
 
-        {/* WHAT IT PROVES */}
         <section className="border-t border-hairline py-16 sm:py-20">
           <div className="container-page max-w-[820px]">
             <div className="eyebrow">// 05 · What this proves</div>
@@ -149,7 +165,6 @@ export function CaseStudyPage({ cs, prev, next }: {
           </div>
         </section>
 
-        {/* CTA + PREV/NEXT */}
         <section className="border-t border-hairline py-16">
           <div className="container-page">
             <div className="text-center max-w-[640px] mx-auto">
@@ -157,8 +172,8 @@ export function CaseStudyPage({ cs, prev, next }: {
               <h2 className="mt-3 font-serif text-display-s">Want the live walkthrough?</h2>
               <p className="mt-4 text-muted text-[15px]">Happy to walk through the engine, the framework, or the pipeline on a call.</p>
               <div className="mt-7 flex flex-wrap gap-3 justify-center">
-                <Link href="/contact" className="bg-gold text-bg px-6 py-3.5 text-[12px] font-semibold tracking-[0.14em] uppercase font-mono hover:bg-gold-soft transition-colors min-h-[44px] inline-flex items-center">Get in touch →</Link>
-                <Link href="/#case-studies" className="border border-rule text-paper px-6 py-3.5 text-[12px] font-semibold tracking-[0.14em] uppercase font-mono hover:border-gold hover:text-gold transition-colors min-h-[44px] inline-flex items-center">All case studies</Link>
+                <a href={`mailto:${site.email}`} className="bg-paper text-bg px-6 py-3.5 text-[12px] font-semibold tracking-[0.14em] uppercase font-mono hover:bg-gold transition-colors min-h-[44px] inline-flex items-center rounded-full">Email me →</a>
+                <Link href="/#case-studies" className="border border-hairline text-paper px-6 py-3.5 text-[12px] font-semibold tracking-[0.14em] uppercase font-mono hover:border-gold hover:text-gold transition-colors min-h-[44px] inline-flex items-center rounded-full">All case studies</Link>
               </div>
             </div>
             {(prev || next) && (
@@ -195,5 +210,5 @@ function Meta({ k, v }: { k: string; v: string }) {
 }
 
 function P({ children }: { children: ReactNode }) {
-  return <p className="text-paper text-[15px] sm:text-[16px] leading-[1.75]">{children}</p>;
+  return <p className="text-paper/85 text-[15px] sm:text-[16px] leading-[1.75]">{children}</p>;
 }
