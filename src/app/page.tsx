@@ -2,8 +2,20 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   site, proof, caseStudies, brandInvolvement, principles,
-  waysToCollaborate, federationAdvisory, heroImages,
+  waysToCollaborate, federationAdvisory,
 } from "@/content/site";
+
+// Hero images per case-study slug — inlined for build resilience.
+// Drop more files at /public/work/<slug>.jpg as you have them.
+const heroImages: Record<string, string | undefined> = {
+  "esports-world-cup":              "/work/ewc-honor.jpg",
+  "true-gaming-leap":               "/work/leap-nvidia.jpg",
+  "telecom-egypt-raad":             "/work/raad-facility.jpg",
+  "sony-inzone-team-falcons":       undefined,
+  "team-falcons-commercial-stack":  undefined,
+  "falcons-pricing-os":             undefined,
+  "glg-advisory":                   undefined,
+};
 import {
   FalconsCommercialArt, PricingOSArt, SonyINZONEArt, GLGArt,
 } from "@/components/CaseArtwork";
@@ -110,7 +122,7 @@ function SelectedWork() {
       <div className="container-page pb-24">
         <div className="grid md:grid-cols-2 gap-6 md:gap-10">
           {caseStudies.map((c, i) => {
-            const img = heroImages[c.slug];
+            const img = heroImages?.[c.slug];
             const art = caseArt[c.slug];
             return (
               <Link key={c.slug} href={`/case-studies/${c.slug}`} className="group block">
