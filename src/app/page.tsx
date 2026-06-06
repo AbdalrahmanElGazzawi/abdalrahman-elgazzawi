@@ -8,7 +8,7 @@ import {
 // Hero images per case-study slug — inlined for build resilience.
 // Drop more files at /public/work/<slug>.jpg as you have them.
 const heroImages: Record<string, string | undefined> = {
-  "esports-world-cup":              "/work/ewc-honor.jpg",
+  "esports-world-cup":              "/photos/ewc-grand-final.jpg",
   "true-gaming-leap":               "/work/leap-nvidia.jpg",
   "telecom-egypt-raad":             "/work/raad-facility.jpg",
   "sony-inzone-team-falcons":       undefined,
@@ -21,6 +21,7 @@ import {
 } from "@/components/CaseArtwork";
 import { LiveCampaigns } from "@/components/LiveCampaigns";
 import { AIOperations } from "@/components/AIOperations";
+import { Moments } from "@/components/Moments";
 
 // Map slug → bespoke SVG art (for cards without real photos)
 const caseArt: Record<string, React.ReactNode | undefined> = {
@@ -40,6 +41,7 @@ export default function Page() {
         <SelectedWork />
         <LiveCampaigns />
         <AIOperations />
+        <Moments />
         <Federation />
         <Brands />
         <HowIWork />
@@ -78,10 +80,22 @@ function Hero() {
         <div className="absolute inset-0 bg-gradient-to-b from-bg/40 via-bg/80 to-bg" />
       </div>
       <div className="relative container-page pt-24 md:pt-40 pb-24 md:pb-32">
-        <p className="eyebrow mb-10">Commercial Partnerships · MENA</p>
-        <h1 className="text-[52px] md:text-[120px] leading-[0.96] tracking-[-0.025em] font-light max-w-[1100px]">
-          Commercial partnerships,<br/>campaign operations,<br/><em className="italic font-normal text-gold">sponsorship delivery</em>.
+        {/* Portrait + name lockup */}
+        <div className="mb-10 flex items-center gap-4">
+          <div className="relative h-14 w-14 sm:h-16 sm:w-16 overflow-hidden rounded-full ring-2 ring-gold/70 shrink-0">
+            <Image src="/photos/portrait.jpg" alt="Abdalrahman ElGazzawi" fill priority sizes="64px" className="object-cover" />
+          </div>
+          <div>
+            <div className="text-[14px] sm:text-[15px] text-paper font-light">Abdalrahman ElGazzawi</div>
+            <p className="eyebrow !mb-0 !mt-1">{site.hero.eyebrow}</p>
+          </div>
+        </div>
+        <h1 className="text-[52px] md:text-[112px] leading-[0.96] tracking-[-0.025em] font-light max-w-[1100px]">
+          Strategic partnerships,<br/>integrated campaigns,<br/><em className="italic font-normal text-gold">AI-augmented operations</em>.
         </h1>
+        <p className="mt-8 max-w-[680px] text-[15px] md:text-[17px] text-muted italic leading-[1.6]">
+          {site.hero.sub}
+        </p>
         <div className="mt-14 flex flex-wrap gap-3">
           <a href={`mailto:${site.email}`} className="inline-flex items-center rounded-full bg-gold text-bg px-7 py-3.5 text-[15px] tracking-wide hover:bg-gold-soft transition-colors">Email me</a>
           <a href="#work" className="inline-flex items-center rounded-full border border-paper/15 px-7 py-3.5 text-[15px] tracking-wide hover:border-paper transition-colors">Selected work</a>
