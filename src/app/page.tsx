@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
-  site, proof, caseStudies, brandInvolvement, principles,
+  site, hero, proof, caseStudies, brandInvolvement, principles,
   waysToCollaborate, federationAdvisory,
 } from "@/content/site";
 
@@ -87,14 +87,14 @@ function Hero() {
           </div>
           <div>
             <div className="text-[14px] sm:text-[15px] text-paper font-light">Abdalrahman ElGazzawi</div>
-            <p className="eyebrow !mb-0 !mt-1">{site.hero.eyebrow}</p>
+            <p className="eyebrow !mb-0 !mt-1">{hero.eyebrow}</p>
           </div>
         </div>
         <h1 className="text-[52px] md:text-[112px] leading-[0.96] tracking-[-0.025em] font-light max-w-[1100px]">
           Strategic partnerships,<br/>integrated campaigns,<br/><em className="italic font-normal text-gold">AI-augmented operations</em>.
         </h1>
         <p className="mt-8 max-w-[680px] text-[15px] md:text-[17px] text-muted italic leading-[1.6]">
-          {site.hero.sub}
+          {hero.sub}
         </p>
         <div className="mt-14 flex flex-wrap gap-3">
           <a href={`mailto:${site.email}`} className="inline-flex items-center rounded-full bg-gold text-bg px-7 py-3.5 text-[15px] tracking-wide hover:bg-gold-soft transition-colors">Email me</a>
