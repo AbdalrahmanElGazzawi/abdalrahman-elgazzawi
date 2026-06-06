@@ -20,6 +20,7 @@ import {
   FalconsCommercialArt, PricingOSArt, SonyINZONEArt, GLGArt,
 } from "@/components/CaseArtwork";
 import { LiveCampaigns } from "@/components/LiveCampaigns";
+import { AIOperations } from "@/components/AIOperations";
 
 // Map slug → bespoke SVG art (for cards without real photos)
 const caseArt: Record<string, React.ReactNode | undefined> = {
@@ -38,6 +39,7 @@ export default function Page() {
         <TrustStrip />
         <SelectedWork />
         <LiveCampaigns />
+        <AIOperations />
         <Federation />
         <Brands />
         <HowIWork />

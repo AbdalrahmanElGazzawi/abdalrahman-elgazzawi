@@ -1,8 +1,8 @@
 export const site = {
   name: "Abdalrahman ElGazzawi",
   nickname: "Koge",
-  role: "Commercial Partnerships & Campaign Operations Professional",
-  headline: "Commercial Partnerships · Account Management · Campaign Operations",
+  role: "Senior Commercial Partnerships & Brand Marketing Manager",
+  headline: "Strategic Partnerships · Brand Marketing · Integrated Campaigns · AI-Augmented Ops · MENA",
   positioning: "I help brands, agencies, teams, and entertainment businesses turn commercial ideas into priced, packaged, and delivered campaigns.",
   email: "abdghazzawi1@gmail.com",
   phone: "+966 53 296 2163",
@@ -17,9 +17,9 @@ export const site = {
 };
 
 export const hero = {
-  eyebrow: "Commercial partnerships · Campaign operations",
+  eyebrow: "Senior Commercial Partnerships & Brand Marketing · MENA",
   headline: ["Commercial partnerships,", "campaign operations,", "and sponsorship delivery."],
-  sub: "I help brands, agencies, teams, and entertainment businesses turn commercial ideas into priced, packaged, and delivered campaigns — from proposals and rights packaging to partner coordination, workflow systems, and proof of delivery.",
+  sub: "10+ years architecting partnership frameworks, integrated marketing campaigns, and AI-augmented operating systems. Recent work with Aramco, PepsiCo, KIA, Samsung, Adidas, Mastercard, Sony, NVIDIA, Honor, Unilever, Mentos.",
   meta: "Based in Cairo, Egypt · Open to Riyadh, GCC, Remote & Global opportunities",
   cta: {
     primary:   { label: "Download General CV", href: "/downloads/Abdalrahman_ElGazzawi_General_CV.pdf" },
@@ -34,12 +34,14 @@ export const aboutCopy = "I am a commercial partnerships and campaign operations
 export const summary = "I am a multi-disciplinary consultant and operator who helps organizations turn strategy into execution across commercial growth, partnerships, go-to-market planning, and delivery operations. 778+ commercial assets delivered with full contractual fulfillment; campaigns reaching 5M+ viewers.";
 
 export const proof = [
-  { n: "10+",  l: "Years across commercial & gaming" },
-  { n: "778+", l: "Commercial deliverables shipped" },
-  { n: "5M+",  l: "Viewers reached" },
-  { n: "78+",  l: "Brands pitched" },
-  { n: "147",  l: "LEAP Expo contacts captured" },
-  { n: "GLG",  l: "Council Member · 2025 — Present" },
+  { n: "26",     l: "Deal pipeline · Falcons partnerships" },
+  { n: "22",     l: "EWC partners across 6 tiers" },
+  { n: "$1M+",   l: "Strategic partnership architected" },
+  { n: "778+",   l: "EWC deliverables shipped" },
+  { n: "5M+",    l: "Viewers reached" },
+  { n: "78+",    l: "Brands pitched · 5 sales agencies" },
+  { n: "147",    l: "LEAP qualified leads · 6 clients closed" },
+  { n: "~20%",   l: "Portfolio revenue growth · TrueGaming" },
 ];
 
 export const caseStudies = [
@@ -227,11 +229,34 @@ export const principles = [
 export const arc = "Café admin → BD → QA → Gaming Specialist → BD/PM → Senior Account Mgmt → Council Member → Commercial Partnerships Consultant";
 
 export const brandInvolvement = [
-  { tier: "Closed / directly managed", color: "gold",   items: ["Sony INZONE (2026)","Team Falcons","Ruder Finn Atteline","True Gaming","SPORTFIVE","Esports World Cup","Saudi Esports Federation"] },
-  { tier: "Delivered / supported",     color: "green",  items: ["Nvidia","Microsoft","ASUS","AstraNova","Saudi Aramco","Gamers8","Mobalytics","Telecom Egypt"] },
-  { tier: "Pipeline / pitched",        color: "neutral",items: ["STC","Mobily","HADO","Saudi eLeagues","ArabHardware"] },
-  { tier: "Ecosystem affiliations",    color: "neutral",items: ["GLG (Gerson Lehrman Group)","Egyptian Esports Federation","Egypt Football Association","Vanguard","S2 Games","Wanyoo","Adrenaline (Damascus)"] },
+  { tier: "Closed / Activated", color: "gold",
+    items: ["Sony INZONE","NVIDIA","KIA","Samsung","Infinix","Activision","Xsolla","ExitLag","RealMe","Huawei","Honor"] },
+  { tier: "EWC 2024 Partner Programme · 22 partners delivered", color: "green",
+    items: ["stc","Aramco","Sony","PepsiCo","Qiddiya","Honor","LG","Adidas","Mastercard","KitKat","Mentos","Amazon","Unilever"] },
+  { tier: "Agencies coordinated", color: "neutral",
+    items: ["EFG","Hala Partners","H&K","CSM","Ruder Finn Atteline"] },
+  { tier: "Operating environments", color: "neutral",
+    items: ["Team Falcons","Saudi Esports Federation","Esports World Cup","SPORTFIVE","True Gaming","GLG","Egyptian Esports Federation","Egypt Football Association","Telecom Egypt","Vanguard"] },
 ];
+
+
+// AI-Augmented Operations — the differentiator
+export const aiOperations = {
+  intro: "Most commercial ops is spreadsheet sprawl. I build it as live web tooling.",
+  thesis: "Prompt engineering, agentic workflows, and rapid prototyping — shipped into bilingual EN/AR commercial operating systems at Falcons, GLG, and beyond.",
+  tools: [
+    { slug: "claude",   name: "Claude" },
+    { slug: "openai",   name: "ChatGPT" },
+    { slug: "vercel",   name: "Vercel" },
+    { slug: "supabase", name: "Supabase" },
+    { slug: "zapier",   name: "Zapier" },
+  ],
+  shipped: [
+    { label: "Alliance Pricing OS",     url: "https://alliance-pricing-web.vercel.app", note: "Live talent pricing engine · 31 talents classified · v1.0" },
+    { label: "Falcons Pricing Web",     url: null, note: "Internal quote portal · bilingual EN/AR" },
+    { label: "Master Commercial OS v2", url: null, note: "38-tab pricing + rights packaging governance" },
+  ],
+};
 
 export const federationAdvisory = {
   intro: "Federation-tier engagements where the brief is commercial intelligence and structural design.",
@@ -256,8 +281,8 @@ export const selectedProjects = [
 export const navLinks = [
   { href: "/#work",      label: "Work" },
   { href: "/#brands",    label: "Brands" },
+  { href: "/#ai",        label: "AI Ops" },
   { href: "/about",      label: "About" },
-  { href: "/downloads",  label: "Downloads" },
   { href: "/contact",    label: "Contact" },
 ];
 
