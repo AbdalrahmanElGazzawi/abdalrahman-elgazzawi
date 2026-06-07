@@ -73,11 +73,12 @@ function Nav() {
 
 function Hero() {
   return (
-    <section className="relative overflow-hidden">
-      {/* Full-bleed atmospheric photo (RA\u2019AD facility) */}
-      <div className="absolute inset-0">
-        <Image src="/work/raad-facility.jpg" alt="" fill priority sizes="100vw" className="object-cover object-center opacity-25" />
-        <div className="absolute inset-0 bg-gradient-to-b from-bg/40 via-bg/80 to-bg" />
+    <section className="relative overflow-hidden bg-bg">
+      {/* Clean dark hero — subtle radial gold glow, no photo */}
+      <div aria-hidden className="absolute inset-0 pointer-events-none">
+        <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(201,169,97,0.10) 0%, rgba(201,169,97,0.04) 30%, transparent 65%)" }} />
+        <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 50% 40% at 85% 100%, rgba(201,169,97,0.06) 0%, transparent 50%)" }} />
+        <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
       </div>
       <div className="relative container-page pt-24 md:pt-40 pb-24 md:pb-32">
         {/* Portrait + name lockup */}

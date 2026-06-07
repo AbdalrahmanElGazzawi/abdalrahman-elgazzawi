@@ -249,7 +249,6 @@ export const aiOperations = {
     { slug: "openai",   name: "ChatGPT" },
     { slug: "vercel",   name: "Vercel" },
     { slug: "supabase", name: "Supabase" },
-    { slug: "zapier",   name: "Zapier" },
   ],
   shipped: [
     { label: "Alliance Pricing OS",     url: "https://alliance-pricing-web.vercel.app", note: "Live talent pricing engine · 31 talents classified · v1.0" },
