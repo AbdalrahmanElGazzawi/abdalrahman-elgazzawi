@@ -8,13 +8,13 @@ import {
 // Hero images per case-study slug — inlined for build resilience.
 // Drop more files at /public/work/<slug>.jpg as you have them.
 const heroImages: Record<string, string | undefined> = {
-  "esports-world-cup":              "/photos/ewc-card.jpg",
-  "true-gaming-leap":               "/photos/leap-keynote-card.jpg",
-  "telecom-egypt-raad":             "/work/raad-facility.jpg",
-  "sony-inzone-team-falcons":       undefined,
-  "team-falcons-commercial-stack":  "/photos/falcons-card.jpg",
-  "falcons-pricing-os":             undefined,
-  "glg-advisory":                   "/photos/glg-card.jpg",
+  "esports-world-cup":              "/photos/ewc-card.jpg",          // real photo: EWC Grand Final stage
+  "true-gaming-leap":               "/photos/leap-keynote-card.jpg", // real photo: LEAP keynote (TG was the LEAP engagement)
+  "telecom-egypt-raad":             "/work/raad-facility.jpg",       // real photo: RA'AD facility
+  "sony-inzone-team-falcons":       undefined,                       // bespoke SVG art
+  "team-falcons-commercial-stack":  undefined,                       // bespoke SVG (the commercial stack diagram IS the artifact)
+  "falcons-pricing-os":             undefined,                       // bespoke SVG art
+  "glg-advisory":                   undefined,                       // bespoke SVG art (advisory work, not event-based)
 };
 import {
   FalconsCommercialArt, PricingOSArt, SonyINZONEArt, GLGArt,
