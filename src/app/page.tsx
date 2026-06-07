@@ -8,13 +8,13 @@ import {
 // Hero images per case-study slug — inlined for build resilience.
 // Drop more files at /public/work/<slug>.jpg as you have them.
 const heroImages: Record<string, string | undefined> = {
-  "esports-world-cup":              "/photos/ewc-grand-final.jpg",
-  "true-gaming-leap":               "/work/leap-nvidia.jpg",
+  "esports-world-cup":              "/photos/ewc-card.jpg",
+  "true-gaming-leap":               "/photos/leap-keynote-card.jpg",
   "telecom-egypt-raad":             "/work/raad-facility.jpg",
   "sony-inzone-team-falcons":       undefined,
-  "team-falcons-commercial-stack":  undefined,
+  "team-falcons-commercial-stack":  "/photos/falcons-card.jpg",
   "falcons-pricing-os":             undefined,
-  "glg-advisory":                   undefined,
+  "glg-advisory":                   "/photos/glg-card.jpg",
 };
 import {
   FalconsCommercialArt, PricingOSArt, SonyINZONEArt, GLGArt,
@@ -142,23 +142,33 @@ function SelectedWork() {
             const art = caseArt[c.slug];
             return (
               <Link key={c.slug} href={`/case-studies/${c.slug}`} className="group block">
-                <div className="relative aspect-[16/10] overflow-hidden rounded-[14px] border border-paper/10 bg-deep">
+                <div className="relative aspect-[16/10] overflow-hidden rounded-[14px] border border-paper/10 bg-deep ring-1 ring-gold/0 group-hover:ring-gold/40 transition-all duration-300">
                   {img ? (
                     <>
                       <Image src={img} alt={c.title} fill sizes="(min-width: 768px) 50vw, 100vw"
-                        className="object-cover transition-transform duration-700 group-hover:scale-105" />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" />
+                        className="object-cover object-top transition-transform duration-700 group-hover:scale-105" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent pointer-events-none" />
                     </>
                   ) : art ? (
                     <div className="absolute inset-0">{art}</div>
                   ) : (
                     <div className="absolute inset-0" style={{ background: `linear-gradient(135deg, #1C1814 0%, #0F0D0B 100%)` }} />
                   )}
-                  <div className="absolute top-5 left-5 italic text-paper/70 text-[18px]">0{i + 1}</div>
-                  <div className="absolute top-5 right-5 inline-flex items-center rounded-full bg-bg/85 text-paper text-[11px] px-3 py-1.5 tracking-[0.16em] uppercase">{c.timeframe}</div>
+
+                  {/* Index number — top-left */}
+                  <div className="absolute top-5 left-5 italic text-paper/70 text-[18px] tracking-wider">0{i + 1}</div>
+
+                  {/* Timeframe badge — top-right */}
+                  <div className="absolute top-5 right-5 inline-flex items-center rounded-full bg-bg/85 backdrop-blur text-paper text-[11px] px-3 py-1.5 tracking-[0.16em] uppercase border border-paper/10">{c.timeframe}</div>
+
+                  {/* Gold arrow signpost — bottom-right corner, animated on hover */}
+                  <div className="absolute bottom-5 right-5 h-12 w-12 rounded-full bg-gold/95 text-bg inline-flex items-center justify-center text-[20px] font-light shadow-lg shadow-bg/40 transition-all duration-300 group-hover:scale-110 group-hover:bg-gold pointer-events-none">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><line x1="7" y1="17" x2="17" y2="7" /><polyline points="9 7 17 7 17 15" /></svg>
+                  </div>
+
                   {img && (
-                    <div className="absolute bottom-6 left-6 right-6">
-                      <h3 className="text-[24px] md:text-[32px] tracking-[-0.01em] leading-tight text-paper font-light">{c.title}</h3>
+                    <div className="absolute bottom-6 left-6 right-20">
+                      <h3 className="text-[22px] md:text-[28px] tracking-[-0.01em] leading-tight text-paper font-light drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">{c.title}</h3>
                     </div>
                   )}
                 </div>
@@ -167,8 +177,8 @@ function SelectedWork() {
                   {!img && (
                     <h3 className="mt-3 text-[22px] tracking-[-0.01em] text-paper font-light">{c.title}</h3>
                   )}
-                  <div className="mt-4 inline-flex items-center gap-1.5 text-[14px] tracking-wide text-paper group-hover:text-gold transition-colors">
-                    Read case file <span className="transition-transform group-hover:translate-x-1" aria-hidden>→</span>
+                  <div className="mt-4 inline-flex items-center gap-2 text-[13px] tracking-[0.14em] uppercase text-gold group-hover:text-paper transition-colors font-medium">
+                    Read case file <span className="transition-transform duration-300 group-hover:translate-x-1.5" aria-hidden>→</span>
                   </div>
                 </div>
               </Link>
