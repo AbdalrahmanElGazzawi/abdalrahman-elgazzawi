@@ -1,12 +1,12 @@
 import Image from "next/image";
 
 const moments = [
-  { src: "/photos/keynote-leap.jpg",     alt: "Keynote at Saudi LEAP 24 — Ministry of Media stage", w: "lg", caption: "LEAP 24 · keynote · Riyadh" },
-  { src: "/photos/ewc-grand-final.jpg",  alt: "Esports World Cup Grand Final — Qiddiya Arena",       w: "sm", caption: "EWC · Grand Final · Day 4" },
-  { src: "/photos/qiddiya-arena.jpg",    alt: "Qiddiya Arena entrance during EWC",                   w: "sm", caption: "Qiddiya Arena · EWC 2024" },
-  { src: "/photos/sef-flag.jpg",         alt: "Saudi Esports Federation flag at activation",         w: "sm", caption: "Saudi Esports Federation activation" },
-  { src: "/photos/ewc-venue-night.jpg",  alt: "EWC archway · stc play gaming hall",                  w: "lg", caption: "EWC · venue · stc play gaming hall" },
-  { src: "/photos/racing-sim.jpg",       alt: "EWC sim racing activation",                           w: "sm", caption: "EWC · racing activation" },
+  { src: "/photos/rooftop-network.jpg",  alt: "EWC operator dinner — international esports leadership network", w: "lg", caption: "EWC · operator dinner · Riyadh" },
+  { src: "/photos/te-team.jpg",          alt: "Telecom Egypt esports squad — building the regional team",       w: "sm", caption: "Telecom Egypt · esports squad" },
+  { src: "/photos/qiddiya-arena.jpg",    alt: "Qiddiya Arena entrance during EWC",                              w: "sm", caption: "Qiddiya Arena · EWC 2024" },
+  { src: "/photos/sef-flag.jpg",         alt: "Saudi Esports Federation flag at activation",                    w: "sm", caption: "Saudi Esports Federation · activation" },
+  { src: "/photos/ewc-venue-night.jpg",  alt: "EWC archway · stc play gaming hall",                             w: "lg", caption: "EWC · venue · stc play gaming hall" },
+  { src: "/photos/racing-sim.jpg",       alt: "EWC sim racing activation",                                      w: "sm", caption: "EWC · sim racing activation" },
 ];
 
 export function Moments() {
