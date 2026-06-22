@@ -74,12 +74,9 @@ function Hero() {
   return (
     <section className="relative overflow-hidden bg-bg">
       {/* Clean dark hero. subtle radial gold glow, no photo */}
-      <div aria-hidden className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(15,107,78,0.10) 0%, rgba(15,107,78,0.04) 30%, transparent 65%)" }} />
-        <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 50% 40% at 85% 100%, rgba(15,107,78,0.06) 0%, transparent 50%)" }} />
-        <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
-      </div>
-      <div className="relative container-page pt-24 md:pt-40 pb-24 md:pb-32">
+      <div aria-hidden className="absolute inset-0 pointer-events-none grid-bg opacity-40" />
+      <div aria-hidden className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent" />
+      <div className="relative container-page pt-20 md:pt-28 pb-20 md:pb-24">
         {/* Portrait + name lockup */}
         <div className="mb-10 flex items-center gap-4">
           <div className="relative h-14 w-14 sm:h-16 sm:w-16 overflow-hidden rounded-full ring-2 ring-gold/70 shrink-0">
@@ -90,16 +87,16 @@ function Hero() {
             <p className="eyebrow !mb-0 !mt-1">{hero.eyebrow}</p>
           </div>
         </div>
-        <h1 className="text-[52px] md:text-[112px] leading-[0.96] tracking-[-0.025em] font-light max-w-[1100px]">
-          I run commercial<br/>partnerships and<br/><em className="italic font-normal text-gold">campaigns.</em>
+        <h1 className="text-[44px] sm:text-[64px] md:text-[88px] leading-[1.02] tracking-[-0.02em] font-medium max-w-[1100px] text-paper">
+          I run commercial partnerships and <em className="italic font-normal text-gold">campaigns.</em>
         </h1>
         <p className="mt-8 max-w-[680px] text-[15px] md:text-[17px] text-muted italic leading-[1.6]">
           {hero.sub}
         </p>
-        <div className="mt-14 flex flex-wrap gap-3">
-          <a href={`mailto:${site.email}`} className="inline-flex items-center rounded-full bg-gold text-bg px-7 py-3.5 text-[15px] tracking-wide hover:bg-gold-soft transition-colors">Email me</a>
-          <a href="#work" className="inline-flex items-center rounded-full border border-paper/15 px-7 py-3.5 text-[15px] tracking-wide hover:border-paper transition-colors">Selected work</a>
-          <a href="#campaigns" className="inline-flex items-center rounded-full border border-paper/15 px-7 py-3.5 text-[15px] tracking-wide hover:border-paper transition-colors">Live campaigns</a>
+        <div className="mt-10 flex flex-wrap gap-3">
+          <a href={`mailto:${site.email}`} className="inline-flex items-center rounded-full bg-gold text-panel px-7 py-3 text-[14px] font-medium tracking-wide hover:bg-gold-soft transition-colors">Email me</a>
+          <a href="#work" className="inline-flex items-center rounded-full border border-paper/30 text-paper bg-panel px-7 py-3 text-[14px] font-medium tracking-wide hover:border-gold hover:text-gold transition-colors">Selected work</a>
+          <a href="#campaigns" className="inline-flex items-center rounded-full border border-paper/30 text-paper bg-panel px-7 py-3 text-[14px] font-medium tracking-wide hover:border-gold hover:text-gold transition-colors">Live campaigns</a>
         </div>
       </div>
       <div className="container-page relative"><div className="h-px bg-gold/25" /></div>
@@ -121,7 +118,7 @@ function TrustStrip() {
           ))}
         </div>
       </div>
-      <div className="container-page"><div className="h-px bg-gold/25" /></div>
+      <div className="container-page"><div className="h-px bg-hairline" /></div>
     </section>
   );
 }
@@ -131,8 +128,8 @@ function SelectedWork() {
     <section id="work" className="scroll-mt-20">
       <div className="container-page pt-24 md:pt-32 pb-12">
         <p className="eyebrow mb-5">Selected work</p>
-        <h2 className="text-display-s sm:text-display-m max-w-[760px] font-light leading-[1.05]">
-          Live campaigns. Real partners.<br/><em className="italic text-gold">Work that shipped.</em>
+        <h2 className="text-[34px] sm:text-[48px] md:text-[56px] max-w-[760px] font-medium leading-[1.05] tracking-[-0.015em] text-paper">
+          Live campaigns. Real partners. <em className="italic font-normal text-gold">Work that shipped.</em>
         </h2>
       </div>
       <div className="container-page pb-24">
@@ -142,43 +139,32 @@ function SelectedWork() {
             const art = caseArt[c.slug];
             return (
               <Link key={c.slug} href={`/case-studies/${c.slug}`} className="group block">
-                <div className="relative aspect-[16/10] overflow-hidden rounded-[14px] border border-paper/10 bg-deep ring-1 ring-gold/0 group-hover:ring-gold/40 transition-all duration-300">
+                <div className="relative aspect-[16/10] overflow-hidden rounded-[10px] border border-hairline bg-panel transition-all duration-300 group-hover:border-gold/70 group-hover:shadow-[0_18px_50px_-30px_rgba(15,107,78,0.35)]">
                   {img ? (
-                    <>
-                      <Image src={img} alt={c.title} fill sizes="(min-width: 768px) 50vw, 100vw"
-                        className="object-cover object-top transition-transform duration-700 group-hover:scale-105" />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent pointer-events-none" />
-                    </>
+                    <Image src={img} alt={c.title} fill sizes="(min-width: 768px) 50vw, 100vw"
+                      className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]" />
                   ) : art ? (
                     <div className="absolute inset-0">{art}</div>
                   ) : (
-                    <div className="absolute inset-0" style={{ background: `linear-gradient(135deg, #1C1814 0%, #F7F6F2 100%)` }} />
+                    <div className="absolute inset-0 bg-deep" />
                   )}
 
-                  {/* Index number. top-left */}
-                  <div className="absolute top-5 left-5 italic text-paper/70 text-[18px] tracking-wider">0{i + 1}</div>
+                  {/* Index — top-left */}
+                  <div className="absolute top-4 left-5 italic text-[16px] tracking-wider text-paper/55 mix-blend-multiply">0{i + 1}</div>
 
-                  {/* Timeframe badge. top-right */}
-                  <div className="absolute top-5 right-5 inline-flex items-center rounded-full bg-bg/85 backdrop-blur text-paper text-[11px] px-3 py-1.5 tracking-[0.16em] uppercase border border-paper/10">{c.timeframe}</div>
+                  {/* Timeframe badge — top-right */}
+                  <div className="absolute top-4 right-5 inline-flex items-center rounded-full bg-panel/95 backdrop-blur text-paper text-[10px] px-3 py-1.5 tracking-[0.16em] uppercase border border-hairline shadow-sm">{c.timeframe}</div>
 
-                  {/* Gold arrow signpost. bottom-right corner, animated on hover */}
-                  <div className="absolute bottom-5 right-5 h-12 w-12 rounded-full bg-gold/95 text-bg inline-flex items-center justify-center text-[20px] font-light shadow-lg shadow-bg/40 transition-all duration-300 group-hover:scale-110 group-hover:bg-gold pointer-events-none">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><line x1="7" y1="17" x2="17" y2="7" /><polyline points="9 7 17 7 17 15" /></svg>
+                  {/* Arrow signpost — bottom-right, only on hover */}
+                  <div className="absolute bottom-4 right-4 h-10 w-10 rounded-full bg-gold text-panel inline-flex items-center justify-center opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none shadow-md">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="7" y1="17" x2="17" y2="7" /><polyline points="9 7 17 7 17 15" /></svg>
                   </div>
-
-                  {img && (
-                    <div className="absolute bottom-6 left-6 right-20">
-                      <h3 className="text-[22px] md:text-[28px] tracking-[-0.01em] leading-tight text-paper font-light drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">{c.title}</h3>
-                    </div>
-                  )}
                 </div>
-                <div className="pt-6">
-                  <p className="text-[12px] uppercase tracking-[0.22em] text-muted">{c.eyebrow}</p>
-                  {!img && (
-                    <h3 className="mt-3 text-[22px] tracking-[-0.01em] text-paper font-light">{c.title}</h3>
-                  )}
-                  <div className="mt-4 inline-flex items-center gap-2 text-[13px] tracking-[0.14em] uppercase text-gold group-hover:text-paper transition-colors font-medium">
-                    Read case file <span className="transition-transform duration-300 group-hover:translate-x-1.5" aria-hidden>→</span>
+                <div className="pt-5">
+                  <p className="text-[11px] uppercase tracking-[0.22em] text-muted">{c.eyebrow}</p>
+                  <h3 className="mt-3 text-[20px] md:text-[24px] tracking-[-0.005em] leading-snug text-paper font-medium">{c.title}</h3>
+                  <div className="mt-4 inline-flex items-center gap-2 text-[12px] tracking-[0.16em] uppercase text-gold group-hover:gap-3 transition-all font-semibold">
+                    Read case file <span aria-hidden>→</span>
                   </div>
                 </div>
               </Link>
@@ -186,7 +172,7 @@ function SelectedWork() {
           })}
         </div>
       </div>
-      <div className="container-page"><div className="h-px bg-gold/25" /></div>
+      <div className="container-page"><div className="h-px bg-hairline" /></div>
     </section>
   );
 }
@@ -210,7 +196,7 @@ function Federation() {
           ))}
         </div>
       </div>
-      <div className="container-page"><div className="h-px bg-gold/25" /></div>
+      <div className="container-page"><div className="h-px bg-hairline" /></div>
     </section>
   );
 }
@@ -249,7 +235,7 @@ function Brands() {
           ))}
         </div>
       </div>
-      <div className="container-page"><div className="h-px bg-gold/25" /></div>
+      <div className="container-page"><div className="h-px bg-hairline" /></div>
     </section>
   );
 }
@@ -272,7 +258,7 @@ function HowIWork() {
           ))}
         </div>
       </div>
-      <div className="container-page"><div className="h-px bg-gold/25" /></div>
+      <div className="container-page"><div className="h-px bg-hairline" /></div>
     </section>
   );
 }
@@ -297,7 +283,7 @@ function Collaborate() {
         </div>
         <p className="mt-7 text-[13px] italic text-muted">{disclosure}</p>
       </div>
-      <div className="container-page"><div className="h-px bg-gold/25" /></div>
+      <div className="container-page"><div className="h-px bg-hairline" /></div>
     </section>
   );
 }

@@ -15,7 +15,7 @@ export function Footer() {
           <Link href="/contact"    className="hover:text-paper transition-colors">Contact</Link>
         </div>
         <div className="text-[13px] text-muted italic">
-          Designed and built by Koge · Cormorant Garamond
+          Designed and built by Koge · Newsreader
         </div>
       </div>
     </footer>
