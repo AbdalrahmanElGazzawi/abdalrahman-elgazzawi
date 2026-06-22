@@ -39,7 +39,7 @@ export function Moments() {
 
 function FigureLarge({ m, priority }: { m: typeof moments[number]; priority?: boolean }) {
   return (
-    <figure className="group relative overflow-hidden rounded-[10px] border border-hairline bg-panel transition-all duration-300 hover:border-gold/60 hover:shadow-[0_18px_50px_-30px_rgba(15,107,78,0.30)]">
+    <figure className="group relative overflow-hidden rounded-[10px] border border-hairline bg-panel transition-all duration-300 hover:border-gold/60 hover:shadow-[0_18px_50px_-30px_rgba(10,31,61,0.30)]">
       <div className="relative aspect-[16/10]">
         <Image src={m.src} alt={m.alt} fill priority={priority}
                sizes="(max-width: 768px) 100vw, 50vw"
@@ -55,7 +55,7 @@ function FigureLarge({ m, priority }: { m: typeof moments[number]; priority?: bo
 
 function FigureSmall({ m }: { m: typeof moments[number] }) {
   return (
-    <figure className="group relative overflow-hidden rounded-[10px] border border-hairline bg-panel transition-all duration-300 hover:border-gold/60 hover:shadow-[0_18px_50px_-30px_rgba(15,107,78,0.30)]">
+    <figure className="group relative overflow-hidden rounded-[10px] border border-hairline bg-panel transition-all duration-300 hover:border-gold/60 hover:shadow-[0_18px_50px_-30px_rgba(10,31,61,0.30)]">
       <div className="relative aspect-[3/4]">
         <Image src={m.src} alt={m.alt} fill
                sizes="(max-width: 768px) 50vw, 25vw"

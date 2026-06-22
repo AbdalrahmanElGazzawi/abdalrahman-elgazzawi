@@ -1,25 +1,25 @@
 import type { Config } from "tailwindcss";
 
-// Light theme. Off-white paper. Near-black ink. One restrained accent (deep forest).
-// No gold. No "luxury" gradient. Built like Linear / Stripe / Pitch — confident and quiet.
+// Light theme. Off-white paper. Near-black ink. One restrained accent (deep navy).
+// Single premium navy accent. Built like Linear / Stripe / Pitch — confident and quiet.
 const config: Config = {
   content: ["./src/**/*.{ts,tsx,mdx}", "./content/**/*.{md,mdx}"],
   theme: {
     extend: {
       colors: {
-        bg:       "#F7F6F2",   // warm off-white paper
+        bg:       "#F6F7F9",   // warm off-white paper
         panel:    "#FFFFFF",   // clean card surface
-        deep:     "#EDECE6",   // subtle alt panel
+        deep:     "#E9EBEF",   // subtle alt panel
         paper:    "#0F0F0F",   // near-black ink (renamed semantically; "paper" stays for API compat)
         ink:      "#0F0F0F",
-        accent:   { DEFAULT: "#0F6B4E", soft: "#2E8B6E", deep: "#0A4D38" },  // deep forest
+        accent:   { DEFAULT: "#0A1F3D", soft: "#1E40AF", deep: "#061735" },  // deep navy
         // Back-compat aliases so older components don't break:
-        gold:     { DEFAULT: "#0F6B4E", soft: "#2E8B6E", deep: "#0A4D38" },
-        green:    { DEFAULT: "#0F6B4E", deep: "#0A4D38", soft: "#2E8B6E", glow: "#2E8B6E" },
+        gold:     { DEFAULT: "#0A1F3D", soft: "#1E40AF", deep: "#061735" },
+        green:    { DEFAULT: "#0A1F3D", deep: "#061735", soft: "#1E40AF", glow: "#1E40AF" },
         muted:    "#666666",
         dim:      "#999999",
-        hairline: "#E2E0D8",
-        rule:     "#D4D1C6",
+        hairline: "#E1E4EA",
+        rule:     "#CDD2DA",
       },
       fontFamily: {
         sans:  ["var(--font-inter)", "ui-sans-serif", "system-ui", "-apple-system", "Segoe UI", "Roboto", "sans-serif"],

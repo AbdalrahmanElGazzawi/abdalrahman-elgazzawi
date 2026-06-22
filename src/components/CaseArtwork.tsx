@@ -6,7 +6,7 @@
 const BG     = "#FFFFFF";
 const INK    = "#0F0F0F";
 const MUTED  = "#6B6B6B";
-const ACCENT = "#0F6B4E";
+const ACCENT = "#0A1F3D";
 
 export function FalconsCommercialArt() {
   return (

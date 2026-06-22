@@ -139,7 +139,7 @@ function SelectedWork() {
             const art = caseArt[c.slug];
             return (
               <Link key={c.slug} href={`/case-studies/${c.slug}`} className="group block">
-                <div className="relative aspect-[16/10] overflow-hidden rounded-[10px] border border-hairline bg-panel transition-all duration-300 group-hover:border-gold/70 group-hover:shadow-[0_18px_50px_-30px_rgba(15,107,78,0.35)]">
+                <div className="relative aspect-[16/10] overflow-hidden rounded-[10px] border border-hairline bg-panel transition-all duration-300 group-hover:border-gold/70 group-hover:shadow-[0_18px_50px_-30px_rgba(10,31,61,0.35)]">
                   {img ? (
                     <Image src={img} alt={c.title} fill sizes="(min-width: 768px) 50vw, 100vw"
                       className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]" />

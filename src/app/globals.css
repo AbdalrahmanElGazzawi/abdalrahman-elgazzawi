@@ -4,16 +4,16 @@
 
 :root { color-scheme: light; }
 html { scroll-behavior: smooth; }
-html, body { background: #F7F6F2; color: #0F0F0F; }
+html, body { background: #F6F7F9; color: #0F0F0F; }
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-optical-sizing: auto;
 }
-::selection { background: #0F6B4E; color: #F7F6F2; }
+::selection { background: #0A1F3D; color: #F6F7F9; }
 
 :focus { outline: none; }
-:focus-visible { outline: 2px solid #0F6B4E; outline-offset: 3px; border-radius: 2px; }
+:focus-visible { outline: 2px solid #0A1F3D; outline-offset: 3px; border-radius: 2px; }
 
 .container-page { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 @media (min-width: 768px)  { .container-page { padding: 0 40px; } }
@@ -27,11 +27,11 @@ body {
   text-transform: none;
   font-weight: 500;
 }
-.eyebrow::before { content: "·  "; color: #0F6B4E; font-weight: 700; }
+.eyebrow::before { content: "·  "; color: #0A1F3D; font-weight: 700; }
 
-.panel { background: #FFFFFF; border: 1px solid #E2E0D8; border-radius: 6px; }
+.panel { background: #FFFFFF; border: 1px solid #E1E4EA; border-radius: 6px; }
 .lift  { transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
-.lift:hover { transform: translateY(-2px); border-color: #0F6B4E; box-shadow: 0 18px 40px -28px rgba(15,107,78,0.25); }
+.lift:hover { transform: translateY(-2px); border-color: #0A1F3D; box-shadow: 0 18px 40px -28px rgba(10,31,61,0.25); }
 .tab-nums { font-variant-numeric: tabular-nums; }
 
 /* Subtle dot grid for hero — barely visible */
