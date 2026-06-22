@@ -4,17 +4,17 @@ export function StackDiagram() {
       <svg viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto block panel">
         <defs>
           <linearGradient id="layerGrad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#C9A961" stopOpacity="0.15" />
-            <stop offset="100%" stopColor="#C9A961" stopOpacity="0" />
+            <stop offset="0%" stopColor="#0F6B4E" stopOpacity="0.15" />
+            <stop offset="100%" stopColor="#0F6B4E" stopOpacity="0" />
           </linearGradient>
         </defs>
         <rect x="0" y="0" width="800" height="360" fill="#101218" />
         <text x="20" y="24" fontFamily="ui-monospace, monospace" fontSize="10" fill="#7E8088" letterSpacing="2">// FALCONS COMMERCIAL STACK</text>
         {[
           { y: 50,  label: "QUOTE LIFECYCLE APP",  sub: "Pricing OS · Roster · Quote Builder · Client Portal · Admin", c: "#5BD394" },
-          { y: 130, label: "MANDATES OS",          sub: "Bilingual pipeline · ~SAR 2.3M tracked · campaigns · sponsors · IP · events", c: "#C9A961" },
-          { y: 210, label: "AGENCY FRAMEWORK v5",  sub: "140 pages · 4-phase model · 13 counterparty tracks · clause library · playbooks", c: "#C9A961" },
-          { y: 290, label: "PRICING SOURCE OF TRUTH v1.0", sub: "15 sections · 200 talents · 5 base methods · 9 multipliers", c: "#C9A961" },
+          { y: 130, label: "MANDATES OS",          sub: "Bilingual pipeline · ~SAR 2.3M tracked · campaigns · sponsors · IP · events", c: "#0F6B4E" },
+          { y: 210, label: "AGENCY FRAMEWORK v5",  sub: "140 pages · 4-phase model · 13 counterparty tracks · clause library · playbooks", c: "#0F6B4E" },
+          { y: 290, label: "PRICING SOURCE OF TRUTH v1.0", sub: "15 sections · 200 talents · 5 base methods · 9 multipliers", c: "#0F6B4E" },
         ].map((row, i) => (
           <g key={i}>
             <rect x="40" y={row.y - 30} width="720" height="60" fill="#161922" stroke="#2A2D36" />
@@ -40,7 +40,7 @@ export function PricingOSDiagram() {
         <text x="20" y="24" fontFamily="ui-monospace, monospace" fontSize="10" fill="#7E8088" letterSpacing="2">// FALCONS PRICING OS · ARCHITECTURE</text>
         {[
           { x: 60,  label: "INPUTS",  rows: [{ k: "Roster", d: "200 talents · tiered" }, { k: "Brief", d: "Brand · audience · scope" }, { k: "Rights", d: "Window · territory · usage" }], c: "#5BD394" },
-          { x: 320, label: "ENGINE",  rows: [{ k: "Methodology v1", d: "5 base methods" }, { k: "9-axis multipliers", d: "Quote-time logic" }, { k: "Approval matrix", d: "Role-scoped sign-off" }], c: "#C9A961" },
+          { x: 320, label: "ENGINE",  rows: [{ k: "Methodology v1", d: "5 base methods" }, { k: "9-axis multipliers", d: "Quote-time logic" }, { k: "Approval matrix", d: "Role-scoped sign-off" }], c: "#0F6B4E" },
           { x: 580, label: "OUTPUTS", rows: [{ k: "Quote pack", d: "Client-ready" }, { k: "Mandate row", d: "Pipeline appended" }, { k: "Audit trail", d: "Postgres RLS log" }], c: "#5BD394" },
         ].map((col, ci) => (
           <g key={col.label}>
@@ -55,8 +55,8 @@ export function PricingOSDiagram() {
             ))}
             {ci < 2 && (
               <g>
-                <line x1={col.x + 165} y1="200" x2={col.x + 250} y2="200" stroke="#C9A961" strokeWidth="1" />
-                <polygon points={`${col.x + 250},196 ${col.x + 258},200 ${col.x + 250},204`} fill="#C9A961" />
+                <line x1={col.x + 165} y1="200" x2={col.x + 250} y2="200" stroke="#0F6B4E" strokeWidth="1" />
+                <polygon points={`${col.x + 250},196 ${col.x + 258},200 ${col.x + 250},204`} fill="#0F6B4E" />
               </g>
             )}
           </g>
@@ -83,14 +83,14 @@ export function SonyDiagram() {
           { x: 640, label: "CONVERSION", d: "20% KSA discount-code" },
         ].map((s, i) => (
           <g key={s.label}>
-            <rect x={s.x - 60} y="100" width="120" height="80" fill="#161922" stroke="#C9A961" />
-            <text x={s.x} y="128" textAnchor="middle" fontFamily="ui-monospace, monospace" fontSize="10" fill="#C9A961" letterSpacing="2">{`0${i + 1}`}</text>
+            <rect x={s.x - 60} y="100" width="120" height="80" fill="#161922" stroke="#0F6B4E" />
+            <text x={s.x} y="128" textAnchor="middle" fontFamily="ui-monospace, monospace" fontSize="10" fill="#0F6B4E" letterSpacing="2">{`0${i + 1}`}</text>
             <text x={s.x} y="148" textAnchor="middle" fontFamily="Georgia, serif" fontStyle="italic" fontSize="15" fill="#F4F1EB">{s.label}</text>
             <text x={s.x} y="167" textAnchor="middle" fontFamily="ui-monospace, monospace" fontSize="8" fill="#7E8088">{s.d}</text>
-            {i < 4 && <line x1={s.x + 60} y1="140" x2={s.x + 80} y2="140" stroke="#C9A961" strokeWidth="1" />}
+            {i < 4 && <line x1={s.x + 60} y1="140" x2={s.x + 80} y2="140" stroke="#0F6B4E" strokeWidth="1" />}
           </g>
         ))}
-        <text x="400" y="65" textAnchor="middle" fontFamily="Georgia, serif" fontStyle="italic" fontSize="22" fill="#C9A961">USD 11.2K · 5 creators · 12 deliverables</text>
+        <text x="400" y="65" textAnchor="middle" fontFamily="Georgia, serif" fontStyle="italic" fontSize="22" fill="#0F6B4E">USD 11.2K · 5 creators · 12 deliverables</text>
         <text x="400" y="83" textAnchor="middle" fontFamily="ui-monospace, monospace" fontSize="9" fill="#7E8088" letterSpacing="2">CLOSED · DECEMBER 2025</text>
         <text x="400" y="225" textAnchor="middle" fontFamily="ui-monospace, monospace" fontSize="10" fill="#5BD394" letterSpacing="2">// CREATORS</text>
         <text x="400" y="247" textAnchor="middle" fontFamily="Georgia, serif" fontStyle="italic" fontSize="14" fill="#F4F1EB">Abu Najd · Madv · Spyerfrog · Oden · xsma333</text>
@@ -115,8 +115,8 @@ export function EWCDiagram() {
         ].map((m) => (
           <g key={m.l}>
             <rect x={m.x} y="60" width="170" height="120" fill="#161922" stroke="#2A2D36" />
-            <line x1={m.x} y1="60" x2={m.x + 170} y2="60" stroke="#C9A961" strokeWidth="2" />
-            <text x={m.x + 85} y="115" textAnchor="middle" fontFamily="Georgia, serif" fontStyle="italic" fontSize="42" fill="#C9A961">{m.v}</text>
+            <line x1={m.x} y1="60" x2={m.x + 170} y2="60" stroke="#0F6B4E" strokeWidth="2" />
+            <text x={m.x + 85} y="115" textAnchor="middle" fontFamily="Georgia, serif" fontStyle="italic" fontSize="42" fill="#0F6B4E">{m.v}</text>
             <text x={m.x + 85} y="160" textAnchor="middle" fontFamily="ui-monospace, monospace" fontSize="10" fill="#7E8088" letterSpacing="2">{m.l}</text>
           </g>
         ))}
@@ -138,8 +138,8 @@ export function GLGDiagram() {
         <text x="780" y="24" textAnchor="end" fontFamily="ui-monospace, monospace" fontSize="9" fill="#5BD394" letterSpacing="2">● COUNCIL MEMBER · 2025 — PRESENT</text>
 
         {/* Center node — "Esports & Gaming SME" */}
-        <circle cx="400" cy="180" r="70" fill="#161922" stroke="#C9A961" strokeWidth="1.5" />
-        <text x="400" y="170" textAnchor="middle" fontFamily="ui-monospace, monospace" fontSize="9" fill="#C9A961" letterSpacing="2">SUBJECT-MATTER</text>
+        <circle cx="400" cy="180" r="70" fill="#161922" stroke="#0F6B4E" strokeWidth="1.5" />
+        <text x="400" y="170" textAnchor="middle" fontFamily="ui-monospace, monospace" fontSize="9" fill="#0F6B4E" letterSpacing="2">SUBJECT-MATTER</text>
         <text x="400" y="186" textAnchor="middle" fontFamily="Georgia, serif" fontStyle="italic" fontSize="18" fill="#F4F1EB">EXPERT</text>
         <text x="400" y="204" textAnchor="middle" fontFamily="ui-monospace, monospace" fontSize="9" fill="#7E8088" letterSpacing="2">ESPORTS · GAMING · MENA</text>
 
@@ -155,7 +155,7 @@ export function GLGDiagram() {
           <g key={t.k}>
             <line x1="400" y1="180" x2={t.x} y2={t.y} stroke="#2A2D36" strokeDasharray="3 4" />
             <rect x={t.x - 90} y={t.y - 18} width="180" height="36" fill="#161922" stroke="#2A2D36" />
-            <text x={t.x} y={t.y - 3} textAnchor="middle" fontFamily="ui-monospace, monospace" fontSize="9" fill="#C9A961" letterSpacing="1.5">{t.k}</text>
+            <text x={t.x} y={t.y - 3} textAnchor="middle" fontFamily="ui-monospace, monospace" fontSize="9" fill="#0F6B4E" letterSpacing="1.5">{t.k}</text>
             <text x={t.x} y={t.y + 11} textAnchor="middle" fontFamily="ui-monospace, monospace" fontSize="8" fill="#7E8088">{t.d}</text>
           </g>
         ))}
@@ -180,8 +180,8 @@ export function TrueGamingDiagram() {
         ].map((p) => (
           <g key={p.title}>
             <rect x={p.x} y="60" width="200" height="240" fill="#161922" stroke="#2A2D36" />
-            <line x1={p.x} y1="60" x2={p.x + 200} y2="60" stroke="#C9A961" strokeWidth="2" />
-            <text x={p.x + 100} y="86" textAnchor="middle" fontFamily="ui-monospace, monospace" fontSize="11" fill="#C9A961" letterSpacing="2">{p.title}</text>
+            <line x1={p.x} y1="60" x2={p.x + 200} y2="60" stroke="#0F6B4E" strokeWidth="2" />
+            <text x={p.x + 100} y="86" textAnchor="middle" fontFamily="ui-monospace, monospace" fontSize="11" fill="#0F6B4E" letterSpacing="2">{p.title}</text>
             {p.rows.map((row, ri) => (
               <g key={ri}>
                 <text x={p.x + 16} y={130 + ri * 56} fontFamily="Georgia, serif" fontStyle="italic" fontSize={row.k.length > 10 ? "16" : "22"} fill="#F4F1EB">{row.k}</text>
@@ -212,12 +212,12 @@ export function RaadDiagram() {
           { x: 540, title: "OPERATIONS",      sub: "KPI/KRI built", rows: ["Performance scorecards","Vendor coordination","Budget utilisation"] },
         ].map((p) => (
           <g key={p.title}>
-            <rect x={p.x} y="60" width="200" height="240" fill="#161922" stroke="#C9A961" strokeWidth="1" />
-            <text x={p.x + 100} y="90" textAnchor="middle" fontFamily="ui-monospace, monospace" fontSize="11" fill="#C9A961" letterSpacing="2">{p.title}</text>
+            <rect x={p.x} y="60" width="200" height="240" fill="#161922" stroke="#0F6B4E" strokeWidth="1" />
+            <text x={p.x + 100} y="90" textAnchor="middle" fontFamily="ui-monospace, monospace" fontSize="11" fill="#0F6B4E" letterSpacing="2">{p.title}</text>
             <text x={p.x + 100} y="108" textAnchor="middle" fontFamily="ui-monospace, monospace" fontSize="9" fill="#5BD394" letterSpacing="2">{p.sub}</text>
             {p.rows.map((r, ri) => (
               <g key={ri}>
-                <line x1={p.x + 20} y1={150 + ri * 36} x2={p.x + 30} y2={150 + ri * 36} stroke="#C9A961" />
+                <line x1={p.x + 20} y1={150 + ri * 36} x2={p.x + 30} y2={150 + ri * 36} stroke="#0F6B4E" />
                 <text x={p.x + 36} y={154 + ri * 36} fontFamily="ui-monospace, monospace" fontSize="10" fill="#F4F1EB">{r}</text>
               </g>
             ))}

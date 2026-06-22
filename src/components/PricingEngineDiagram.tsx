@@ -30,9 +30,9 @@ export function PricingEngineDiagram() {
           <svg viewBox="0 0 460 460" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto block panel">
             <defs>
               <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
-                <stop offset="0%"  stopColor="#C9A961" stopOpacity="0.35" />
-                <stop offset="60%" stopColor="#C9A961" stopOpacity="0.05" />
-                <stop offset="100%" stopColor="#C9A961" stopOpacity="0" />
+                <stop offset="0%"  stopColor="#0F6B4E" stopOpacity="0.35" />
+                <stop offset="60%" stopColor="#0F6B4E" stopOpacity="0.05" />
+                <stop offset="100%" stopColor="#0F6B4E" stopOpacity="0" />
               </radialGradient>
             </defs>
             <rect x="0" y="0" width="460" height="460" fill="#101218" />
@@ -44,7 +44,7 @@ export function PricingEngineDiagram() {
             {/* center label — formula glyph */}
             <g>
               <text x={cx} y={cy - 14} textAnchor="middle" fontFamily="ui-monospace, monospace" fontSize="9" fill="#7E8088" letterSpacing="2">FINAL PRICE</text>
-              <text x={cx} y={cy + 8} textAnchor="middle" fontFamily="Georgia, serif" fontStyle="italic" fontSize="22" fill="#C9A961">MAX</text>
+              <text x={cx} y={cy + 8} textAnchor="middle" fontFamily="Georgia, serif" fontStyle="italic" fontSize="22" fill="#0F6B4E">MAX</text>
               <text x={cx} y={cy + 28} textAnchor="middle" fontFamily="ui-monospace, monospace" fontSize="9" fill="#5C5E66">× CAP × (1 + RIGHTS)</text>
             </g>
             {/* spokes + nodes */}
@@ -53,8 +53,8 @@ export function PricingEngineDiagram() {
               return (
                 <g key={a.k}>
                   <line x1={cx} y1={cy} x2={p.x} y2={p.y} stroke="#2A2D36" strokeWidth="0.8" />
-                  <circle cx={p.x} cy={p.y} r="20" fill="#161922" stroke="#C9A961" strokeWidth="1" />
-                  <text x={p.x} y={p.y - 1} textAnchor="middle" fontFamily="ui-monospace, monospace" fontSize="9" fill="#C9A961" letterSpacing="1">{a.n}</text>
+                  <circle cx={p.x} cy={p.y} r="20" fill="#161922" stroke="#0F6B4E" strokeWidth="1" />
+                  <text x={p.x} y={p.y - 1} textAnchor="middle" fontFamily="ui-monospace, monospace" fontSize="9" fill="#0F6B4E" letterSpacing="1">{a.n}</text>
                   <text x={p.x} y={p.y + 11} textAnchor="middle" fontFamily="ui-monospace, monospace" fontSize="7" fill="#7E8088" letterSpacing="0.5">{a.k.toUpperCase().slice(0, 8)}</text>
                 </g>
               );

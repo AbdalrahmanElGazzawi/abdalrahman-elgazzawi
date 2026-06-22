@@ -43,7 +43,7 @@ export default function Note() {
         .prose-essay > * + * { margin-top: 1.4em; }
         .prose-essay p { color: var(--paper); font-size: 17px; line-height: 1.78; }
         .prose-essay h2 { font-family: var(--font-fraunces), Georgia, serif; font-style: italic; font-size: 28px; line-height: 1.2; margin-top: 2.4em; color: var(--paper); }
-        .prose-essay em { color: #D9BD80; font-style: italic; }
+        .prose-essay em { color: #2E8B6E; font-style: italic; }
         .prose-essay strong { color: var(--paper); }
       `}</style>
     </>

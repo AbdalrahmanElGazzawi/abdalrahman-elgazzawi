@@ -4,8 +4,8 @@
 // Each piece is a typography + geometric composition in brand palette.
 // Dark luxury aesthetic — warm black bg, gold accent, cream type.
 
-const BG = "#0F0D0B";
-const GOLD = "#C9A961";
+const BG = "#F7F6F2";
+const GOLD = "#0F6B4E";
 const PAPER = "#F0EAE0";
 const MUTED = "#3A3530";
 
@@ -15,7 +15,7 @@ export function FalconsCommercialArt() {
       <defs>
         <linearGradient id="fbg1" x1="0" y1="0" x2="1" y2="1">
           <stop offset="0" stopColor="#1C1814" />
-          <stop offset="1" stopColor="#0F0D0B" />
+          <stop offset="1" stopColor="#F7F6F2" />
         </linearGradient>
         <radialGradient id="fglow1" cx="0.7" cy="0.3" r="0.6">
           <stop offset="0" stopColor={GOLD} stopOpacity="0.18" />
@@ -65,7 +65,7 @@ export function PricingOSArt() {
       <defs>
         <linearGradient id="pbg1" x1="0" y1="0" x2="1" y2="1">
           <stop offset="0" stopColor="#1C1814" />
-          <stop offset="1" stopColor="#0F0D0B" />
+          <stop offset="1" stopColor="#F7F6F2" />
         </linearGradient>
       </defs>
       <rect width="1600" height="1000" fill="url(#pbg1)" />
@@ -109,7 +109,7 @@ export function SonyINZONEArt() {
       <defs>
         <linearGradient id="sbg1" x1="0" y1="0" x2="1" y2="1">
           <stop offset="0" stopColor="#1C1814" />
-          <stop offset="1" stopColor="#0F0D0B" />
+          <stop offset="1" stopColor="#F7F6F2" />
         </linearGradient>
         <radialGradient id="sglow" cx="0.5" cy="0.5" r="0.5">
           <stop offset="0" stopColor={GOLD} stopOpacity="0.22" />
@@ -136,7 +136,7 @@ export function GLGArt() {
       <defs>
         <linearGradient id="gbg1" x1="0" y1="0" x2="1" y2="1">
           <stop offset="0" stopColor="#1C1814" />
-          <stop offset="1" stopColor="#0F0D0B" />
+          <stop offset="1" stopColor="#F7F6F2" />
         </linearGradient>
       </defs>
       <rect width="1600" height="1000" fill="url(#gbg1)" />

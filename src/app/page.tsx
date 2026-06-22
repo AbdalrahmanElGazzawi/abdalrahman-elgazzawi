@@ -75,8 +75,8 @@ function Hero() {
     <section className="relative overflow-hidden bg-bg">
       {/* Clean dark hero. subtle radial gold glow, no photo */}
       <div aria-hidden className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(201,169,97,0.10) 0%, rgba(201,169,97,0.04) 30%, transparent 65%)" }} />
-        <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 50% 40% at 85% 100%, rgba(201,169,97,0.06) 0%, transparent 50%)" }} />
+        <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(15,107,78,0.10) 0%, rgba(15,107,78,0.04) 30%, transparent 65%)" }} />
+        <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 50% 40% at 85% 100%, rgba(15,107,78,0.06) 0%, transparent 50%)" }} />
         <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
       </div>
       <div className="relative container-page pt-24 md:pt-40 pb-24 md:pb-32">
@@ -152,7 +152,7 @@ function SelectedWork() {
                   ) : art ? (
                     <div className="absolute inset-0">{art}</div>
                   ) : (
-                    <div className="absolute inset-0" style={{ background: `linear-gradient(135deg, #1C1814 0%, #0F0D0B 100%)` }} />
+                    <div className="absolute inset-0" style={{ background: `linear-gradient(135deg, #1C1814 0%, #F7F6F2 100%)` }} />
                   )}
 
                   {/* Index number. top-left */}
