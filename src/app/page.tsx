@@ -1,29 +1,27 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
-  site, hero, proof, caseStudies, brandInvolvement, principles,
+  site, caseStudies, brandInvolvement, principles,
   waysToCollaborate, federationAdvisory,
 } from "@/content/site";
 
 // Hero images per case-study slug. inlined for build resilience.
 // Drop more files at /public/work/<slug>.jpg as you have them.
 const heroImages: Record<string, string | undefined> = {
-  "esports-world-cup":              "/photos/ewc-card.jpg",          // real photo: EWC Grand Final stage
-  "true-gaming-leap":               "/photos/leap-keynote-card.jpg", // real photo: LEAP keynote (TG was the LEAP engagement)
-  "telecom-egypt-raad":             "/work/raad-facility.jpg",       // real photo: RA'AD facility
-  "sony-inzone-team-falcons":       undefined,                       // bespoke SVG art
-  "team-falcons-commercial-stack":  undefined,                       // bespoke SVG (the commercial stack diagram IS the artifact)
-  "falcons-pricing-os":             undefined,                       // bespoke SVG art
-  "glg-advisory":                   undefined,                       // bespoke SVG art (advisory work, not event-based)
+  "esports-world-cup":              "/photos/ewc-card.jpg",
+  "true-gaming-leap":               "/photos/leap-keynote-card.jpg",
+  "telecom-egypt-raad":             "/work/raad-facility.jpg",
+  "sony-inzone-team-falcons":       undefined,
+  "team-falcons-commercial-stack":  undefined,
+  "falcons-pricing-os":             undefined,
+  "glg-advisory":                   undefined,
 };
 import {
   FalconsCommercialArt, PricingOSArt, SonyINZONEArt, GLGArt,
 } from "@/components/CaseArtwork";
 import { LiveCampaigns } from "@/components/LiveCampaigns";
-// import { AIOperations } from "@/components/AIOperations";
 import { Moments } from "@/components/Moments";
 
-// Map slug → bespoke SVG art (for cards without real photos)
 const caseArt: Record<string, React.ReactNode | undefined> = {
   "team-falcons-commercial-stack":  <FalconsCommercialArt />,
   "falcons-pricing-os":             <PricingOSArt />,
@@ -31,13 +29,54 @@ const caseArt: Record<string, React.ReactNode | undefined> = {
   "glg-advisory":                   <GLGArt />,
 };
 
+// Real, sourced metrics (Path Forward proof-of-value + CVs). Safe to publish.
+const ledger = [
+  { n: "11",    l: "Commercial systems built from zero · Falcons" },
+  { n: "12",    l: "Live commercial deals progressed" },
+  { n: "180+",  l: "Talent roster priced & packaged" },
+  { n: "970+",  l: "Hours logged in 70 days · 0 off" },
+  { n: "778+",  l: "EWC deliverables shipped" },
+  { n: "5M+",   l: "Viewers reached across campaigns" },
+  { n: "78+",   l: "Brands pitched · 5 agencies" },
+  { n: "147",   l: "LEAP qualified leads · 6 closed" },
+];
+
+// The commercial foundation — real systems built at Team Falcons.
+const foundation = [
+  {
+    ix: "01 — Pricing methodology",
+    title: "Pricing Engine v8 & Creator Rate Card v3",
+    body: "Talent-tier × deliverable × territory × authority multipliers — a bilingual, talent-tiered rate card engineered to price at a premium to Western benchmarks through cultural-access and audience-overlap math.",
+    tags: ["Pricing Engine v8", "Rate Card v3", "EN / AR"],
+  },
+  {
+    ix: "02 — Framework architecture",
+    title: "Agency Framework v5 — 91 pages",
+    body: "A multi-phase brand investment model with governance, rights packaging, and KSA-compliant engagement terms — paired with a 21-page Agency Engagement Agreement and Sponsorship OS onboarding architecture.",
+    tags: ["91-pp framework", "Governance", "Rights packaging"],
+  },
+  {
+    ix: "03 — Pipeline & outreach",
+    title: "Master Hub & Lead Tracker v2",
+    body: "A bilingual command center running a 12-deal pipeline with 27 logged meetings on a weekly cadence — governed by RACI v4 and an SLA operating model, advancing a seven-figure partnership opportunity to contract stage.",
+    tags: ["12-deal pipeline", "RACI v4", "EN / AR"],
+  },
+  {
+    ix: "04 — Shipped product",
+    title: "Falcons Pricing OS — live in production",
+    body: "A Next.js + Supabase + Vercel internal app covering the full quote lifecycle — roster, builder, client portal, sales log, and admin — deployed to production with role-based permissions.",
+    tags: ["Next.js", "Supabase", "Production"],
+  },
+];
+
 export default function Page() {
   return (
     <>
       <Nav />
       <main>
         <Hero />
-        <TrustStrip />
+        <Ledger />
+        <CommercialFoundation />
         <SelectedWork />
         <LiveCampaigns />
         <Moments />
@@ -56,14 +95,14 @@ function Nav() {
   return (
     <header className="sticky top-0 z-50 bg-bg/80 backdrop-blur-md border-b border-hairline">
       <div className="container-page h-16 flex items-center justify-between">
-        <Link href="/" className="text-[18px] tracking-tight">
-          <span className="italic font-light text-gold">A.</span> <span className="font-light">ElGazzawi</span>
+        <Link href="/" className="text-[16px] font-semibold tracking-tight text-paper">
+          Abdalrahman <span className="text-gold">ElGazzawi</span>
         </Link>
         <nav className="hidden md:flex items-center gap-8 text-[14px] tracking-wide text-muted">
+          <a href="#foundation" className="hover:text-paper transition-colors">What I build</a>
           <a href="#work" className="hover:text-paper transition-colors">Work</a>
-          <a href="#how" className="hover:text-paper transition-colors">How I work</a>
-          <a href="#collaborate" className="hover:text-paper transition-colors">Collaborate</a>
-          <a href={`mailto:${site.email}`} className="inline-flex items-center rounded-full bg-gold text-bg px-5 py-2 text-[13px] tracking-wide hover:bg-gold-soft transition-colors">Email me</a>
+          <a href="#campaigns" className="hover:text-paper transition-colors">Campaigns</a>
+          <a href={`mailto:${site.email}`} className="inline-flex items-center rounded-full bg-gold text-panel px-5 py-2 text-[13px] tracking-wide hover:bg-accent-soft transition-colors">Email me</a>
         </nav>
       </div>
     </header>
@@ -73,52 +112,79 @@ function Nav() {
 function Hero() {
   return (
     <section className="relative overflow-hidden bg-bg">
-      {/* Clean dark hero. subtle radial gold glow, no photo */}
       <div aria-hidden className="absolute inset-0 pointer-events-none grid-bg opacity-40" />
-      <div aria-hidden className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent" />
-      <div className="relative container-page pt-20 md:pt-28 pb-20 md:pb-24">
-        {/* Portrait + name lockup */}
+      <div className="relative container-page pt-20 md:pt-28 pb-16 md:pb-20">
         <div className="mb-10 flex items-center gap-4">
-          <div className="relative h-14 w-14 sm:h-16 sm:w-16 overflow-hidden rounded-full ring-2 ring-gold/70 shrink-0">
+          <div className="relative h-14 w-14 sm:h-16 sm:w-16 overflow-hidden rounded-full ring-1 ring-hairline shrink-0">
             <Image src="/photos/portrait.jpg" alt="Abdalrahman ElGazzawi" fill priority sizes="64px" className="object-cover" />
           </div>
           <div>
-            <div className="text-[14px] sm:text-[15px] text-paper font-light">Abdalrahman ElGazzawi</div>
-            <p className="eyebrow !mb-0 !mt-1">{hero.eyebrow}</p>
+            <div className="text-[14px] sm:text-[15px] text-paper font-medium">Abdalrahman ElGazzawi</div>
+            <p className="text-[13px] text-muted mt-0.5">Commercial Partnerships · MENA · Cairo / Riyadh</p>
           </div>
         </div>
-        <h1 className="text-[44px] sm:text-[64px] md:text-[88px] leading-[1.02] tracking-[-0.02em] font-medium max-w-[1100px] text-paper">
-          I run commercial partnerships and <em className="italic font-normal text-gold">campaigns.</em>
+        <h1 className="font-serif text-[42px] sm:text-[60px] md:text-[80px] leading-[1.02] tracking-[-0.022em] font-normal max-w-[15ch] text-paper">
+          Writes the methodology. Ships the product. <em className="italic text-gold">Closes the deal.</em>
         </h1>
-        <p className="mt-8 max-w-[680px] text-[15px] md:text-[17px] text-muted italic leading-[1.6]">
-          {hero.sub}
+        <p className="mt-8 max-w-[640px] text-[16px] md:text-[18px] text-muted leading-[1.6]">
+          A hybrid commercial operator. I build the pricing, packaging, and campaign systems behind partnerships — then close on them. Recent work with Aramco, PepsiCo, Sony, NVIDIA, Adidas, and Mastercard.
         </p>
         <div className="mt-10 flex flex-wrap gap-3">
-          <a href={`mailto:${site.email}`} className="inline-flex items-center rounded-full bg-gold text-panel px-7 py-3 text-[14px] font-medium tracking-wide hover:bg-gold-soft transition-colors">Email me</a>
-          <a href="#work" className="inline-flex items-center rounded-full border border-paper/30 text-paper bg-panel px-7 py-3 text-[14px] font-medium tracking-wide hover:border-gold hover:text-gold transition-colors">Selected work</a>
-          <a href="#campaigns" className="inline-flex items-center rounded-full border border-paper/30 text-paper bg-panel px-7 py-3 text-[14px] font-medium tracking-wide hover:border-gold hover:text-gold transition-colors">Live campaigns</a>
+          <a href={`mailto:${site.email}`} className="inline-flex items-center rounded-full bg-gold text-panel px-7 py-3 text-[14px] font-medium tracking-wide hover:bg-accent-soft transition-colors">Email me</a>
+          <a href="#foundation" className="inline-flex items-center rounded-full border border-hairline text-paper bg-panel px-7 py-3 text-[14px] font-medium tracking-wide hover:border-gold hover:text-gold transition-colors">What I build</a>
+          <a href="#work" className="inline-flex items-center rounded-full border border-hairline text-paper bg-panel px-7 py-3 text-[14px] font-medium tracking-wide hover:border-gold hover:text-gold transition-colors">Selected work</a>
         </div>
       </div>
-      <div className="container-page relative"><div className="h-px bg-gold/25" /></div>
     </section>
   );
 }
 
-function TrustStrip() {
+function Ledger() {
   return (
-    <section className="bg-bg">
-      <div className="container-page py-16 md:py-24">
-        <p className="eyebrow mb-12">Proof</p>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-y-14 gap-x-8">
-          {proof.map((m) => (
-            <div key={m.l}>
-              <div className="text-[44px] md:text-[60px] leading-none tracking-[-0.02em] tab-nums font-light text-gold">{m.n}</div>
-              <div className="mt-4 text-[15px] text-muted leading-snug">{m.l}</div>
+    <section className="bg-bg border-t border-hairline">
+      <div className="container-page">
+        <div className="grid grid-cols-2 md:grid-cols-4">
+          {ledger.map((m, i) => (
+            <div key={m.l} className={`py-7 md:py-8 px-1 md:px-5 border-hairline ${i % 4 !== 3 ? "md:border-r" : ""} ${i % 2 === 0 ? "border-r md:border-r" : ""} ${i < ledger.length - (ledger.length % 4 || 4) ? "border-b" : "border-b md:border-b-0"}`}>
+              <div className="font-mono text-[26px] md:text-[32px] leading-none tracking-[-0.01em] tab-nums text-gold">{m.n}</div>
+              <div className="mt-3 text-[12.5px] text-muted leading-snug max-w-[20ch]">{m.l}</div>
             </div>
           ))}
         </div>
       </div>
-      <div className="container-page"><div className="h-px bg-hairline" /></div>
+    </section>
+  );
+}
+
+function CommercialFoundation() {
+  return (
+    <section id="foundation" className="scroll-mt-20 bg-bg border-t border-hairline">
+      <div className="container-page py-24 md:py-32">
+        <p className="eyebrow mb-5">The commercial foundation</p>
+        <h2 className="font-serif text-[34px] sm:text-[48px] md:text-[52px] max-w-[20ch] font-normal leading-[1.06] tracking-[-0.015em] text-paper">
+          Most operators run the pipeline. <em className="italic text-gold">I build the system that prices it.</em>
+        </h2>
+        <p className="mt-6 max-w-[64ch] text-[16.5px] text-muted leading-[1.65]">
+          At Team Falcons I built the commercial foundation from zero — a pricing engine, bilingual rate cards, a 91-page agency framework, the trackers that move the pipeline, and a production pricing app. The same systems thinking carries into every brief.
+        </p>
+        <p className="mt-4 font-mono text-[12.5px] text-gold tracking-[0.02em]">
+          Built in 70 days — 970+ hours logged · 0 days off · 118 tasks shipped · 27 meetings.
+        </p>
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-px bg-hairline border border-hairline rounded-panel overflow-hidden">
+          {foundation.map((f) => (
+            <article key={f.ix} className="bg-panel p-8 sm:p-9">
+              <div className="font-mono text-[12px] text-gold">{f.ix}</div>
+              <h3 className="mt-3.5 font-serif text-[23px] leading-[1.18] tracking-[-0.01em] text-paper font-normal">{f.title}</h3>
+              <p className="mt-3 text-[14.5px] text-muted leading-[1.6]">{f.body}</p>
+              <div className="mt-5 flex flex-wrap gap-1.5">
+                {f.tags.map((t) => (
+                  <span key={t} className="font-mono text-[11px] text-muted border border-hairline px-2.5 py-1 rounded-[5px]">{t}</span>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
     </section>
   );
 }
@@ -128,7 +194,7 @@ function SelectedWork() {
     <section id="work" className="scroll-mt-20">
       <div className="container-page pt-24 md:pt-32 pb-12">
         <p className="eyebrow mb-5">Selected work</p>
-        <h2 className="text-[34px] sm:text-[48px] md:text-[56px] max-w-[760px] font-medium leading-[1.05] tracking-[-0.015em] text-paper">
+        <h2 className="font-serif text-[34px] sm:text-[48px] md:text-[56px] max-w-[760px] font-normal leading-[1.05] tracking-[-0.015em] text-paper">
           Live campaigns. Real partners. <em className="italic font-normal text-gold">Work that shipped.</em>
         </h2>
       </div>
@@ -148,21 +214,15 @@ function SelectedWork() {
                   ) : (
                     <div className="absolute inset-0 bg-deep" />
                   )}
-
-                  {/* Index — top-left */}
                   <div className="absolute top-4 left-5 italic text-[16px] tracking-wider text-paper/55 mix-blend-multiply">0{i + 1}</div>
-
-                  {/* Timeframe badge — top-right */}
                   <div className="absolute top-4 right-5 inline-flex items-center rounded-full bg-panel/95 backdrop-blur text-paper text-[10px] px-3 py-1.5 tracking-[0.16em] uppercase border border-hairline shadow-sm">{c.timeframe}</div>
-
-                  {/* Arrow signpost — bottom-right, only on hover */}
                   <div className="absolute bottom-4 right-4 h-10 w-10 rounded-full bg-gold text-panel inline-flex items-center justify-center opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none shadow-md">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="7" y1="17" x2="17" y2="7" /><polyline points="9 7 17 7 17 15" /></svg>
                   </div>
                 </div>
                 <div className="pt-5">
                   <p className="text-[11px] uppercase tracking-[0.22em] text-muted">{c.eyebrow}</p>
-                  <h3 className="mt-3 text-[20px] md:text-[24px] tracking-[-0.005em] leading-snug text-paper font-medium">{c.title}</h3>
+                  <h3 className="mt-3 font-serif text-[20px] md:text-[24px] tracking-[-0.005em] leading-snug text-paper font-normal">{c.title}</h3>
                   <div className="mt-4 inline-flex items-center gap-2 text-[12px] tracking-[0.16em] uppercase text-gold group-hover:gap-3 transition-all font-semibold">
                     Read case file <span aria-hidden>→</span>
                   </div>
@@ -183,14 +243,14 @@ function Federation() {
     <section id="federation" className="scroll-mt-20 bg-bg">
       <div className="container-page py-24 md:py-32">
         <p className="eyebrow mb-5">Federation & advisory</p>
-        <h2 className="text-display-s sm:text-display-m font-light leading-[1.05] max-w-[800px]">
-          Trust at the<br/><em className="italic text-gold">federation tier.</em>
+        <h2 className="font-serif text-display-s sm:text-display-m font-normal leading-[1.05] max-w-[800px] text-paper">
+          Trust at the <em className="italic text-gold">federation tier.</em>
         </h2>
-        <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-px bg-hairline border border-hairline">
+        <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-px bg-hairline border border-hairline rounded-panel overflow-hidden">
           {items.map((it) => (
             <article key={it.org} className="bg-panel p-7 sm:p-8 lift border-l-2 border-l-gold">
               <span className="text-[10px] tracking-[0.22em] uppercase text-gold">{it.tag}</span>
-              <h3 className="mt-4 italic text-[22px] text-paper leading-tight font-normal">{it.org}</h3>
+              <h3 className="mt-4 font-serif italic text-[22px] text-paper leading-tight font-normal">{it.org}</h3>
               <p className="mt-4 text-paper/80 text-[15px] leading-[1.65]">{it.body}</p>
             </article>
           ))}
@@ -212,11 +272,10 @@ function Brands() {
     <section id="brands" className="bg-bg">
       <div className="container-page py-16 md:py-24">
         <p className="eyebrow mb-10">Brands & partners</p>
-        {/* BIG logo strip on a dark panel */}
         <div className="mb-14 panel p-10 md:p-16">
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-12 gap-y-10 items-center justify-items-center">
             {featured.map((l) => (
-              <div key={l.alt} className="relative h-12 md:h-16 w-full max-w-[200px] opacity-80 hover:opacity-100 transition-opacity">
+              <div key={l.alt} className="relative h-12 md:h-16 w-full max-w-[200px] opacity-70 hover:opacity-100 transition-opacity">
                 <Image src={l.src} alt={l.alt} fill sizes="200px" className="object-contain" />
               </div>
             ))}
@@ -245,15 +304,15 @@ function HowIWork() {
     <section id="how" className="scroll-mt-20">
       <div className="container-page py-24 md:py-32">
         <p className="eyebrow mb-5">How I work</p>
-        <h2 className="text-display-s sm:text-display-m font-light leading-[1.05] max-w-[860px]">
+        <h2 className="font-serif text-display-s sm:text-display-m font-normal leading-[1.05] max-w-[860px] text-paper">
           Clarify. Build. <em className="italic text-gold">Ship.</em>
         </h2>
         <div className="mt-16 grid md:grid-cols-3 gap-12">
           {principles.map((s) => (
             <div key={s.n} className="relative pt-6">
               <div className="absolute top-0 left-0 h-px w-16 bg-gold" aria-hidden />
-              <div className="italic text-[18px] text-gold mb-3">{s.n}</div>
-              <h3 className="text-[28px] md:text-[34px] tracking-[-0.01em] leading-[1.1] font-light">{s.title}</h3>
+              <div className="font-mono text-[14px] text-gold mb-3">{s.n}</div>
+              <h3 className="font-serif text-[28px] md:text-[34px] tracking-[-0.01em] leading-[1.1] font-normal text-paper">{s.title}</h3>
             </div>
           ))}
         </div>
@@ -269,14 +328,14 @@ function Collaborate() {
     <section id="collaborate" className="scroll-mt-20 bg-bg">
       <div className="container-page py-24 md:py-32">
         <p className="eyebrow mb-5">Ways to collaborate</p>
-        <h2 className="text-display-s sm:text-display-m font-light leading-[1.05] max-w-[860px]">
-          Four shapes.<br/><em className="italic text-gold">Full-time leads.</em>
+        <h2 className="font-serif text-display-s sm:text-display-m font-normal leading-[1.05] max-w-[860px] text-paper">
+          Four shapes. <em className="italic text-gold">Full-time leads.</em>
         </h2>
-        <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-px bg-hairline border border-hairline">
+        <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-px bg-hairline border border-hairline rounded-panel overflow-hidden">
           {items.map((it, i) => (
             <article key={it.label} className="bg-panel p-8 lift">
-              <span className="text-[10px] tracking-[0.22em] uppercase text-gold">0{i+1} · {it.eyebrow}</span>
-              <h3 className="mt-4 italic text-[26px] text-paper leading-tight font-normal">{it.label}</h3>
+              <span className="text-[10px] tracking-[0.22em] uppercase text-gold">0{i + 1} · {it.eyebrow}</span>
+              <h3 className="mt-4 font-serif italic text-[26px] text-paper leading-tight font-normal">{it.label}</h3>
               <div className="mt-3 text-[12px] tracking-[0.18em] uppercase text-muted">{it.shape}</div>
             </article>
           ))}
@@ -293,11 +352,11 @@ function Contact() {
     <section id="contact" className="scroll-mt-20 bg-bg">
       <div className="container-page py-28 md:py-40">
         <p className="eyebrow mb-5">Contact</p>
-        <h2 className="text-[44px] md:text-[80px] leading-[1.02] tracking-[-0.02em] max-w-[900px] font-light">
+        <h2 className="font-serif text-[44px] md:text-[80px] leading-[1.02] tracking-[-0.02em] max-w-[900px] font-normal text-paper">
           Have a brief? <em className="italic text-gold">Email me directly.</em>
         </h2>
         <div className="mt-14">
-          <a href={`mailto:${site.email}`} className="text-[32px] md:text-[56px] tracking-[-0.02em] underline-offset-[8px] decoration-[1px] decoration-gold/40 hover:decoration-gold hover:text-gold transition-colors italic font-light">
+          <a href={`mailto:${site.email}`} className="font-serif text-[32px] md:text-[56px] tracking-[-0.02em] underline-offset-[8px] decoration-[1px] decoration-gold/40 hover:decoration-gold hover:text-gold transition-colors italic font-normal text-paper">
             {site.email}
           </a>
         </div>
@@ -318,7 +377,7 @@ function Footer() {
     <footer className="border-t border-hairline">
       <div className="container-page py-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
         <p className="text-[14px] text-muted">© {new Date().getFullYear()} {site.name}</p>
-        <p className="text-[14px] text-muted"><span className="italic">Designed and built by Koge</span> · Cormorant Garamond</p>
+        <p className="text-[14px] text-muted"><span className="italic">Designed and built by Koge</span> · Newsreader</p>
       </div>
     </footer>
   );
