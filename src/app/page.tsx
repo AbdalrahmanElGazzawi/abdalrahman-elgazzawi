@@ -5,7 +5,7 @@ import {
   waysToCollaborate, federationAdvisory,
 } from "@/content/site";
 
-// Hero images per case-study slug — inlined for build resilience.
+// Hero images per case-study slug. inlined for build resilience.
 // Drop more files at /public/work/<slug>.jpg as you have them.
 const heroImages: Record<string, string | undefined> = {
   "esports-world-cup":              "/photos/ewc-card.jpg",          // real photo: EWC Grand Final stage
@@ -20,7 +20,7 @@ import {
   FalconsCommercialArt, PricingOSArt, SonyINZONEArt, GLGArt,
 } from "@/components/CaseArtwork";
 import { LiveCampaigns } from "@/components/LiveCampaigns";
-import { AIOperations } from "@/components/AIOperations";
+// import { AIOperations } from "@/components/AIOperations";
 import { Moments } from "@/components/Moments";
 
 // Map slug → bespoke SVG art (for cards without real photos)
@@ -40,7 +40,6 @@ export default function Page() {
         <TrustStrip />
         <SelectedWork />
         <LiveCampaigns />
-        <AIOperations />
         <Moments />
         <Federation />
         <Brands />
@@ -74,7 +73,7 @@ function Nav() {
 function Hero() {
   return (
     <section className="relative overflow-hidden bg-bg">
-      {/* Clean dark hero — subtle radial gold glow, no photo */}
+      {/* Clean dark hero. subtle radial gold glow, no photo */}
       <div aria-hidden className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(201,169,97,0.10) 0%, rgba(201,169,97,0.04) 30%, transparent 65%)" }} />
         <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 50% 40% at 85% 100%, rgba(201,169,97,0.06) 0%, transparent 50%)" }} />
@@ -92,7 +91,7 @@ function Hero() {
           </div>
         </div>
         <h1 className="text-[52px] md:text-[112px] leading-[0.96] tracking-[-0.025em] font-light max-w-[1100px]">
-          Strategic partnerships,<br/>integrated campaigns,<br/><em className="italic font-normal text-gold">AI-augmented operations</em>.
+          I run commercial<br/>partnerships and<br/><em className="italic font-normal text-gold">campaigns.</em>
         </h1>
         <p className="mt-8 max-w-[680px] text-[15px] md:text-[17px] text-muted italic leading-[1.6]">
           {hero.sub}
@@ -133,7 +132,7 @@ function SelectedWork() {
       <div className="container-page pt-24 md:pt-32 pb-12">
         <p className="eyebrow mb-5">Selected work</p>
         <h2 className="text-display-s sm:text-display-m max-w-[760px] font-light leading-[1.05]">
-          Live campaigns. Shipped systems.<br/><em className="italic text-gold">Partnerships that closed.</em>
+          Live campaigns. Real partners.<br/><em className="italic text-gold">Work that shipped.</em>
         </h2>
       </div>
       <div className="container-page pb-24">
@@ -156,13 +155,13 @@ function SelectedWork() {
                     <div className="absolute inset-0" style={{ background: `linear-gradient(135deg, #1C1814 0%, #0F0D0B 100%)` }} />
                   )}
 
-                  {/* Index number — top-left */}
+                  {/* Index number. top-left */}
                   <div className="absolute top-5 left-5 italic text-paper/70 text-[18px] tracking-wider">0{i + 1}</div>
 
-                  {/* Timeframe badge — top-right */}
+                  {/* Timeframe badge. top-right */}
                   <div className="absolute top-5 right-5 inline-flex items-center rounded-full bg-bg/85 backdrop-blur text-paper text-[11px] px-3 py-1.5 tracking-[0.16em] uppercase border border-paper/10">{c.timeframe}</div>
 
-                  {/* Gold arrow signpost — bottom-right corner, animated on hover */}
+                  {/* Gold arrow signpost. bottom-right corner, animated on hover */}
                   <div className="absolute bottom-5 right-5 h-12 w-12 rounded-full bg-gold/95 text-bg inline-flex items-center justify-center text-[20px] font-light shadow-lg shadow-bg/40 transition-all duration-300 group-hover:scale-110 group-hover:bg-gold pointer-events-none">
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><line x1="7" y1="17" x2="17" y2="7" /><polyline points="9 7 17 7 17 15" /></svg>
                   </div>
