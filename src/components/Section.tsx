@@ -25,18 +25,18 @@ export function Section({
       <div className="container-page">
         {eyebrow && <div className="eyebrow mb-4">{eyebrow}</div>}
         {title && (
-          <h2 className="text-display-s sm:text-display-m font-bold text-paper max-w-[22ch]">
+          <h2 className="font-serif text-display-s sm:text-display-m text-paper max-w-[24ch] font-normal">
             {title}
             {accent && (
               <>
                 {" "}
-                <span className="text-gold font-bold">{accent}</span>
+                <span className="text-gold italic">{accent}</span>
               </>
             )}
           </h2>
         )}
         {sub && (
-          <p className="text-muted text-[15px] sm:text-[16px] mt-4 max-w-prose leading-[1.65]">
+          <p className="text-muted text-[16px] sm:text-[17px] mt-5 max-w-prose leading-[1.7]">
             {sub}
           </p>
         )}

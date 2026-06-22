@@ -3,13 +3,45 @@
 @tailwind utilities;
 
 :root { color-scheme: dark; }
-html, body { background: #0F0D0B; color: #F0EAE0; }
-* { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-::selection { background: #C9A961; color: #0F0D0B; }
+html { scroll-behavior: smooth; }
+html, body { background: #15110D; color: #EFE7D9; }
+body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-optical-sizing: auto; }
+::selection { background: #C99A55; color: #15110D; }
 
-.container-page { @apply max-w-content mx-auto px-6 sm:px-8 lg:px-12; }
-.eyebrow { @apply uppercase text-muted; font-size: 11px; letter-spacing: 0.32em; font-weight: 500; }
-.panel { @apply bg-panel border border-hairline rounded-[14px]; }
-.lift { @apply transition-all duration-300; }
-.lift:hover { @apply border-gold/40; box-shadow: 0 2px 24px -12px rgba(201,169,97,0.18); }
+:focus { outline: none; }
+:focus-visible { outline: 2px solid #C99A55; outline-offset: 3px; border-radius: 2px; }
+
+.container-page { @apply mx-auto px-6 sm:px-8 lg:px-12; max-width: 1240px; }
+
+/* Quieter eyebrow — small caps feel, not screamy uppercase */
+.eyebrow {
+  font-family: var(--font-newsreader), Georgia, serif;
+  font-style: italic;
+  font-size: 13px;
+  color: #998E7E;
+  letter-spacing: 0;
+  text-transform: none;
+  font-weight: 400;
+}
+
+.panel { @apply bg-panel border border-hairline; border-radius: 10px; }
+.lift  { transition: transform .25s ease, border-color .2s ease, box-shadow .25s ease; }
+.lift:hover { transform: translateY(-2px); border-color: rgba(201,154,85,0.4); box-shadow: 0 24px 48px -28px rgba(201,154,85,0.18); }
+
 .tab-nums { font-variant-numeric: tabular-nums; }
+
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(201,154,85,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,154,85,0.03) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,*::before,*::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
+@media print {
+  body { background: white; color: black; }
+  nav, footer, .no-print, .grid-bg { display: none !important; }
+}
