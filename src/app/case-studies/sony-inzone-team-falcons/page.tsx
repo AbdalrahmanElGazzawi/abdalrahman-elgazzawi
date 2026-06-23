@@ -8,6 +8,10 @@ const cs: CaseStudy = {
   role: "Commercial lead — scope, price, contract, activation, measurement",
   timeframe: "Q4 2025",
   tags: ["KSA market","Creator activation","Discount mechanic","Brand seeding","Direct-response measurement"],
+  media: [
+    { type: "photo", src: "/work/sony-inzone-team-falcons.jpg", alt: "Sony INZONE x Team Falcons", caption: "Closed 2026 campaign, operated end-to-end. KSA market.", tag: "Campaign" },
+    { type: "photo", src: "/photos/falcons-card.jpg",           alt: "Team Falcons brand context", caption: "Tier-1 esports organisation, Saudi Arabia.", tag: "Context" },
+  ],
   context:
     "Sony INZONE — Sony's gaming peripherals line — wanted to land a credible KSA presence ahead of regional retail expansion. They came in via Ruder Finn Atteline. The brief asked for credibility with Saudi gaming creators and a measurable connection to retail movement.",
   problem:

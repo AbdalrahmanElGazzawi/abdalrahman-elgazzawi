@@ -2,6 +2,7 @@
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { Section } from "@/components/Section";
+import { MediaGallery } from "@/components/MediaGallery";
 import { caseStudies } from "@/content/site";
 
 const cs = caseStudies.find((c) => c.slug === "team-falcons-commercial-stack")!;
@@ -56,6 +57,14 @@ export default function FalconsCaseStudy() {
             ))}
           </div>
         </Section>
+        <MediaGallery
+          items={[
+            { type: "photo", src: "/work/team-falcons-commercial-stack.jpg", alt: "Team Falcons brand surface", caption: "Riyadh, 2026. Fixed-term commercial partnerships engagement.", tag: "Engagement" },
+            { type: "photo", src: "/photos/falcons-card.jpg", alt: "Team Falcons context", caption: "Tier-1 esports organisation, Saudi Arabia.", tag: "Context" },
+          ]}
+          title="Engagement surface."
+          accent="Internal artifacts withheld by contract."
+        />
       </main>
       <Footer />
     </>

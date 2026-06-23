@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import type { ReactNode } from "react";
 import { ConfidentialityNote } from "./ConfidentialityNote";
+import { MediaGallery, type MediaItem } from "./MediaGallery";
 import { site } from "@/content/site";
 
 export interface CaseStudy {
@@ -12,6 +13,7 @@ export interface CaseStudy {
   proves: string;
   visual?: ReactNode;
   heroImage?: { src: string; alt: string };
+  media?: MediaItem[];
 }
 
 function Nav() {
@@ -124,6 +126,10 @@ export function CaseStudyPage({ cs, prev, next }: {
             </div>
           </div>
         </section>
+
+        {cs.media && cs.media.length > 0 && (
+          <MediaGallery items={cs.media} />
+        )}
 
         <section className="border-t border-hairline py-16 sm:py-20">
           <div className="container-page grid grid-cols-1 lg:grid-cols-12 gap-10">

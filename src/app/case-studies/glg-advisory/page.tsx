@@ -8,6 +8,9 @@ const cs: CaseStudy = {
   role: "Council Member — Gaming, Esports & AI",
   timeframe: "April 2025 — Present (1+ year)",
   tags: ["Expert advisory","Market intelligence","MENA gaming","Investor briefings"],
+  media: [
+    { type: "photo", src: "/photos/glg-card.jpg", alt: "GLG council engagement", caption: "Subject-matter expert on gaming, esports, MENA. Client identities confidential.", tag: "Advisory" },
+  ],
   context:
     "GLG (Gerson Lehrman Group) is the world's largest expert-network platform — connecting institutional investors, consulting firms, and global enterprises with subject-matter experts for paid consultations. Council Members are vetted, retained, and engaged on demand.",
   problem:

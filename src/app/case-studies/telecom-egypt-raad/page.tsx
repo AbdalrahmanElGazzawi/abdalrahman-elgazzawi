@@ -8,6 +8,12 @@ const cs: CaseStudy = {
   role: "Esports Specialist — Operations",
   timeframe: "Mar 2021 — Oct 2021",
   tags: ["Venue construction","PMPL bootcamp","KPI/KRI structure","Vendor coordination"],
+  media: [
+    { type: "photo", src: "/work/raad-facility.jpg",      alt: "RA AD esports venue",          caption: "End-to-end planning at the Telecom Egypt sporting club.", tag: "Venue" },
+    { type: "photo", src: "/work/raad-team.jpg",          alt: "RA AD operations team",         caption: "On-site ops during PMPL playoff bootcamp.", tag: "Team" },
+    { type: "photo", src: "/work/telecom-egypt-raad.jpg", alt: "PMPL bootcamp at Telecom HQ",   caption: "Build-out completed in under seven days.", tag: "Build" },
+    { type: "photo", src: "/photos/te-team.jpg",          alt: "Telecom Egypt team",            caption: "Cross-functional team that shipped it.", tag: "Team" },
+  ],
   context:
     "Telecom Egypt — Egypt's national fixed-line and broadband operator — entered esports through RA'AD, its sponsored team and operational arm. The mission required physical infrastructure, operational discipline, and a credible competitive presence inside months.",
   problem:

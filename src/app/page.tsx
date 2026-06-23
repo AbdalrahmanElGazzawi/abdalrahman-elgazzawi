@@ -24,17 +24,16 @@ const caseArt: Record<string, React.ReactNode | undefined> = {};
 
 // Real, sourced metrics (Path Forward proof-of-value + CVs). Safe to publish.
 const ledger = [
-  { n: "11",    l: "Commercial systems built from zero · Falcons" },
-  { n: "12",    l: "Live commercial deals progressed" },
-  { n: "180+",  l: "Talent roster priced & packaged" },
-  { n: "970+",  l: "Hours logged in 70 days · 0 off" },
-  { n: "778+",  l: "EWC deliverables shipped" },
-  { n: "5M+",   l: "Viewers reached across campaigns" },
-  { n: "78+",   l: "Brands pitched · 5 agencies" },
-  { n: "147",   l: "LEAP qualified leads · 6 closed" },
+  { n: "12",    l: "Partner pipeline progressed at Falcons" },
+  { n: "7-fig", l: "Partnership opportunity advanced to contract stage" },
+  { n: "778+",  l: "EWC commercial deliverables shipped" },
+  { n: "5M+",   l: "Viewers reached across EWC campaigns" },
+  { n: "78+",   l: "Brands pitched across 5 agencies" },
+  { n: "6",     l: "New clients onboarded at True Gaming" },
+  { n: "147",   l: "Contacts captured at LEAP Expo" },
+  { n: "50+",   l: "Gamers8 proposals reviewed at Vanguard" },
 ];
 
-// The commercial foundation — real systems built at Team Falcons.
 const foundation = [
   {
     ix: "01 — Pricing methodology",
@@ -69,7 +68,6 @@ export default function Page() {
       <main>
         <Hero />
         <Ledger />
-        <CommercialFoundation />
         <SelectedWork />
         <Artifacts />
         <LiveCampaigns />
@@ -150,38 +148,6 @@ function Ledger() {
   );
 }
 
-function CommercialFoundation() {
-  return (
-    <section id="foundation" className="scroll-mt-20 bg-bg border-t border-hairline">
-      <div className="container-page py-24 md:py-32">
-        <p className="eyebrow mb-5">The commercial foundation</p>
-        <h2 className="font-serif text-[34px] sm:text-[48px] md:text-[52px] max-w-[20ch] font-normal leading-[1.06] tracking-[-0.015em] text-paper">
-          Most operators run the pipeline. <em className="italic text-gold">I build the system that prices it.</em>
-        </h2>
-        <p className="mt-6 max-w-[64ch] text-[16.5px] text-muted leading-[1.65]">
-          At Team Falcons I built the commercial foundation from zero — a pricing engine, bilingual rate cards, a 91-page agency framework, the trackers that move the pipeline, and a production pricing app. The same systems thinking carries into every brief.
-        </p>
-        <p className="mt-4 font-mono text-[12.5px] text-gold tracking-[0.02em]">
-          Built in 70 days — 970+ hours logged · 0 days off · 118 tasks shipped · 27 meetings.
-        </p>
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-px bg-hairline border border-hairline rounded-panel overflow-hidden">
-          {foundation.map((f) => (
-            <article key={f.ix} className="bg-panel p-8 sm:p-9">
-              <div className="font-mono text-[12px] text-gold">{f.ix}</div>
-              <h3 className="mt-3.5 font-serif text-[23px] leading-[1.18] tracking-[-0.01em] text-paper font-normal">{f.title}</h3>
-              <p className="mt-3 text-[14.5px] text-muted leading-[1.6]">{f.body}</p>
-              <div className="mt-5 flex flex-wrap gap-1.5">
-                {f.tags.map((t) => (
-                  <span key={t} className="font-mono text-[11px] text-muted border border-hairline px-2.5 py-1 rounded-[5px]">{t}</span>
-                ))}
-              </div>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 function SelectedWork() {
   return (

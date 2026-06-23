@@ -251,7 +251,6 @@ export const aiOperations = {
  { slug: "supabase", name: "Supabase" },
  ],
  shipped: [
- { label: "Alliance Pricing OS", url: "https://alliance-pricing-web.vercel.app", note: "Live talent pricing engine · 31 talents classified · v1.0" },
  { label: "Falcons Pricing Web", url: null, note: "Internal quote portal · bilingual EN/AR" },
  { label: "Master Commercial OS v2", url: null, note: "38-tab pricing + rights packaging governance" },
  ],

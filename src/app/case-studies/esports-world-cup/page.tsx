@@ -2,6 +2,7 @@
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { Section } from "@/components/Section";
+import { MediaGallery } from "@/components/MediaGallery";
 import { caseStudies } from "@/content/site";
 
 const cs = caseStudies.find((c) => c.slug === "esports-world-cup")!;
@@ -72,6 +73,16 @@ export default function SportfiveCaseStudy() {
             ))}
           </div>
         </Section>
+        <MediaGallery
+          items={[
+            { type: "photo", src: "/work/ewc-honor.jpg",            alt: "EWC sponsor activations on venue floor", caption: "Sponsor surfaces across the EWC venue. Riyadh, 2024.", tag: "Venue" },
+            { type: "photo", src: "/work/ewc-sponsors.jpg",         alt: "Sponsor delivery floor",                 caption: "On-the-ground delivery of contracted assets at scale.", tag: "Delivery" },
+            { type: "photo", src: "/work/esports-world-cup.jpg",    alt: "EWC venue, finals night",                caption: "Headline arena moment from the finals weekend.", tag: "Event" },
+            { type: "photo", src: "/photos/ewc-venue-night.jpg",    alt: "EWC venue at night",                     caption: "Riyadh Boulevard skin, EWC takeover.", tag: "Venue" },
+            { type: "photo", src: "/photos/sef-flag.jpg",           alt: "Saudi Esports Federation moment",        caption: "SEF IP commercial roadmap surface.", tag: "SEF" },
+            { type: "doc",   src: "/work/artifact-ewc-welcome.jpg", alt: "EWC commercial welcome deck — cover",    caption: "Public-facing welcome deck. Cover only.", tag: "Deck" },
+          ]}
+        />
       </main>
       <Footer />
     </>
