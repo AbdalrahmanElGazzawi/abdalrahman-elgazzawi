@@ -8,26 +8,19 @@ import {
 // Hero images per case-study slug. inlined for build resilience.
 // Drop more files at /public/work/<slug>.jpg as you have them.
 const heroImages: Record<string, string | undefined> = {
-  "esports-world-cup":              "/photos/ewc-card.jpg",
-  "true-gaming-leap":               "/photos/leap-keynote-card.jpg",
-  "telecom-egypt-raad":             "/work/raad-facility.jpg",
-  "sony-inzone-team-falcons":       undefined,
-  "team-falcons-commercial-stack":  undefined,
-  "falcons-pricing-os":             undefined,
-  "glg-advisory":                   undefined,
+  "esports-world-cup":              "/work/esports-world-cup.jpg",
+  "true-gaming-leap":               "/work/true-gaming-leap.jpg",
+  "telecom-egypt-raad":             "/work/telecom-egypt-raad.jpg",
+  "sony-inzone-team-falcons":       "/work/sony-inzone-team-falcons.jpg",
+  "team-falcons-commercial-stack":  "/work/team-falcons-commercial-stack.jpg",
+  "falcons-pricing-os":             "/photos/falcons-card.jpg",
+  "glg-advisory":                   "/photos/glg-card.jpg",
 };
-import {
-  FalconsCommercialArt, PricingOSArt, SonyINZONEArt, GLGArt,
-} from "@/components/CaseArtwork";
+// CaseArtwork imports removed: every case now has a real photo via heroImages.
 import { LiveCampaigns } from "@/components/LiveCampaigns";
 import { Moments } from "@/components/Moments";
 
-const caseArt: Record<string, React.ReactNode | undefined> = {
-  "team-falcons-commercial-stack":  <FalconsCommercialArt />,
-  "falcons-pricing-os":             <PricingOSArt />,
-  "sony-inzone-team-falcons":       <SonyINZONEArt />,
-  "glg-advisory":                   <GLGArt />,
-};
+const caseArt: Record<string, React.ReactNode | undefined> = {};
 
 // Real, sourced metrics (Path Forward proof-of-value + CVs). Safe to publish.
 const ledger = [
@@ -78,6 +71,7 @@ export default function Page() {
         <Ledger />
         <CommercialFoundation />
         <SelectedWork />
+        <Artifacts />
         <LiveCampaigns />
         <Moments />
         <Federation />
@@ -380,5 +374,67 @@ function Footer() {
         <p className="text-[14px] text-muted"><span className="italic">Designed and built by Koge</span> · Newsreader</p>
       </div>
     </footer>
+  );
+}
+
+function Artifacts() {
+  const items = [
+    {
+      src: "/work/artifact-truegaming-onepager.jpg",
+      title: "Senior Commercial Partnerships one-pager",
+      caption: "Personal value-prop one-pager. Hand-built. PDF, 1 page.",
+      tag: "One-pager",
+    },
+    {
+      src: "/work/artifact-ewc-welcome.jpg",
+      title: "Esports World Cup — welcome deck",
+      caption: "Cover from the EWC commercial welcome deck. Public-facing.",
+      tag: "Deck",
+    },
+    {
+      src: "/work/ewc-honor.jpg",
+      title: "EWC sponsor activations",
+      caption: "Sponsor surfaces across the EWC venue. Riyadh, 2024.",
+      tag: "Activation",
+    },
+    {
+      src: "/work/ewc-sponsors.jpg",
+      title: "Sponsor delivery floor",
+      caption: "On-the-ground delivery of contracted assets at scale.",
+      tag: "Delivery",
+    },
+  ];
+  return (
+    <section id="artifacts" className="scroll-mt-20 bg-bg border-t border-hairline">
+      <div className="container-page py-24 md:py-32">
+        <p className="eyebrow mb-5">Artifacts</p>
+        <h2 className="font-serif text-[34px] sm:text-[48px] md:text-[52px] max-w-[20ch] font-normal leading-[1.06] tracking-[-0.015em] text-paper">
+          The work itself. <em className="italic text-gold">Not a description of the work.</em>
+        </h2>
+        <p className="mt-6 max-w-[60ch] text-[16px] text-muted leading-[1.65]">
+          A small sample of decks, one-pagers, and sponsor-floor moments. Internal partner data and rate numbers redacted by default.
+        </p>
+        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {items.map((it) => (
+            <figure key={it.src} className="group">
+              <div className="relative aspect-[3/4] overflow-hidden rounded-[10px] border border-hairline bg-panel">
+                <Image
+                  src={it.src}
+                  alt={it.title}
+                  fill
+                  sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                />
+                <span className="absolute top-3 left-3 text-[10px] uppercase tracking-[0.18em] bg-panel/95 border border-hairline rounded-full px-2.5 py-1 text-muted">{it.tag}</span>
+              </div>
+              <figcaption className="mt-4">
+                <div className="text-[14px] text-paper font-medium leading-snug">{it.title}</div>
+                <div className="text-[12.5px] text-muted mt-1 leading-snug">{it.caption}</div>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
