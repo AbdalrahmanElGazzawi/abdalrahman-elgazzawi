@@ -17,22 +17,10 @@ const heroImages: Record<string, string | undefined> = {
   "glg-advisory":                   "/photos/glg-card.jpg",
 };
 // CaseArtwork imports removed: every case now has a real photo via heroImages.
-import { LiveCampaigns } from "@/components/LiveCampaigns";
-import { Moments } from "@/components/Moments";
 
 const caseArt: Record<string, React.ReactNode | undefined> = {};
 
 // Real, sourced metrics (Path Forward proof-of-value + CVs). Safe to publish.
-const ledger = [
-  { n: "12",    l: "Partner pipeline progressed at Falcons" },
-  { n: "7-fig", l: "Partnership opportunity advanced to contract stage" },
-  { n: "778+",  l: "EWC commercial deliverables shipped" },
-  { n: "5M+",   l: "Viewers reached across EWC campaigns" },
-  { n: "78+",   l: "Brands pitched across 5 agencies" },
-  { n: "6",     l: "New clients onboarded at True Gaming" },
-  { n: "147",   l: "Contacts captured at LEAP Expo" },
-  { n: "50+",   l: "Gamers8 proposals reviewed at Vanguard" },
-];
 
 const foundation = [
   {
@@ -124,22 +112,6 @@ function Hero() {
   );
 }
 
-function Ledger() {
-  return (
-    <section className="bg-bg border-t border-hairline">
-      <div className="container-page">
-        <div className="grid grid-cols-2 md:grid-cols-4">
-          {ledger.map((m, i) => (
-            <div key={m.l} className={`py-7 md:py-8 px-1 md:px-5 border-hairline ${i % 4 !== 3 ? "md:border-r" : ""} ${i % 2 === 0 ? "border-r md:border-r" : ""} ${i < ledger.length - (ledger.length % 4 || 4) ? "border-b" : "border-b md:border-b-0"}`}>
-              <div className="font-mono text-[26px] md:text-[32px] leading-none tracking-[-0.01em] tab-nums text-gold">{m.n}</div>
-              <div className="mt-3 text-[12.5px] text-muted leading-snug max-w-[20ch]">{m.l}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 
 function SelectedWork() {
@@ -190,29 +162,6 @@ function SelectedWork() {
   );
 }
 
-function Federation() {
-  const { items } = federationAdvisory;
-  return (
-    <section id="federation" className="scroll-mt-20 bg-bg">
-      <div className="container-page py-24 md:py-32">
-        <p className="eyebrow mb-5">Federation & advisory</p>
-        <h2 className="font-serif text-display-s sm:text-display-m font-normal leading-[1.05] max-w-[800px] text-paper">
-          Trust at the <em className="italic text-gold">federation tier.</em>
-        </h2>
-        <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-px bg-hairline border border-hairline rounded-panel overflow-hidden">
-          {items.map((it) => (
-            <article key={it.org} className="bg-panel p-7 sm:p-8 lift border-l-2 border-l-gold">
-              <span className="text-[10px] tracking-[0.22em] uppercase text-gold">{it.tag}</span>
-              <h3 className="mt-4 font-serif italic text-[22px] text-paper leading-tight font-normal">{it.org}</h3>
-              <p className="mt-4 text-paper/80 text-[15px] leading-[1.65]">{it.body}</p>
-            </article>
-          ))}
-        </div>
-      </div>
-      <div className="container-page"><div className="h-px bg-hairline" /></div>
-    </section>
-  );
-}
 
 function Brands() {
   const featured = [
@@ -336,64 +285,3 @@ function Footer() {
   );
 }
 
-function Artifacts() {
-  const items = [
-    {
-      src: "/work/artifact-truegaming-onepager.jpg",
-      title: "Senior Commercial Partnerships one-pager",
-      caption: "Personal value-prop one-pager. Hand-built. PDF, 1 page.",
-      tag: "One-pager",
-    },
-    {
-      src: "/work/artifact-ewc-welcome.jpg",
-      title: "Esports World Cup — welcome deck",
-      caption: "Cover from the EWC commercial welcome deck. Public-facing.",
-      tag: "Deck",
-    },
-    {
-      src: "/work/ewc-honor.jpg",
-      title: "EWC sponsor activations",
-      caption: "Sponsor surfaces across the EWC venue. Riyadh, 2024.",
-      tag: "Activation",
-    },
-    {
-      src: "/work/ewc-sponsors.jpg",
-      title: "Sponsor delivery floor",
-      caption: "On-the-ground delivery of contracted assets at scale.",
-      tag: "Delivery",
-    },
-  ];
-  return (
-    <section id="artifacts" className="scroll-mt-20 bg-bg border-t border-hairline">
-      <div className="container-page py-24 md:py-32">
-        <p className="eyebrow mb-5">Artifacts</p>
-        <h2 className="font-serif text-[34px] sm:text-[48px] md:text-[52px] max-w-[20ch] font-normal leading-[1.06] tracking-[-0.015em] text-paper">
-          The work itself. <em className="italic text-gold">Not a description of the work.</em>
-        </h2>
-        <p className="mt-6 max-w-[60ch] text-[16px] text-muted leading-[1.65]">
-          A small sample of decks, one-pagers, and sponsor-floor moments. Internal partner data and rate numbers redacted by default.
-        </p>
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {items.map((it) => (
-            <figure key={it.src} className="group">
-              <div className="relative aspect-[3/4] overflow-hidden rounded-[10px] border border-hairline bg-panel">
-                <Image
-                  src={it.src}
-                  alt={it.title}
-                  fill
-                  sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                />
-                <span className="absolute top-3 left-3 text-[10px] uppercase tracking-[0.18em] bg-panel/95 border border-hairline rounded-full px-2.5 py-1 text-muted">{it.tag}</span>
-              </div>
-              <figcaption className="mt-4">
-                <div className="text-[14px] text-paper font-medium leading-snug">{it.title}</div>
-                <div className="text-[12.5px] text-muted mt-1 leading-snug">{it.caption}</div>
-              </figcaption>
-            </figure>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
