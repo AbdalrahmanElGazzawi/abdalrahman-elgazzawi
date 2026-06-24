@@ -15,7 +15,7 @@ export function Moments() {
       <div className="container-page py-20 md:py-28">
         <p className="eyebrow mb-3">On the ground</p>
         <h2 className="text-[34px] sm:text-[48px] md:text-[56px] font-medium leading-[1.05] tracking-[-0.015em] max-w-[820px] text-paper">
-          Selected moments — <em className="italic font-normal text-gold">conferences, finals, federation work.</em>
+          Selected moments — conferences, finals, federation work.
         </h2>
 
         {/* Row 1: 2 large */}

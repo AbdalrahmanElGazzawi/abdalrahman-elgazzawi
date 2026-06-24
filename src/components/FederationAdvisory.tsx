@@ -20,7 +20,7 @@ export function FederationAdvisory() {
           <div className="lg:col-span-8">
             <div className="eyebrow">// Federation & advisory</div>
             <h2 className="mt-4 font-serif text-display-s sm:text-display-m leading-[1.05]">
-              Trust at the<br /><span className="text-gold italic">federation tier.</span>
+              Trust at the<br />federation tier.
             </h2>
           </div>
           <div className="lg:col-span-4">

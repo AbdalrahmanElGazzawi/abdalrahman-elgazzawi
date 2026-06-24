@@ -30,7 +30,7 @@ export function Section({
             {accent && (
               <>
                 {" "}
-                <span className="text-gold italic">{accent}</span>
+                <span className="text-paper">{accent}</span>
               </>
             )}
           </h2>

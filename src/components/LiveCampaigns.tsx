@@ -52,7 +52,7 @@ export function LiveCampaigns() {
       <div className="container-page py-24 md:py-32">
         <p className="eyebrow mb-5">Live campaigns</p>
         <h2 className="text-display-s sm:text-display-m max-w-[900px] font-light leading-[1.05]">
-          Campaigns I operated,<br /><em className="italic text-gold">live in market.</em>
+          Campaigns I operated,<br />live in market.
         </h2>
         <p className="mt-6 text-[14px] italic text-muted max-w-[640px]">
           Sony INZONE × Team Falcons (creator-led, bilingual EN/AR). NVIDIA RTX × Spy. Falcons broadcast & CDL.

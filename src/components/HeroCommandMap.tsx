@@ -11,7 +11,7 @@ export function Hero() {
           <h1 className="font-serif text-display-l text-paper leading-[1.04] font-normal">
             {hero.headline[0]}<br />
             <span className="italic text-paper/95">{hero.headline[1]}</span><br />
-            <span className="text-gold italic">{hero.headline[2]}</span>
+            {hero.headline[2]}
           </h1>
           <p className="mt-7 text-paper/85 text-[18px] sm:text-[20px] leading-[1.65] max-w-[58ch] font-serif">{hero.sub}</p>
           <p className="mt-3 text-muted text-[14px] sm:text-[15px]">{hero.meta}</p>

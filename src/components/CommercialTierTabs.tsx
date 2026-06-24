@@ -11,7 +11,7 @@ export function CommercialTierTabs() {
       <div className="container-page">
         <div className="eyebrow mb-5">// Commercial spine</div>
         <h2 className="font-serif text-display-s sm:text-display-m max-w-[22ch]">
-          One spine. Four phases.<br /><span className="text-gold italic">From advertising on-ramp to equity territory.</span>
+          One spine. Four phases.<br />From advertising on-ramp to equity territory.
         </h2>
         <p className="text-muted text-[15px] sm:text-[16px] mt-5 max-w-prose leading-[1.7]">
           Every brand, every counterparty, every deal traces to one of four phases of the Brand Investment Model. The framework decides who signs, what's bundled, and how it's governed.

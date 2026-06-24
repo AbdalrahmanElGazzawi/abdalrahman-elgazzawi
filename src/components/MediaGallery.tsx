@@ -28,7 +28,7 @@ export function MediaGallery({
       <div className="container-page">
         <p className="eyebrow mb-4">{eyebrow}</p>
         <h2 className="font-serif text-display-s sm:text-display-m max-w-[24ch] text-paper font-normal leading-[1.06]">
-          {title} <em className="italic text-gold">{accent}</em>
+          {title} <span className="text-paper">{accent}</span>
         </h2>
         <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {items.map((it, i) => {

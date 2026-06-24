@@ -7,7 +7,7 @@ export function CompetitiveCred() {
         <div className="lg:col-span-5">
           <div className="eyebrow">// Esports-native</div>
           <h2 className="mt-4 font-serif text-display-s sm:text-display-m leading-[1.05]">
-            Competitor before<br /><span className="text-gold italic">commercial.</span>
+            Competitor before<br />commercial.
           </h2>
           <p className="mt-6 text-paper text-[15px] sm:text-[16px] leading-[1.7] max-w-prose">{competitiveCred.intro}</p>
           <p className="mt-4 text-muted text-[13px] font-mono">// Earliest gaming chapter — Damascus internet café, 2012.</p>

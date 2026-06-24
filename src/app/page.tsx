@@ -72,9 +72,7 @@ function Nav() {
           Abdalrahman <span className="text-gold">ElGazzawi</span>
         </Link>
         <nav className="hidden md:flex items-center gap-8 text-[14px] tracking-wide text-muted">
-          <a href="#foundation" className="hover:text-paper transition-colors">What I build</a>
           <a href="#work" className="hover:text-paper transition-colors">Work</a>
-          <a href="#campaigns" className="hover:text-paper transition-colors">Campaigns</a>
           <a href={`mailto:${site.email}`} className="inline-flex items-center rounded-full bg-gold text-panel px-5 py-2 text-[13px] tracking-wide hover:bg-accent-soft transition-colors">Email me</a>
         </nav>
       </div>
@@ -96,15 +94,14 @@ function Hero() {
             <p className="text-[13px] text-muted mt-0.5">Commercial Partnerships · MENA · Cairo / Riyadh</p>
           </div>
         </div>
-        <h1 className="font-serif text-[42px] sm:text-[60px] md:text-[80px] leading-[1.02] tracking-[-0.022em] font-normal max-w-[15ch] text-paper">
-          Writes the methodology. Ships the product. <em className="italic text-gold">Closes the deal.</em>
+        <h1 className="font-serif text-[44px] sm:text-[64px] md:text-[88px] leading-[1.02] tracking-[-0.022em] font-normal max-w-[16ch] text-paper">
+          Commercial partnerships and campaign operations.
         </h1>
-        <p className="mt-8 max-w-[640px] text-[16px] md:text-[18px] text-muted leading-[1.6]">
-          A hybrid commercial operator. I build the pricing, packaging, and campaign systems behind partnerships — then close on them. Recent work with Aramco, PepsiCo, Sony, NVIDIA, Adidas, and Mastercard.
+        <p className="mt-8 max-w-[640px] text-[16px] md:text-[18px] text-muted leading-[1.65]">
+          I price, package, and close partnership deals. Recent work: Team Falcons (consultancy), Esports World Cup via SPORTFIVE, Sony INZONE x Team Falcons (closed), True Gaming on LEAP and tier-1 brand activations.
         </p>
         <div className="mt-10 flex flex-wrap gap-3">
           <a href={`mailto:${site.email}`} className="inline-flex items-center rounded-full bg-gold text-panel px-7 py-3 text-[14px] font-medium tracking-wide hover:bg-accent-soft transition-colors">Email me</a>
-          <a href="#foundation" className="inline-flex items-center rounded-full border border-hairline text-paper bg-panel px-7 py-3 text-[14px] font-medium tracking-wide hover:border-gold hover:text-gold transition-colors">What I build</a>
           <a href="#work" className="inline-flex items-center rounded-full border border-hairline text-paper bg-panel px-7 py-3 text-[14px] font-medium tracking-wide hover:border-gold hover:text-gold transition-colors">Selected work</a>
         </div>
       </div>
@@ -119,8 +116,8 @@ function SelectedWork() {
     <section id="work" className="scroll-mt-20">
       <div className="container-page pt-24 md:pt-32 pb-12">
         <p className="eyebrow mb-5">Selected work</p>
-        <h2 className="font-serif text-[34px] sm:text-[48px] md:text-[56px] max-w-[760px] font-normal leading-[1.05] tracking-[-0.015em] text-paper">
-          Live campaigns. Real partners. <em className="italic font-normal text-gold">Work that shipped.</em>
+        <h2 className="font-serif text-[34px] sm:text-[44px] md:text-[52px] max-w-[800px] font-normal leading-[1.05] tracking-[-0.015em] text-paper">
+          Selected work.
         </h2>
       </div>
       <div className="container-page pb-24">
@@ -206,7 +203,7 @@ function HowIWork() {
       <div className="container-page py-24 md:py-32">
         <p className="eyebrow mb-5">How I work</p>
         <h2 className="font-serif text-display-s sm:text-display-m font-normal leading-[1.05] max-w-[860px] text-paper">
-          Clarify. Build. <em className="italic text-gold">Ship.</em>
+          Clarify. Build. Ship.
         </h2>
         <div className="mt-16 grid md:grid-cols-3 gap-12">
           {principles.map((s) => (
@@ -230,7 +227,7 @@ function Collaborate() {
       <div className="container-page py-24 md:py-32">
         <p className="eyebrow mb-5">Ways to collaborate</p>
         <h2 className="font-serif text-display-s sm:text-display-m font-normal leading-[1.05] max-w-[860px] text-paper">
-          Four shapes. <em className="italic text-gold">Full-time leads.</em>
+          Four shapes. Full-time leads.
         </h2>
         <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-px bg-hairline border border-hairline rounded-panel overflow-hidden">
           {items.map((it, i) => (
@@ -254,7 +251,7 @@ function Contact() {
       <div className="container-page py-28 md:py-40">
         <p className="eyebrow mb-5">Contact</p>
         <h2 className="font-serif text-[44px] md:text-[80px] leading-[1.02] tracking-[-0.02em] max-w-[900px] font-normal text-paper">
-          Have a brief? <em className="italic text-gold">Email me directly.</em>
+          Have a brief? Email me directly.
         </h2>
         <div className="mt-14">
           <a href={`mailto:${site.email}`} className="font-serif text-[32px] md:text-[56px] tracking-[-0.02em] underline-offset-[8px] decoration-[1px] decoration-gold/40 hover:decoration-gold hover:text-gold transition-colors italic font-normal text-paper">

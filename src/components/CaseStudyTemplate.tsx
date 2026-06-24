@@ -108,7 +108,7 @@ export function CaseStudyPage({ cs, prev, next }: {
         <section className="border-t border-hairline py-16 sm:py-20">
           <div className="container-page">
             <div className="eyebrow">// 02 · System built</div>
-            <h2 className="mt-3 font-serif text-display-s sm:text-display-m max-w-[20ch]">What was<br /><span className="text-gold italic">actually shipped.</span></h2>
+            <h2 className="mt-3 font-serif text-display-s sm:text-display-m max-w-[20ch]">What was actually shipped.</h2>
             <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-px bg-hairline border border-hairline">
               {cs.systemSections.map((sec) => (
                 <div key={sec.title} className="bg-panel p-6 sm:p-7 lift">
@@ -160,14 +160,6 @@ export function CaseStudyPage({ cs, prev, next }: {
                 </div>
               ))}
             </div>
-          </div>
-        </section>
-
-        <section className="border-t border-hairline py-16 sm:py-20">
-          <div className="container-page max-w-[820px]">
-            <div className="eyebrow">// 05 · What this proves</div>
-            <p className="mt-5 font-serif italic text-[24px] sm:text-[30px] text-paper leading-[1.4]">{cs.proves}</p>
-            <ConfidentialityNote className="mt-10" />
           </div>
         </section>
 

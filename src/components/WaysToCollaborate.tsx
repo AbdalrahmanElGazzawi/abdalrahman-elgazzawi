@@ -10,7 +10,7 @@ export function WaysToCollaborate() {
             <div className="eyebrow">// Ways to collaborate</div>
             <h2 className="mt-4 font-serif text-display-s sm:text-display-m leading-[1.05]">
               Four shapes of engagement.<br />
-              <span className="text-gold italic">Full-time leads.</span>
+              Full-time leads.
             </h2>
           </div>
           <div className="lg:col-span-4">

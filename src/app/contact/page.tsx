@@ -35,7 +35,7 @@ export default function Contact() {
           <div className="container-page py-20 sm:py-28">
             <div className="eyebrow">// Contact</div>
             <h1 className="mt-4 font-serif text-display-m sm:text-display-l leading-[0.98] max-w-[18ch]">
-              Have a brief?<br /><em className="italic text-gold">Email me directly.</em>
+              Have a brief?<br />Email me directly.
             </h1>
             <div className="mt-10">
               <div className="eyebrow mb-4">// Direct</div>

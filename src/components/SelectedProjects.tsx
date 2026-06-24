@@ -8,7 +8,7 @@ export function SelectedProjects() {
           <div className="lg:col-span-8">
             <div className="eyebrow">// Selected projects · archive</div>
             <h2 className="mt-4 font-serif text-display-s sm:text-display-m leading-[1.05]">
-              Beyond the case studies.<br /><span className="text-gold italic">Twelve more shipped artifacts.</span>
+              Beyond the case studies.<br />Twelve more shipped artifacts.
             </h2>
           </div>
           <div className="lg:col-span-4">

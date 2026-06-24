@@ -9,7 +9,7 @@ export function AIOperations() {
         <p className="eyebrow mb-5">AI-augmented operations</p>
         <h2 className="text-display-s sm:text-display-m font-light leading-[1.05] max-w-[900px]">
           {intro.split(" I build it ")[0]} I build it<br />
-          <em className="italic text-gold">{intro.split(" I build it ")[1]}</em>
+          {intro.split(" I build it ")[1]}
         </h2>
         <p className="mt-6 max-w-[680px] text-[15px] md:text-[16px] text-muted italic leading-[1.7]">
           {thesis}
