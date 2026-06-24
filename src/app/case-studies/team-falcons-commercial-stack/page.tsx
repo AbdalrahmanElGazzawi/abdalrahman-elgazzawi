@@ -59,8 +59,9 @@ export default function FalconsCaseStudy() {
         </Section>
         <MediaGallery
           items={[
-            { type: "photo", src: "/work/team-falcons-commercial-stack.jpg", alt: "Team Falcons brand surface", caption: "Riyadh, 2026. Fixed-term commercial partnerships engagement.", tag: "Engagement" },
-            { type: "photo", src: "/photos/falcons-card.jpg", alt: "Team Falcons context", caption: "Tier-1 esports organisation, Saudi Arabia.", tag: "Context" },
+            { type: "photo", src: "/photos/falcons-card.jpg",     alt: "On stage — gaming and esports keynote", caption: "Saudi gaming context — Warzone / WoW backdrop.", tag: "Keynote" },
+            { type: "photo", src: "/photos/qiddiya-arena.jpg",   alt: "Qiddiya arena context",                 caption: "Riyadh esports ecosystem.",                  tag: "Ecosystem" },
+            { type: "photo", src: "/photos/keynote-vision.jpg",   alt: "STC keynote — Vision-2030 surface",      caption: "Saudi commercial / Vision-2030 panel.",      tag: "Panel" },
           ]}
           title="Engagement surface."
           accent="Internal artifacts withheld by contract."
