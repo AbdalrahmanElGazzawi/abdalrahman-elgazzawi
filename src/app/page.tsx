@@ -67,15 +67,8 @@ export default function Page() {
       <Nav />
       <main>
         <Hero />
-        <Ledger />
         <SelectedWork />
-        <Artifacts />
-        <LiveCampaigns />
-        <Moments />
-        <Federation />
         <Brands />
-        <HowIWork />
-        <Collaborate />
         <Contact />
       </main>
       <Footer />
