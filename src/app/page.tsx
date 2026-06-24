@@ -12,8 +12,8 @@ const heroImages: Record<string, string | undefined> = {
   "true-gaming-leap":               "/work/true-gaming-leap.jpg",
   "telecom-egypt-raad":             "/work/telecom-egypt-raad.jpg",
   "sony-inzone-team-falcons":       "/work/sony-inzone-team-falcons.jpg",
-  "team-falcons-commercial-stack":  "/photos/falcons-card.jpg",
-  "falcons-pricing-os":             "/photos/falcons-card.jpg",
+  "team-falcons-commercial-stack":  "/photos/falcons-keynote.jpg",
+  "falcons-pricing-os":             "/photos/falcons-keynote.jpg",
   "glg-advisory":                   "/photos/glg-card.jpg",
 };
 // CaseArtwork imports removed: every case now has a real photo via heroImages.
