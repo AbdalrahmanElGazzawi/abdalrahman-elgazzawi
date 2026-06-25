@@ -9,7 +9,6 @@ const cs: CaseStudy = {
   timeframe: "Aug 2023 — Apr 2024",
   tags: ["LEAP Expo","Awards SOP","Brand activations","JIRA cadence"],
   media: [
-    { type: "photo", src: "/work/leap-nvidia.jpg",                   alt: "True Gaming x Nvidia at LEAP",  caption: "Tier-1 endemic activation on the LEAP floor.", tag: "Activation" },
     { type: "photo", src: "/work/true-gaming-leap.jpg",              alt: "LEAP booth - True Gaming",      caption: "147 contacts captured, 6 new clients onboarded.", tag: "Booth" },
     { type: "photo", src: "/photos/keynote-leap.jpg",                alt: "LEAP keynote stage",            caption: "Industry surface for partner pitch traffic.", tag: "Event" },
     { type: "doc",   src: "/work/artifact-truegaming-onepager.jpg",  alt: "Senior Commercial Partnerships one-pager", caption: "Personal value-prop one-pager. PDF, 1 page.", tag: "One-pager" },
