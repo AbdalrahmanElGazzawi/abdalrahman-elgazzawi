@@ -126,26 +126,6 @@ export const caseStudies = [
  "Phone consultations and written briefings; client identities confidential under network terms.",
  ],
  },
- {
- slug: "egypt-efa-fifae",
- eyebrow: "Federation advisory · 2026",
- title: "Egyptian Football Association × FIFAe. Egypt's esports-football reset.",
- subtitle: "Co-authored the EFA's 2026 FIFAe programme — commercial, marketing, and master plans — plus the governance roadmap and funding strategy to take Egypt's national eFootball squad from registration to the FIFAe World Cup.",
- role: "Commercial & Strategy Consultant · Federation advisory",
- timeframe: "2026",
- location: "Cairo, Egypt",
- tags: ["Federation strategy","Commercial planning","Governance & compliance","Funding strategy"],
- outcome: "Co-authored Egypt's 2026 FIFAe commercial, marketing, and master plans; built the MOU-to-operations governance rulebook and a multi-source funding strategy for the national programme.",
- artifacts: ["Commercial plan","Marketing plan","Master calendar","Governance rulebook"],
- image: "/img/case-glg.svg",
- accent: "gold",
- proofBullets: [
- "Co-authored the 2026 Commercial, Marketing, and Master plans for Egypt's national FIFAe programme.",
- "Built a 17-step master calendar from registration through the FIFAe World Cup.",
- "Structured a multi-source funding strategy for the year-1 programme.",
- "Translated the FIFA × eFootball MOU into an operational compliance rulebook.",
- ],
- },
 ];
 
 export const archivedCaseStudies = [];
