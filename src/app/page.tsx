@@ -7,8 +7,18 @@ import {
 
 // Hero images per case-study slug. inlined for build resilience.
 // Drop more files at /public/work/<slug>.jpg as you have them.
+const heroImages: Record<string, string | undefined> = {
+  "esports-world-cup":              "/work/esports-world-cup.jpg",
+  "true-gaming-leap":               "/work/true-gaming-leap.jpg",
+  "telecom-egypt-raad":             "/work/telecom-egypt-raad.jpg",
+  "sony-inzone-team-falcons":       "/work/sony-inzone-team-falcons.jpg",
+  "team-falcons-commercial-stack":  "/photos/falcons-keynote.jpg",
+  "falcons-pricing-os":             "/photos/falcons-keynote.jpg",
+  "glg-advisory":                   "/photos/glg-card.jpg",
+};
 // CaseArtwork imports removed: every case now has a real photo via heroImages.
 
+const caseArt: Record<string, React.ReactNode | undefined> = {};
 
 // Real, sourced metrics (Path Forward proof-of-value + CVs). Safe to publish.
 
@@ -111,25 +121,43 @@ function SelectedWork() {
         </h2>
       </div>
       <div className="container-page pb-24">
-        <div className="grid md:grid-cols-2 gap-px bg-hairline border border-hairline rounded-[10px] overflow-hidden">
-          {caseStudies.map((c) => (
-            <Link key={c.slug} href={`/case-studies/${c.slug}`} className="group block bg-panel p-8 sm:p-10 transition-colors duration-300 hover:bg-deep">
-              <div className="flex items-start justify-between gap-4">
-                <p className="text-[11px] uppercase tracking-[0.22em] text-muted">{c.eyebrow}</p>
-                <span className="shrink-0 text-[10px] tracking-[0.16em] uppercase text-muted border border-hairline rounded-full px-3 py-1">{c.timeframe}</span>
-              </div>
-              <h3 className="mt-6 font-serif text-[24px] md:text-[30px] tracking-[-0.01em] leading-snug text-paper font-normal">{c.title}</h3>
-              <div className="mt-6 inline-flex items-center gap-2 text-[12px] tracking-[0.16em] uppercase text-gold group-hover:gap-3 transition-all font-semibold">
-                Read case file <span aria-hidden>&rarr;</span>
-              </div>
-            </Link>
-          ))}
+        <div className="grid md:grid-cols-2 gap-6 md:gap-10">
+          {caseStudies.map((c, i) => {
+            const img = heroImages?.[c.slug];
+            const art = caseArt[c.slug];
+            return (
+              <Link key={c.slug} href={`/case-studies/${c.slug}`} className="group block">
+                <div className="relative aspect-[16/10] overflow-hidden rounded-[10px] border border-hairline bg-panel transition-all duration-300 group-hover:border-gold/70 group-hover:shadow-[0_18px_50px_-30px_rgba(10,31,61,0.35)]">
+                  {img ? (
+                    <Image src={img} alt={c.title} fill sizes="(min-width: 768px) 50vw, 100vw"
+                      className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]" />
+                  ) : art ? (
+                    <div className="absolute inset-0">{art}</div>
+                  ) : (
+                    <div className="absolute inset-0 bg-deep" />
+                  )}
+                  <div className="absolute top-4 right-5 inline-flex items-center rounded-full bg-panel/95 backdrop-blur text-paper text-[10px] px-3 py-1.5 tracking-[0.16em] uppercase border border-hairline shadow-sm">{c.timeframe}</div>
+                  <div className="absolute bottom-4 right-4 h-10 w-10 rounded-full bg-gold text-panel inline-flex items-center justify-center opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none shadow-md">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="7" y1="17" x2="17" y2="7" /><polyline points="9 7 17 7 17 15" /></svg>
+                  </div>
+                </div>
+                <div className="pt-5">
+                  <p className="text-[11px] uppercase tracking-[0.22em] text-muted">{c.eyebrow}</p>
+                  <h3 className="mt-3 font-serif text-[20px] md:text-[24px] tracking-[-0.005em] leading-snug text-paper font-normal">{c.title}</h3>
+                  <div className="mt-4 inline-flex items-center gap-2 text-[12px] tracking-[0.16em] uppercase text-gold group-hover:gap-3 transition-all font-semibold">
+                    Read case file <span aria-hidden>→</span>
+                  </div>
+                </div>
+              </Link>
+            );
+          })}
         </div>
       </div>
       <div className="container-page"><div className="h-px bg-hairline" /></div>
     </section>
   );
 }
+
 
 function Brands() {
   const featured = [
