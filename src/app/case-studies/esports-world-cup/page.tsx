@@ -75,6 +75,7 @@ export default function SportfiveCaseStudy() {
         </Section>
         <MediaGallery
           items={[
+            { type: "photo", src: "/work/ewc-honor.jpg",            alt: "EWC sponsor activations on venue floor", caption: "Sponsor surfaces across the EWC venue. Riyadh, 2024.", tag: "Venue" },
             { type: "photo", src: "/work/ewc-sponsors.jpg",         alt: "Sponsor delivery floor",                 caption: "On-the-ground delivery of contracted assets at scale.", tag: "Delivery" },
             { type: "photo", src: "/photos/ewc-grand-final.jpg",    alt: "On the EWC floor",                       caption: "Inside the EWC arena during finals.", tag: "On-site" },
             { type: "photo", src: "/photos/ewc-venue-night.jpg",    alt: "EWC venue at night",                     caption: "Riyadh Boulevard skin, EWC takeover.", tag: "Venue" },
