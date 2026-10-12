@@ -9,7 +9,7 @@ export function BrandLogoStrip() {
       eyebrow="Brands & partners"
       title="Closed, delivered,"
       accent="pitched."
-      sub="A sample of brands and partners across the career — closed deals, agency-delivered campaigns, and federation engagements."
+      sub="A sample of brands and partners across the career: closed deals, agency-delivered campaigns, and federation engagements."
     >
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-4 items-center">
         {brandLogos.map((b) => (

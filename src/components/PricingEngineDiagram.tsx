@@ -4,7 +4,7 @@ import { ConfidentialityNote } from "./ConfidentialityNote";
 
 export function PricingEngineDiagram() {
   const { formula, bases, axes } = pricingEngine;
-  // 9 axes positioned around a 3-ring radial — 4 top, 1 left, 3 bottom, 1 right
+  // 9 axes positioned around a 3-ring radial: 4 top, 1 left, 3 bottom, 1 right
   // For maintainability we compute positions from index
   const cx = 230, cy = 230, r = 180;
   const positions = axes.map((_, i) => {
@@ -18,11 +18,11 @@ export function PricingEngineDiagram() {
       eyebrow="// Methodology"
       title="Five base methods."
       accent="Nine pricing axes. One defensible price."
-      sub="Pricing methodology authored from scratch and calibrated against tier-1 global benchmarks. Multipliers apply at quote time, never baked into the base — every line traceable, every multiplier defensible."
+      sub="Pricing methodology authored from scratch and calibrated against tier-1 global benchmarks. Multipliers apply at quote time, never baked into the base. Every line traceable, every multiplier defensible."
     >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-start">
-        {/* LEFT — Radial diagram */}
-        <figure aria-label="Pricing engine — 5 base methods feeding 9 multipliers" className="relative">
+        {/* LEFT: radial diagram */}
+        <figure aria-label="Pricing engine: 5 base methods feeding 9 multipliers" className="relative">
           <div className="absolute -top-3 left-0 right-0 flex items-center justify-between text-[10px] font-mono tracking-[0.18em] uppercase text-muted">
             <span className="text-gold">// PRICING ENGINE</span>
             <span>9 axes · 5 bases</span>
@@ -41,7 +41,7 @@ export function PricingEngineDiagram() {
               <circle key={rr} cx={cx} cy={cy} r={rr} fill="none" stroke="#1F2128" strokeDasharray={rr === 200 ? "0" : "2 4"} />
             ))}
             <circle cx={cx} cy={cy} r="80" fill="url(#centerGlow)" />
-            {/* center label — formula glyph */}
+            {/* center label: formula glyph */}
             <g>
               <text x={cx} y={cy - 14} textAnchor="middle" fontFamily="ui-monospace, monospace" fontSize="9" fill="#7E8088" letterSpacing="2">FINAL PRICE</text>
               <text x={cx} y={cy + 8} textAnchor="middle" fontFamily="Georgia, serif" fontStyle="italic" fontSize="22" fill="#0F6B4E">MAX</text>
@@ -65,7 +65,7 @@ export function PricingEngineDiagram() {
           </figcaption>
         </figure>
 
-        {/* RIGHT — Formula + bases + axes legend */}
+        {/* RIGHT: formula + bases + axes legend */}
         <div>
           {/* Formula card */}
           <div className="panel p-6 sm:p-7">

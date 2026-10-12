@@ -1,8 +1,8 @@
 import Image from "next/image";
 
 const moments = [
-  { src: "/photos/rooftop-network.jpg",  alt: "EWC operator dinner — international esports leadership network", caption: "EWC · operator dinner · Riyadh" },
-  { src: "/photos/te-team.jpg",          alt: "Telecom Egypt esports squad — building the regional team",       caption: "Telecom Egypt · esports squad" },
+  { src: "/photos/rooftop-network.jpg",  alt: "EWC operator dinner with the international esports leadership network", caption: "EWC · operator dinner · Riyadh" },
+  { src: "/photos/te-team.jpg",          alt: "Telecom Egypt esports squad building the regional team",        caption: "Telecom Egypt · esports squad" },
   { src: "/photos/qiddiya-arena.jpg",    alt: "Qiddiya Arena entrance during EWC",                              caption: "Qiddiya Arena · EWC 2024" },
   { src: "/photos/sef-flag.jpg",         alt: "Saudi Esports Federation flag at activation",                    caption: "Saudi Esports Federation" },
   { src: "/photos/ewc-venue-night.jpg",  alt: "EWC archway · stc play gaming hall",                             caption: "EWC venue · stc play gaming hall" },
@@ -15,7 +15,7 @@ export function Moments() {
       <div className="container-page py-20 md:py-28">
         <p className="eyebrow mb-3">On the ground</p>
         <h2 className="text-[34px] sm:text-[48px] md:text-[56px] font-medium leading-[1.05] tracking-[-0.015em] max-w-[820px] text-paper">
-          Selected moments — conferences, finals, federation work.
+          Selected moments: conferences, finals, federation work.
         </h2>
 
         {/* Row 1: 2 large */}

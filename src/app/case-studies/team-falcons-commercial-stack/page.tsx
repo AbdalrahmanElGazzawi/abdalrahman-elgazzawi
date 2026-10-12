@@ -4,13 +4,15 @@ import { Footer } from "@/components/Footer";
 import { Section } from "@/components/Section";
 import { MediaGallery } from "@/components/MediaGallery";
 import { caseStudies } from "@/content/site";
+import { pageMetadata } from "@/lib/metadata";
 
 const cs = caseStudies.find((c) => c.slug === "team-falcons-commercial-stack")!;
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: cs.title,
   description: cs.subtitle,
-};
+  path: "/case-studies/team-falcons-commercial-stack",
+});
 
 export default function FalconsCaseStudy() {
   return (
@@ -59,9 +61,9 @@ export default function FalconsCaseStudy() {
         </Section>
         <MediaGallery
           items={[
-            { type: "photo", src: "/photos/falcons-keynote.jpg",     alt: "On stage — gaming and esports keynote", caption: "Saudi gaming context — Warzone / WoW backdrop.", tag: "Keynote" },
+            { type: "photo", src: "/photos/falcons-keynote.jpg",     alt: "On stage at a gaming and esports keynote", caption: "Saudi gaming context with a Warzone / WoW backdrop.", tag: "Keynote" },
             { type: "photo", src: "/photos/qiddiya-arena.jpg",   alt: "Qiddiya arena context",                 caption: "Riyadh esports ecosystem.",                  tag: "Ecosystem" },
-            { type: "photo", src: "/photos/keynote-vision.jpg",   alt: "STC keynote — Vision-2030 surface",      caption: "Saudi commercial / Vision-2030 panel.",      tag: "Panel" },
+            { type: "photo", src: "/photos/keynote-vision.jpg",   alt: "STC keynote on the Vision-2030 surface", caption: "Saudi commercial / Vision-2030 panel.",      tag: "Panel" },
           ]}
           title="Engagement surface."
           accent="Internal artifacts withheld by contract."

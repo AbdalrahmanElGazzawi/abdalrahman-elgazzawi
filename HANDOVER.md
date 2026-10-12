@@ -1,29 +1,40 @@
 # Portfolio · How to keep it updated
 
-## TL;DR — three places you'll touch
+## TL;DR: the places you'll touch
 
-1. **`src/content/site.ts`** — the single source of truth for *all* homepage
-   content. Hero copy, the five "by the numbers" cards, the Falcons pillars,
-   the methodology axes, the four investment phases, the Sony INZONE closed
-   deal, the active pipeline, EWC stats, BD cards, advisory rows, earlier
-   chapters, principles, stack, brand list, education/languages, contact info.
-   Edit it and push to `main`. Vercel rebuilds in ~90 seconds.
-2. **`src/app/work/falcons/page.tsx`** — the deeper Falcons case study. Long-
-   form prose. Edit directly.
-3. **`src/app/notes/<slug>/page.tsx`** — each note essay is one TSX file.
+1. **`src/content/site.ts`**: most of the site's content. Homepage case-study
+   cards (`caseStudies`), the brand lists, the About page (experience,
+   education, certifications, languages, skills), nav links, CV downloads, and
+   contact details. Edit it and push to `main`. Vercel rebuilds in ~90 seconds.
+2. **`src/app/case-studies/<slug>/page.tsx`**: each case study. Most use the
+   shared `CaseStudyPage` template (`src/components/CaseStudyTemplate.tsx`);
+   the Team Falcons and Esports World Cup pages read their copy from
+   `caseStudies` in `site.ts`.
+3. **`src/app/notes/<slug>/page.tsx`**: each note essay is one TSX file.
    To add a new one: copy the existing folder, rename the slug, edit the
-   prose, and add the metadata to `src/content/notes.ts`.
+   prose, and add the metadata to `src/content/notes.ts` (the sitemap picks
+   it up from there).
+
+### Adding a case study
+
+- Create `src/app/case-studies/<slug>/page.tsx` (copy an existing one).
+- To show it as a homepage card, add it to `caseStudies` in `site.ts` and its
+  photo to `heroImages` in `src/app/page.tsx`.
+- If it isn't a homepage card but is linked from another case study, add the
+  slug to `linkedCaseStudies` in `src/app/sitemap.ts`.
+- Build page metadata with `pageMetadata()` from `src/lib/metadata.ts` so the
+  page gets its own canonical URL and share preview.
 
 ## How a deploy happens
 
 You push to `main` on **github.com/AbdalrahmanElGazzawi/abdalrahman-elgazzawi**,
 Vercel auto-deploys to **abdalrahman-elgazzawi.vercel.app** within ~90 seconds.
-There's no preview/staging branch — `main` is production. If you want a
+There's no preview/staging branch: `main` is production. If you want a
 preview, push a branch and Vercel auto-creates a preview URL.
 
 ## How to push from your laptop
 
-Once, set up a local clone:
+Once, set up a local clone (Node.js 20.9 or newer):
 
 ```bash
 cd ~/Documents
@@ -37,8 +48,9 @@ To make a change:
 
 ```bash
 # edit src/content/site.ts (or any other file)
+npm run typecheck && npm run lint   # catches mistakes before Vercel does
 git add -A
-git commit -m "tweak: update Falcons pipeline numbers"
+git commit -m "tweak: update case study copy"
 git push origin main
 # Vercel deploys automatically. Open the deploy log at vercel.com if you want to watch.
 ```
@@ -46,47 +58,48 @@ git push origin main
 ## Where the env vars live
 
 Two surfaces: `.env.local` (local dev only, gitignored) and Vercel project
-settings (production). The contact form needs:
+settings (production). The contact form needs at least one delivery channel:
 
-- `RESEND_API_KEY` — get one free at resend.com (3,000 emails/mo free tier).
-- `CONTACT_TO_EMAIL` — defaults to `a.faroukbiz2@gmail.com` if unset.
-- `CONTACT_FROM_EMAIL` — Resend gives you `onboarding@resend.dev` to start;
-  swap to your domain once you verify it.
+- `RESEND_API_KEY`: get one at resend.com.
+- `CONTACT_TO_EMAIL`: defaults to the site email in `site.ts` if unset.
+- `CONTACT_FROM_EMAIL`: defaults to Resend's `onboarding@resend.dev`; swap to
+  an address on your own domain once you verify it in Resend.
 
-Optional Supabase (for storing form submissions in a DB):
+Optional Supabase (for storing form submissions in a `messages` table):
 
 - `NEXT_PUBLIC_SUPABASE_URL`
 - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
 - `SUPABASE_SERVICE_ROLE_KEY`
 
-If neither is set, the contact form still works visually — it just doesn't
-deliver anywhere. Add the keys when you're ready.
+If neither Resend nor Supabase is configured, the form is hidden on `/contact`
+(visitors still get the email address and the mailto cards) and `/api/contact`
+returns an error instead of pretending the message was sent. After adding the
+keys in Vercel, redeploy so the form appears.
 
 ## Stack
 
-Next.js 14 (App Router) · TypeScript · Tailwind CSS · `next/og` for the
-auto-generated Open Graph image · Resend for email · Supabase for the
+Next.js 16 (App Router, Turbopack) · React 19 · TypeScript · Tailwind CSS 3 ·
+`next/og` for the Open Graph image · Resend for email · Supabase for the
 optional message log · Vercel Analytics + Speed Insights enabled.
 
 ## Common edits
 
-- **Change your hero photo:** drop a new `hero.jpg` into `public/img/`.
-  Same for `contact.jpg`.
-- **Add a brand to the logo strip:** drop a PNG into `public/img/` named
-  `brand-foo.png`, then add it to `brandLogos` in `src/content/site.ts`.
+- **Change your portrait:** replace `public/photos/portrait.jpg`.
+- **Change the homepage brand logos:** edit the `featured` list in the
+  `Brands` section of `src/app/page.tsx` (SVGs live in `public/brands/`).
 - **Change the OG image (the social-share preview):** edit
-  `src/app/api/og/route.tsx`. It's a React component that renders to PNG
-  at deploy time — visit `/api/og` in your browser to preview.
+  `src/app/api/og/route.tsx`. It renders to a static PNG at build time;
+  visit `/api/og` in your browser to preview.
 - **Add a downloadable file:** drop it into `public/downloads/` and add an
-  entry to the `files` array in `src/app/downloads/page.tsx`.
+  entry to `downloads` in `src/content/site.ts`.
 
 ## Things deliberately left for v2
 
-- MDX-native notes (currently TSX-per-note — works fine, easy to upgrade).
+- MDX-native notes (currently TSX-per-note; works fine, easy to upgrade).
 - Login-gated deep Falcons numbers page (the SAR 17.6M audit, methodology
   engine internals). Add when you have a recruiter who wants the deep dive.
-- Custom domain. Buy at Namecheap or Porkbun (~$10-40/yr for `.com`,
-  `.dev`, `.gg`); add it to the Vercel project settings, swap the DNS
-  record per Vercel's instructions.
+- Custom domain. Buy one at a registrar (`.com`, `.dev`, `.gg`), add it to the
+  Vercel project settings, and update the DNS records per Vercel's
+  instructions.
 
-— Built by Claude · 2026-05-02
+Built by Claude · 2026-05-02 · updated 2026-10-12

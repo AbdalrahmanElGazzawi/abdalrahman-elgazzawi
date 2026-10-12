@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 
-export function ContactForm() {
+export function ContactForm({ email }: { email: string }) {
   const [status, setStatus] = useState<"idle" | "sending" | "ok" | "error">("idle");
   const [error, setError] = useState<string | null>(null);
 
@@ -9,7 +9,7 @@ export function ContactForm() {
     e.preventDefault();
     setStatus("sending"); setError(null);
     const fd = new FormData(e.currentTarget);
-    // Honeypot — bots fill this; real users don't.
+    // Honeypot: bots fill this; real users don't.
     if (fd.get("company")) { setStatus("ok"); return; }
     const payload = {
       name: fd.get("name"), email: fd.get("email"),
@@ -32,7 +32,7 @@ export function ContactForm() {
   if (status === "ok") {
     return (
       <div className="mt-8 p-6 border border-gold/40 bg-gold/[0.06]">
-        <div className="font-serif italic text-[20px] text-paper">Got it — thank you.</div>
+        <div className="font-serif italic text-[20px] text-paper">Got it, thank you.</div>
         <div className="text-muted text-[13px] mt-1">I’ll come back to you within 48 hours.</div>
       </div>
     );
@@ -50,7 +50,7 @@ export function ContactForm() {
         <span className="text-gold text-[10px] font-bold tracking-[0.2em] uppercase">Message</span>
         <textarea name="message" required rows={5}
           className="mt-2 w-full bg-deep border border-hairline rounded px-3 py-2.5 text-paper text-[14px] focus:border-gold outline-none resize-y"
-          placeholder="Role, timeline, scope — whatever's relevant."
+          placeholder="Role, timeline, scope: whatever's relevant."
         />
       </label>
       <button type="submit" disabled={status === "sending"}
@@ -58,7 +58,7 @@ export function ContactForm() {
         {status === "sending" ? "Sending…" : "Send message"}
       </button>
       {error && <div className="text-[13px] text-red-300">{error}</div>}
-      <p className="text-muted text-[11px] italic">Or reply by email directly: <a href="mailto:abdghazzawi1@gmail.com" className="text-gold underline-offset-2 hover:underline">abdghazzawi1@gmail.com</a></p>
+      <p className="text-muted text-[11px] italic">Or reply by email directly: <a href={`mailto:${email}`} className="text-gold underline-offset-2 hover:underline">{email}</a></p>
     </form>
   );
 }

@@ -1,7 +1,7 @@
 "use client";
 
 // Editorial diagrams for case studies without real photos.
-// Light theme — warm off-white bg, ink lines, single forest accent.
+// Light theme: warm off-white bg, ink lines, single forest accent.
 
 const BG     = "#FFFFFF";
 const INK    = "#0F0F0F";
@@ -12,7 +12,7 @@ export function FalconsCommercialArt() {
   return (
     <svg viewBox="0 0 1600 1000" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
       <rect width="1600" height="1000" fill={BG} />
-      {/* hairline grid — very subtle */}
+      {/* hairline grid, very subtle */}
       <g stroke={INK} strokeWidth="0.5" opacity="0.06">
         {[160, 320, 480, 640, 800, 960, 1120, 1280, 1440].map((x) => (
           <line key={`v${x}`} x1={x} y1="0" x2={x} y2="1000" />
@@ -109,7 +109,7 @@ export function GLGArt() {
         </g>
       ))}
       <line x1="220" y1="660" x2="1480" y2="660" stroke={INK} strokeWidth="0.5" opacity="0.15" />
-      <text x="800" y="900" textAnchor="middle" fill={MUTED} fontFamily="'Newsreader', serif" fontSize="12" letterSpacing="4">APRIL 2025 — PRESENT</text>
+      <text x="800" y="900" textAnchor="middle" fill={MUTED} fontFamily="'Newsreader', serif" fontSize="12" letterSpacing="4">SINCE APRIL 2025</text>
     </svg>
   );
 }

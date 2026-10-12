@@ -1,11 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import {
-  site, caseStudies, brandInvolvement, principles,
-  waysToCollaborate, federationAdvisory,
-} from "@/content/site";
+import type { Metadata } from "next";
+import { site, caseStudies, brandInvolvement } from "@/content/site";
 
-// Hero images per case-study slug. inlined for build resilience.
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
+
+// Hero images per case-study slug, inlined for build resilience.
 // Drop more files at /public/work/<slug>.jpg as you have them.
 const heroImages: Record<string, string | undefined> = {
   "esports-world-cup":              "/work/esports-world-cup.jpg",
@@ -16,38 +18,6 @@ const heroImages: Record<string, string | undefined> = {
   "falcons-pricing-os":             "/photos/falcons-keynote.jpg",
   "glg-advisory":                   "/photos/glg-card.jpg",
 };
-// CaseArtwork imports removed: every case now has a real photo via heroImages.
-
-const caseArt: Record<string, React.ReactNode | undefined> = {};
-
-// Real, sourced metrics (Path Forward proof-of-value + CVs). Safe to publish.
-
-const foundation = [
-  {
-    ix: "01 — Pricing methodology",
-    title: "Pricing Engine v8 & Creator Rate Card v3",
-    body: "Talent-tier × deliverable × territory × authority multipliers — a bilingual, talent-tiered rate card engineered to price at a premium to Western benchmarks through cultural-access and audience-overlap math.",
-    tags: ["Pricing Engine v8", "Rate Card v3", "EN / AR"],
-  },
-  {
-    ix: "02 — Framework architecture",
-    title: "Agency Framework v5 — 91 pages",
-    body: "A multi-phase brand investment model with governance, rights packaging, and KSA-compliant engagement terms — paired with a 21-page Agency Engagement Agreement and Sponsorship OS onboarding architecture.",
-    tags: ["91-pp framework", "Governance", "Rights packaging"],
-  },
-  {
-    ix: "03 — Pipeline & outreach",
-    title: "Master Hub & Lead Tracker v2",
-    body: "A bilingual command center running a 12-deal pipeline with 27 logged meetings on a weekly cadence — governed by RACI v4 and an SLA operating model, advancing a seven-figure partnership opportunity to contract stage.",
-    tags: ["12-deal pipeline", "RACI v4", "EN / AR"],
-  },
-  {
-    ix: "04 — Shipped product",
-    title: "Falcons Pricing OS — live in production",
-    body: "A Next.js + Supabase + Vercel internal app covering the full quote lifecycle — roster, builder, client portal, sales log, and admin — deployed to production with role-based permissions.",
-    tags: ["Next.js", "Supabase", "Production"],
-  },
-];
 
 export default function Page() {
   return (
@@ -109,8 +79,6 @@ function Hero() {
   );
 }
 
-
-
 function SelectedWork() {
   return (
     <section id="work" className="scroll-mt-20">
@@ -122,17 +90,14 @@ function SelectedWork() {
       </div>
       <div className="container-page pb-24">
         <div className="grid md:grid-cols-2 gap-6 md:gap-10">
-          {caseStudies.map((c, i) => {
-            const img = heroImages?.[c.slug];
-            const art = caseArt[c.slug];
+          {caseStudies.map((c) => {
+            const img = heroImages[c.slug];
             return (
               <Link key={c.slug} href={`/case-studies/${c.slug}`} className="group block">
                 <div className="relative aspect-[16/10] overflow-hidden rounded-[10px] border border-hairline bg-panel transition-all duration-300 group-hover:border-gold/70 group-hover:shadow-[0_18px_50px_-30px_rgba(10,31,61,0.35)]">
                   {img ? (
                     <Image src={img} alt={c.title} fill sizes="(min-width: 768px) 50vw, 100vw"
                       className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]" />
-                  ) : art ? (
-                    <div className="absolute inset-0">{art}</div>
                   ) : (
                     <div className="absolute inset-0 bg-deep" />
                   )}
@@ -157,7 +122,6 @@ function SelectedWork() {
     </section>
   );
 }
-
 
 function Brands() {
   const featured = [
@@ -191,54 +155,6 @@ function Brands() {
             </div>
           ))}
         </div>
-      </div>
-      <div className="container-page"><div className="h-px bg-hairline" /></div>
-    </section>
-  );
-}
-
-function HowIWork() {
-  return (
-    <section id="how" className="scroll-mt-20">
-      <div className="container-page py-24 md:py-32">
-        <p className="eyebrow mb-5">How I work</p>
-        <h2 className="font-serif text-display-s sm:text-display-m font-normal leading-[1.05] max-w-[860px] text-paper">
-          Clarify. Build. Ship.
-        </h2>
-        <div className="mt-16 grid md:grid-cols-3 gap-12">
-          {principles.map((s) => (
-            <div key={s.n} className="relative pt-6">
-              <div className="absolute top-0 left-0 h-px w-16 bg-gold" aria-hidden />
-              <div className="font-mono text-[14px] text-gold mb-3">{s.n}</div>
-              <h3 className="font-serif text-[28px] md:text-[34px] tracking-[-0.01em] leading-[1.1] font-normal text-paper">{s.title}</h3>
-            </div>
-          ))}
-        </div>
-      </div>
-      <div className="container-page"><div className="h-px bg-hairline" /></div>
-    </section>
-  );
-}
-
-function Collaborate() {
-  const { items, disclosure } = waysToCollaborate;
-  return (
-    <section id="collaborate" className="scroll-mt-20 bg-bg">
-      <div className="container-page py-24 md:py-32">
-        <p className="eyebrow mb-5">Ways to collaborate</p>
-        <h2 className="font-serif text-display-s sm:text-display-m font-normal leading-[1.05] max-w-[860px] text-paper">
-          Four shapes. Full-time leads.
-        </h2>
-        <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-px bg-hairline border border-hairline rounded-panel overflow-hidden">
-          {items.map((it, i) => (
-            <article key={it.label} className="bg-panel p-8 lift">
-              <span className="text-[10px] tracking-[0.22em] uppercase text-gold">0{i + 1} · {it.eyebrow}</span>
-              <h3 className="mt-4 font-serif italic text-[26px] text-paper leading-tight font-normal">{it.label}</h3>
-              <div className="mt-3 text-[12px] tracking-[0.18em] uppercase text-muted">{it.shape}</div>
-            </article>
-          ))}
-        </div>
-        <p className="mt-7 text-[13px] italic text-muted">{disclosure}</p>
       </div>
       <div className="container-page"><div className="h-px bg-hairline" /></div>
     </section>

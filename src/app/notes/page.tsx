@@ -2,20 +2,22 @@ import Link from "next/link";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { notes } from "@/content/notes";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Notes",
   description: "Notes on esports commercial strategy, pricing methodology, and operating in MENA.",
-};
+  path: "/notes",
+});
 
 export default function NotesIndex() {
   return (
     <>
       <Nav />
       <main className="container-page py-20 sm:py-24">
-        <div className="label-eyebrow mb-6">Writing · Notes</div>
-        <h1 className="font-serif text-display-sm font-medium">Notes.</h1>
-        <div className="gold-rule mt-4 mb-6" />
+        <div className="eyebrow mb-6">Writing · Notes</div>
+        <h1 className="font-serif text-display-s font-medium">Notes.</h1>
+        <div className="h-px w-16 bg-gold mt-4 mb-6" />
         <p className="text-muted text-[15px] max-w-[640px] mb-12">Short essays on esports commercial strategy, pricing methodology, and operating across MENA.</p>
         <ul className="grid gap-6">
           {notes.map((n) => (

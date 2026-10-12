@@ -8,7 +8,7 @@ export function ExperienceTimeline() {
       eyebrow="// Experience"
       title="A career arc, not a résumé dump."
       accent={arc}
-      sub="10+ years across the lifecycle. Each role added a layer to the operating system — QA built the eye for systems, BD added commercial muscle, marketing brought audience logic, ops added delivery rigor, strategy connected them all."
+      sub="10+ years across the lifecycle. Each role added a layer to the operating system: QA built the eye for systems, BD added commercial muscle, marketing brought audience logic, ops added delivery rigor, strategy connected them all."
     >
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-hairline border border-hairline">
         {experience.map((e) => (
@@ -23,7 +23,7 @@ export function ExperienceTimeline() {
             <ul className="mt-4 space-y-1.5 text-[12px]">
               {e.proof.map((p) => (
                 <li key={p} className="flex items-start gap-2 text-muted">
-                  <span aria-hidden className="text-gold mt-[5px] shrink-0">—</span>
+                  <span aria-hidden className="mt-[7px] h-1.5 w-1.5 shrink-0 bg-gold" />
                   <span>{p}</span>
                 </li>
               ))}

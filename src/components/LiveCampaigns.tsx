@@ -1,10 +1,10 @@
-// Live campaigns — Instagram + TikTok + YouTube embeds.
+// Live campaigns: Instagram + TikTok + YouTube embeds.
 // Each item proves the campaign shipped: real views, real reach, real handle.
 const campaigns = [
   {
     type: "instagram" as const,
     id: "DYpnOXKMdm5",
-    title: "Spy × NVIDIA RTX 50 — Frames Win Games",
+    title: "Spy × NVIDIA RTX 50: Frames Win Games",
     handle: "@spyerfrog · Falcons player",
     meta: "124 likes · Q2 2026",
   },
@@ -26,7 +26,7 @@ const campaigns = [
     type: "instagram" as const,
     id: "DW6t8x3iGb3",
     isReel: true,
-    title: "Sony INZONE — Arabic Reel",
+    title: "Sony INZONE: Arabic Reel",
     handle: "@spyerfrog · Falcons player",
     meta: "INZONE M3 launch · Q1 2026",
   },
@@ -40,7 +40,7 @@ const campaigns = [
   {
     type: "youtube" as const,
     id: "qIXmQVjFM6o",
-    title: "Falcons CDL Watch Party — Riyadh",
+    title: "Falcons CDL Watch Party, Riyadh",
     handle: "Abu Najd · Falcons content",
     meta: "43K views · 6h 53m · Jan 2026",
   },
@@ -65,9 +65,6 @@ export function LiveCampaigns() {
                 : c.type === "tiktok"
                 ? `https://www.tiktok.com/embed/v2/${c.id}`
                 : `https://www.youtube.com/embed/${c.id}`;
-            const ratio = c.type === "tiktok" || (c.type === "instagram" && (c.isReel || true))
-              ? c.type === "youtube" ? "aspect-video" : "aspect-[9/16]"
-              : "aspect-video";
             // Force YouTube to 16:9, IG/TikTok to 9:16 portrait
             const wrapperRatio = c.type === "youtube" ? "aspect-video" : "aspect-[9/16]";
             return (

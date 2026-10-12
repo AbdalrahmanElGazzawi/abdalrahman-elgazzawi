@@ -9,7 +9,7 @@ export function CaseStudyGrid() {
       eyebrow="// Case studies"
       title="Systems built."
       accent="Outcomes shipped."
-      sub="Four flagship engagements where commercial methodology, governance, and tooling met live deal flow. Public-safe summaries — full deal data sanitized."
+      sub="Four flagship engagements where commercial methodology, governance, and tooling met live deal flow. Public-safe summaries; full deal data sanitized."
     >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-5">
         {caseStudies.map((cs) => (

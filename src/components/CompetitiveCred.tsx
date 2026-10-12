@@ -10,7 +10,7 @@ export function CompetitiveCred() {
             Competitor before<br />commercial.
           </h2>
           <p className="mt-6 text-paper text-[15px] sm:text-[16px] leading-[1.7] max-w-prose">{competitiveCred.intro}</p>
-          <p className="mt-4 text-muted text-[13px] font-mono">// Earliest gaming chapter — Damascus internet café, 2012.</p>
+          <p className="mt-4 text-muted text-[13px] font-mono">// Earliest gaming chapter: Damascus internet café, 2012.</p>
         </div>
         <div className="lg:col-span-7">
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-hairline border border-hairline">

@@ -1,6 +1,6 @@
 export function StackDiagram() {
   return (
-    <figure aria-label="Falcons commercial stack — methodology, framework, mandates, app">
+    <figure aria-label="Falcons commercial stack: methodology, framework, mandates, app">
       <svg viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto block panel">
         <defs>
           <linearGradient id="layerGrad" x1="0" y1="0" x2="0" y2="1">
@@ -27,14 +27,14 @@ export function StackDiagram() {
         ))}
         <text x="780" y="345" textAnchor="end" fontFamily="ui-monospace, monospace" fontSize="9" fill="#5C5E66" letterSpacing="2">SHIPPED · DEFENSIBLE · LIVE</text>
       </svg>
-      <figcaption className="mt-3 text-[11px] font-mono text-muted">// Stack architecture — public-safe representation. Full rate tables and counterparty rows omitted.</figcaption>
+      <figcaption className="mt-3 text-[11px] font-mono text-muted">// Stack architecture: public-safe representation. Full rate tables and counterparty rows omitted.</figcaption>
     </figure>
   );
 }
 
 export function PricingOSDiagram() {
   return (
-    <figure aria-label="Pricing OS — modules, roles, data flow">
+    <figure aria-label="Pricing OS: modules, roles, data flow">
       <svg viewBox="0 0 800 380" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto block panel">
         <rect x="0" y="0" width="800" height="380" fill="#101218" />
         <text x="20" y="24" fontFamily="ui-monospace, monospace" fontSize="10" fill="#7E8088" letterSpacing="2">// FALCONS PRICING OS · ARCHITECTURE</text>
@@ -71,7 +71,7 @@ export function PricingOSDiagram() {
 
 export function SonyDiagram() {
   return (
-    <figure aria-label="Sony INZONE × Team Falcons — deal flow">
+    <figure aria-label="Sony INZONE × Team Falcons: deal flow">
       <svg viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto block panel">
         <rect x="0" y="0" width="800" height="320" fill="#101218" />
         <text x="20" y="24" fontFamily="ui-monospace, monospace" fontSize="10" fill="#7E8088" letterSpacing="2">// SONY INZONE × TEAM FALCONS · DEAL FLOW</text>
@@ -103,7 +103,7 @@ export function SonyDiagram() {
 
 export function EWCDiagram() {
   return (
-    <figure aria-label="EWC commercial delivery — scale view">
+    <figure aria-label="EWC commercial delivery: scale view">
       <svg viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto block panel">
         <rect x="0" y="0" width="800" height="320" fill="#101218" />
         <text x="20" y="24" fontFamily="ui-monospace, monospace" fontSize="10" fill="#7E8088" letterSpacing="2">// EWC · COMMERCIAL DELIVERY · SCALE</text>
@@ -131,13 +131,13 @@ export function EWCDiagram() {
 
 export function GLGDiagram() {
   return (
-    <figure aria-label="GLG advisory — topic coverage map">
+    <figure aria-label="GLG advisory: topic coverage map">
       <svg viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto block panel">
         <rect x="0" y="0" width="800" height="360" fill="#101218" />
         <text x="20" y="24" fontFamily="ui-monospace, monospace" fontSize="10" fill="#7E8088" letterSpacing="2">// GLG ADVISORY · TOPIC COVERAGE</text>
-        <text x="780" y="24" textAnchor="end" fontFamily="ui-monospace, monospace" fontSize="9" fill="#5BD394" letterSpacing="2">● COUNCIL MEMBER · 2025 — PRESENT</text>
+        <text x="780" y="24" textAnchor="end" fontFamily="ui-monospace, monospace" fontSize="9" fill="#5BD394" letterSpacing="2">● COUNCIL MEMBER · SINCE 2025</text>
 
-        {/* Center node — "Esports & Gaming SME" */}
+        {/* Center node: "Esports & Gaming SME" */}
         <circle cx="400" cy="180" r="70" fill="#161922" stroke="#0F6B4E" strokeWidth="1.5" />
         <text x="400" y="170" textAnchor="middle" fontFamily="ui-monospace, monospace" fontSize="9" fill="#0F6B4E" letterSpacing="2">SUBJECT-MATTER</text>
         <text x="400" y="186" textAnchor="middle" fontFamily="Georgia, serif" fontStyle="italic" fontSize="18" fill="#F4F1EB">EXPERT</text>
@@ -167,10 +167,10 @@ export function GLGDiagram() {
 
 export function TrueGamingDiagram() {
   return (
-    <figure aria-label="True Gaming — LEAP Expo + Awards SOP + brand activations">
+    <figure aria-label="True Gaming: LEAP Expo + Awards SOP + brand activations">
       <svg viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto block panel">
         <rect x="0" y="0" width="800" height="360" fill="#101218" />
-        <text x="20" y="24" fontFamily="ui-monospace, monospace" fontSize="10" fill="#7E8088" letterSpacing="2">// TRUE GAMING · 2023 — 2024 · AGENCY-SIDE EXECUTION</text>
+        <text x="20" y="24" fontFamily="ui-monospace, monospace" fontSize="10" fill="#7E8088" letterSpacing="2">// TRUE GAMING · 2023 TO 2024 · AGENCY-SIDE EXECUTION</text>
 
         {/* Three pillars: LEAP · Awards · Brand activations */}
         {[
@@ -200,10 +200,10 @@ export function TrueGamingDiagram() {
 
 export function RaadDiagram() {
   return (
-    <figure aria-label="RA'AD Esports / Telecom Egypt — esports infrastructure">
+    <figure aria-label="RA'AD Esports / Telecom Egypt: esports infrastructure">
       <svg viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto block panel">
         <rect x="0" y="0" width="800" height="360" fill="#101218" />
-        <text x="20" y="24" fontFamily="ui-monospace, monospace" fontSize="10" fill="#7E8088" letterSpacing="2">// RA'AD ESPORTS · TELECOM EGYPT · 2021</text>
+        <text x="20" y="24" fontFamily="ui-monospace, monospace" fontSize="10" fill="#7E8088" letterSpacing="2">// RA’AD ESPORTS · TELECOM EGYPT · 2021</text>
 
         {/* Three blocks: Venue · Bootcamp · Operations */}
         {[

@@ -2,7 +2,7 @@ import Image from "next/image";
 import { brandInvolvement } from "@/content/site";
 import { Section } from "./Section";
 
-// Featured logos — only brands where official asset usage is publicly permitted.
+// Featured logos: only brands where official asset usage is publicly permitted.
 // Sony / NVIDIA / ASUS / Lenovo (public press-kit equivalents via simpleicons.org).
 // Rendered paper-tone, full-opacity at default; restrained, not a logo wall.
 const featuredLogos: { src: string; alt: string; ratio: number }[] = [
@@ -25,9 +25,9 @@ export function BrandInvolvementGrid() {
       eyebrow="// Brands & partners"
       title="Categorised by"
       accent="actual involvement."
-      sub="Logo walls hide what really happened. This map separates closed deals from delivery work, pitched pipeline, and ecosystem ties — so the credibility is unambiguous."
+      sub="Logo walls hide what really happened. This map separates closed deals from delivery work, pitched pipeline, and ecosystem ties, so the credibility is unambiguous."
     >
-      {/* Featured logos — restrained marquee row, paper tone, public-permission only */}
+      {/* Featured logos: restrained marquee row, paper tone, public-permission only */}
       <div className="mb-10 sm:mb-12 border-y border-hairline">
         <div className="py-7 sm:py-9 grid grid-cols-2 sm:grid-cols-4 gap-x-8 sm:gap-x-12 gap-y-6 items-center">
           {featuredLogos.map((l) => (

@@ -1,8 +1,14 @@
 import Link from "next/link";
 import { site, contactCtas } from "@/content/site";
 import { ContactForm } from "@/components/ContactForm";
+import { contactDeliveryConfigured } from "@/lib/contact";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata = { title: "Contact", description: "Email Abdalrahman ElGazzawi directly or send a brief." };
+export const metadata = pageMetadata({
+  title: "Contact",
+  description: "Email Abdalrahman ElGazzawi directly or send a brief.",
+  path: "/contact",
+});
 
 function Nav() {
   return (
@@ -60,13 +66,16 @@ export default function Contact() {
           </div>
         </section>
 
-        <section className="py-20">
-          <div className="container-page max-w-[680px]">
-            <div className="eyebrow">// Or use the form</div>
-            <h2 className="mt-3 font-serif text-display-s">Send a brief.</h2>
-            <div className="mt-10"><ContactForm /></div>
-          </div>
-        </section>
+        {/* Only offer the form when submissions are delivered somewhere (see lib/contact.ts). */}
+        {contactDeliveryConfigured() && (
+          <section className="py-20">
+            <div className="container-page max-w-[680px]">
+              <div className="eyebrow">// Or use the form</div>
+              <h2 className="mt-3 font-serif text-display-s">Send a brief.</h2>
+              <div className="mt-10"><ContactForm email={site.email} /></div>
+            </div>
+          </section>
+        )}
       </main>
       <Footer />
     </>

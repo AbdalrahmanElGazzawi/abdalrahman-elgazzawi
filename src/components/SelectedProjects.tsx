@@ -13,7 +13,7 @@ export function SelectedProjects() {
           </div>
           <div className="lg:col-span-4">
             <p className="text-muted text-[14px] sm:text-[15px] leading-[1.7]">
-              Concrete artifacts mined from across the career — operating SOPs, strategy briefs, sponsorship packages, marcom plans. Public-safe summaries; full documents stay private.
+              Concrete artifacts mined from across the career: operating SOPs, strategy briefs, sponsorship packages, marcom plans. Public-safe summaries; full documents stay private.
             </p>
           </div>
         </div>
