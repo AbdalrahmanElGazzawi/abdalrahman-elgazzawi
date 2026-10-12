@@ -4,13 +4,15 @@ import { Footer } from "@/components/Footer";
 import { Section } from "@/components/Section";
 import { MediaGallery } from "@/components/MediaGallery";
 import { caseStudies } from "@/content/site";
+import { pageMetadata } from "@/lib/metadata";
 
 const cs = caseStudies.find((c) => c.slug === "esports-world-cup")!;
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: cs.title,
   description: cs.subtitle,
-};
+  path: "/case-studies/esports-world-cup",
+});
 
 export default function SportfiveCaseStudy() {
   return (
@@ -80,7 +82,7 @@ export default function SportfiveCaseStudy() {
             { type: "photo", src: "/photos/ewc-grand-final.jpg",    alt: "On the EWC floor",                       caption: "Inside the EWC arena during finals.", tag: "On-site" },
             { type: "photo", src: "/photos/ewc-venue-night.jpg",    alt: "EWC venue at night",                     caption: "Riyadh Boulevard skin, EWC takeover.", tag: "Venue" },
             { type: "photo", src: "/photos/sef-flag.jpg",           alt: "Saudi Esports Federation moment",        caption: "SEF IP commercial roadmap surface.", tag: "SEF" },
-            { type: "doc",   src: "/work/artifact-ewc-welcome.jpg", alt: "EWC commercial welcome deck — cover",    caption: "Public-facing welcome deck. Cover only.", tag: "Deck" },
+            { type: "doc",   src: "/work/artifact-ewc-welcome.jpg", alt: "EWC commercial welcome deck, cover",     caption: "Public-facing welcome deck. Cover only.", tag: "Deck" },
           ]}
         />
       </main>

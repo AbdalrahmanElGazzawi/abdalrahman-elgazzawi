@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { ReactNode } from "react";
-import { ConfidentialityNote } from "./ConfidentialityNote";
 import { MediaGallery, type MediaItem } from "./MediaGallery";
 import { site } from "@/content/site";
 
@@ -25,7 +24,7 @@ function Nav() {
           ElGazzawi <span className="text-dim mx-2">·</span>
           <span className="text-muted text-[13px]">Koge</span>
         </Link>
-        <Link href="/#case-studies" className="text-[12px] font-mono uppercase tracking-[0.06em] text-muted hover:text-paper">← All case studies</Link>
+        <Link href="/#work" className="text-[12px] font-mono uppercase tracking-[0.06em] text-muted hover:text-paper">← All case studies</Link>
       </div>
     </header>
   );
@@ -36,7 +35,7 @@ function Footer() {
     <footer className="border-t border-hairline">
       <div className="container-page py-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
         <p className="text-[13px] text-muted">© {new Date().getFullYear()} {site.name}.</p>
-        <p className="text-[13px] text-muted"><span className="font-serif italic">Designed and built by Koge.</span><span className="mx-2 text-dim">·</span>Instrument Serif &amp; Inter.</p>
+        <p className="text-[13px] text-muted"><span className="font-serif italic">Designed and built by Koge.</span><span className="mx-2 text-dim">·</span>Newsreader &amp; Inter.</p>
       </div>
     </footer>
   );
@@ -53,7 +52,7 @@ export function CaseStudyPage({ cs, prev, next }: {
       <main>
         <header className="relative border-b border-hairline">
           <div className="container-page relative py-16 sm:py-20 lg:py-24">
-            <Link href="/#case-studies" className="text-[11px] font-mono tracking-[0.18em] uppercase text-muted hover:text-gold inline-flex items-center gap-1.5">← All case studies</Link>
+            <Link href="/#work" className="text-[11px] font-mono tracking-[0.18em] uppercase text-muted hover:text-gold inline-flex items-center gap-1.5">← All case studies</Link>
             <div className="mt-6 eyebrow">// {cs.eyebrow}</div>
             <h1 className="mt-3 font-serif text-display-m sm:text-display-l leading-[0.98] max-w-[16ch]">{cs.title}</h1>
             <p className="mt-7 text-paper/85 text-[17px] sm:text-[19px] leading-[1.55] max-w-[60ch] font-serif italic">{cs.outcome}</p>
@@ -117,7 +116,7 @@ export function CaseStudyPage({ cs, prev, next }: {
                   <ul className="mt-4 space-y-2.5 text-[14px]">
                     {sec.bullets.map((b) => (
                       <li key={b} className="flex items-start gap-3 text-paper/80 leading-[1.6]">
-                        <span aria-hidden className="text-gold mt-[7px] shrink-0">—</span><span>{b}</span>
+                        <span aria-hidden className="mt-[8px] h-1.5 w-1.5 shrink-0 bg-gold" /><span>{b}</span>
                       </li>
                     ))}
                   </ul>
@@ -171,7 +170,7 @@ export function CaseStudyPage({ cs, prev, next }: {
               <p className="mt-4 text-muted text-[15px]">Happy to walk through the engine, the framework, or the pipeline on a call.</p>
               <div className="mt-7 flex flex-wrap gap-3 justify-center">
                 <a href={`mailto:${site.email}`} className="bg-paper text-bg px-6 py-3.5 text-[12px] font-semibold tracking-[0.14em] uppercase font-mono hover:bg-gold transition-colors min-h-[44px] inline-flex items-center rounded-full">Email me →</a>
-                <Link href="/#case-studies" className="border border-hairline text-paper px-6 py-3.5 text-[12px] font-semibold tracking-[0.14em] uppercase font-mono hover:border-gold hover:text-gold transition-colors min-h-[44px] inline-flex items-center rounded-full">All case studies</Link>
+                <Link href="/#work" className="border border-hairline text-paper px-6 py-3.5 text-[12px] font-semibold tracking-[0.14em] uppercase font-mono hover:border-gold hover:text-gold transition-colors min-h-[44px] inline-flex items-center rounded-full">All case studies</Link>
               </div>
             </div>
             {(prev || next) && (

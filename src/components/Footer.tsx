@@ -8,10 +8,9 @@ export function Footer() {
         <div className="text-[13px] text-muted">© {new Date().getFullYear()} {site.name}</div>
         <div className="flex items-center flex-wrap gap-x-5 gap-y-2 text-[13px] text-muted">
           <Link href="/#work"      className="hover:text-paper transition-colors">Work</Link>
-          <Link href="/#campaigns" className="hover:text-paper transition-colors">Campaigns</Link>
-          <Link href="/#federation" className="hover:text-paper transition-colors">Advisory</Link>
-          <Link href="/#collaborate" className="hover:text-paper transition-colors">Collaborate</Link>
+          <Link href="/#brands"    className="hover:text-paper transition-colors">Brands</Link>
           <Link href="/about"      className="hover:text-paper transition-colors">About</Link>
+          <Link href="/downloads"  className="hover:text-paper transition-colors">Downloads</Link>
           <Link href="/contact"    className="hover:text-paper transition-colors">Contact</Link>
         </div>
         <div className="text-[13px] text-muted italic">

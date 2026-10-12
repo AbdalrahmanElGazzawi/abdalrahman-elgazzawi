@@ -1,60 +1,62 @@
 import { CaseStudyPage, type CaseStudy } from "@/components/CaseStudyTemplate";
 import { SonyDiagram } from "@/components/diagrams/StackDiagram";
+import { pageMetadata } from "@/lib/metadata";
 
 const cs: CaseStudy = {
-  eyebrow: "Closed deal · KSA · December 2025",
+  eyebrow: "Campaign operations · KSA · 2026",
   title: "Sony INZONE × Team Falcons.",
-  outcome: "Closed and activated a creator-led KSA sponsorship via Ruder Finn Atteline — USD 11.2K, 5 creators, 12 deliverables, full INZONE product seeding, KSA-only 20% discount-code mechanic linking the campaign to measurable retail conversion.",
-  role: "Commercial lead — scope, price, contract, activation, measurement",
-  timeframe: "Q4 2025",
-  tags: ["KSA market","Creator activation","Discount mechanic","Brand seeding","Direct-response measurement"],
+  outcome: "Operated the closed Sony INZONE 2026 campaign end-to-end: creator briefs, bilingual EN/AR copy, product seeding, agency timelines, content feedback, approvals, and launch readiness. Five creators, twelve deliverables, KSA market.",
+  role: "Campaign operations, Team Falcons consultancy",
+  timeframe: "2026",
+  tags: ["KSA market","Creator activation","Bilingual EN/AR","Product seeding","Agency coordination"],
   media: [
     { type: "photo", src: "/work/sony-inzone-team-falcons.jpg", alt: "Sony INZONE x Team Falcons", caption: "Closed 2026 campaign, operated end-to-end. KSA market.", tag: "Campaign" },
   ],
   context:
-    "Sony INZONE — Sony's gaming peripherals line — wanted to land a credible KSA presence ahead of regional retail expansion. They came in via Ruder Finn Atteline. The brief asked for credibility with Saudi gaming creators and a measurable connection to retail movement.",
+    "Sony INZONE, Sony's gaming peripherals line, ran a creator-led campaign in Saudi Arabia with Team Falcons creators, coordinated with the brand's agency, Ruder Finn Atteline. The partnership was closed; the job was to run the campaign so it shipped on time and on brief.",
   problem:
-    "Creator deals in MENA frequently leak value because pricing isn't defensible, deliverables aren't specced tight enough, and activation has no link to measurable conversion. The brand pays for awareness it can't audit.",
+    "Creator campaigns slip when briefs are loose, copy isn't localised, product arrives late, and approvals stall between brand, agency, and talent. Every one of those handoffs needed an owner.",
   myRole:
-    "Owned the deal end-to-end — scoped the activation, priced it through the methodology, contracted it through Framework v5, ran the activation through Mandates OS, and built the KSA discount mechanic that closed the conversion loop.",
+    "Operated the campaign end-to-end as part of my fixed-term consultancy with Team Falcons: creator briefs, bilingual EN/AR copy, product seeding, agency timelines, content feedback, approvals, and launch readiness.",
   systemSections: [
     { eyebrow: "Scope", title: "Five creators, twelve deliverables, full seeding",
-      bullets: ["Five Saudi creators — Abu Najd · Madv · Spyerfrog · Oden · xsma333.","Twelve deliverables across Reels, Stories, and YouTube content.","Full INZONE product seeding — physical units shipped to creators ahead of activation.","KSA-only mechanic so the campaign connected directly to local retail."] },
-    { eyebrow: "Price", title: "Methodology v1 applied — defensible end-to-end",
-      bullets: ["Each creator priced through the methodology — not by negotiation feel.","Multipliers applied transparently: language, audience, content type, rights window.","Methodology document attached as the contractual reference for pricing rationale.","Margin protected. Audit-ready by default."] },
-    { eyebrow: "Contract & activation", title: "Framework v5 clauses + Mandates OS tracking",
-      bullets: ["Contract built on Framework v5 standard clause library.","Activation managed through Mandates OS — every deliverable a tracked row.","Brand approval workflow respected the framework's approval matrix.","Real-time visibility for the brand without exposing internal margins."] },
+      bullets: ["Five Saudi creators: Abu Najd · Madv · Spyerfrog · Oden · xsma333.","Twelve deliverables across Reels, Stories, and YouTube content.","Full INZONE product seeding, with units in creators' hands ahead of activation.","KSA-only campaign so content connected directly to local retail."] },
+    { eyebrow: "Briefs & copy", title: "Creator briefs and bilingual copy",
+      bullets: ["Creator briefs for each talent and deliverable.","Bilingual EN/AR campaign copy.","Content feedback rounds with creators before submission."] },
+    { eyebrow: "Agency & approvals", title: "Timelines, feedback, sign-off",
+      bullets: ["Ran timelines with the brand's agency, Ruder Finn Atteline.","Managed approval rounds between brand, agency, and creators.","Tracked launch readiness across every deliverable."] },
     { eyebrow: "Conversion", title: "20% KSA discount-code mechanic",
-      bullets: ["Each creator received a unique 20% KSA discount code.","Codes routed through INZONE's KSA retail flow.","Direct attribution from creator → code use → retail conversion.","Closed the activation loop — moved campaign from \"impressions\" to \"units moved\"."] },
+      bullets: ["Each creator carried a unique 20% KSA discount code.","Codes routed through INZONE's KSA retail flow.","Linked creator content to measurable retail conversion."] },
   ],
   process: [
-    "Briefed by Ruder Finn Atteline — assessed brand fit, creator fit, KSA-market specifics.",
-    "Priced each creator through the methodology — produced a defensible quote pack with line-item rationale.",
-    "Negotiated within the framework — used standard clauses, raised exceptions only where the brief warranted.",
-    "Booked through Mandates OS — activation became a tracked row with deliverable checklist, deadline, status.",
-    "Created and distributed unique KSA discount codes for each creator — built the retail-conversion bridge.",
-    "Reported through to brand and agency on impressions, engagement, and code-redemption — closing the activation loop.",
+    "Started from the closed scope: five creators, twelve deliverables, KSA market.",
+    "Wrote creator briefs and bilingual EN/AR copy.",
+    "Coordinated product seeding so units reached creators ahead of activation.",
+    "Ran agency timelines, content feedback, and approval rounds.",
+    "Distributed a unique 20% KSA discount code to each creator.",
+    "Brought every deliverable to launch readiness.",
   ],
   impact: [
-    { n: "USD 11.2K", l: "deal value to Falcons" },
-    { n: "5",         l: "creators activated" },
-    { n: "12",        l: "deliverables shipped" },
-    { n: "20%",       l: "KSA discount-code mechanic" },
+    { n: "5",       l: "creators activated" },
+    { n: "12",      l: "deliverables" },
+    { n: "EN / AR", l: "bilingual campaign copy" },
+    { n: "20%",     l: "KSA discount-code mechanic" },
   ],
   proves:
-    "I can take a brand brief and walk it through every layer of the commercial stack — methodology to contract to activation to measurable conversion — without dropping the rationale at any handoff.",
+    "End-to-end campaign operations on a live brand partnership: briefs, localisation, seeding, agency coordination, and approvals, delivered to launch.",
   visual: <SonyDiagram />,
 };
 
-export const metadata = {
-  title: "Sony INZONE × Team Falcons — Case study",
-  description: "Closing and activating a creator-led KSA sponsorship for Sony INZONE via Ruder Finn Atteline — methodology, contract, activation, retail conversion.",
-};
+export const metadata = pageMetadata({
+  title: "Sony INZONE × Team Falcons · Case study",
+  description: "Operating the closed Sony INZONE 2026 creator campaign in KSA with Team Falcons: briefs, bilingual copy, product seeding, agency timelines, approvals.",
+  path: "/case-studies/sony-inzone-team-falcons",
+});
 
 export default function Page() {
   return (
     <CaseStudyPage cs={cs}
       prev={{ href: "/case-studies/falcons-pricing-os", title: "Falcons Pricing OS" }}
-      next={{ href: "/case-studies/esports-world-cup", title: "Esports World Cup — Commercial Delivery" }} />
+      next={{ href: "/case-studies/esports-world-cup", title: "Esports World Cup: commercial delivery" }} />
   );
 }

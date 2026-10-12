@@ -3,11 +3,13 @@ import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { Section } from "@/components/Section";
 import { site, aboutCopy, experience, education, certifications, languages, topSkills, competitiveCred } from "@/content/site";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "About",
-  description: "Commercial partnerships and campaign operations professional based in Cairo, Egypt — open to Riyadh, GCC, remote, and global roles.",
-};
+  description: "Commercial partnerships and campaign operations professional based in Cairo, Egypt. Open to Riyadh, GCC, remote, and global roles.",
+  path: "/about",
+});
 
 export default function AboutPage() {
   return (
@@ -61,7 +63,7 @@ export default function AboutPage() {
                 {education.map((e, i) => (
                   <li key={i} className="text-[14px]">
                     <span className="text-paper font-semibold">{e.school}</span>
-                    <span className="text-muted"> — {e.degree}{(e as any).years ? ` (${(e as any).years})` : ""}</span>
+                    <span className="text-muted">, {e.degree}{e.years ? ` (${e.years})` : ""}</span>
                   </li>
                 ))}
               </ul>
@@ -78,7 +80,7 @@ export default function AboutPage() {
               <div className="eyebrow mb-3">Languages</div>
               <ul className="space-y-1 list-none">
                 {languages.map((l, i) => (
-                  <li key={i} className="text-[14px]"><span className="text-paper font-semibold">{l.name}</span> <span className="text-muted">— {l.level}</span></li>
+                  <li key={i} className="text-[14px]"><span className="text-paper font-semibold">{l.name}</span> <span className="text-muted">· {l.level}</span></li>
                 ))}
               </ul>
             </div>

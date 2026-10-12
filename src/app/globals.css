@@ -19,7 +19,7 @@ body {
 @media (min-width: 768px)  { .container-page { padding: 0 40px; } }
 @media (min-width: 1024px) { .container-page { padding: 0 56px; } }
 
-/* Quiet, lowercase eyebrow — no screamy uppercase */
+/* Quiet, lowercase eyebrow: no screamy uppercase */
 .eyebrow {
   font-size: 13px;
   color: #666666;
@@ -34,11 +34,18 @@ body {
 .lift:hover { transform: translateY(-2px); border-color: #0A1F3D; box-shadow: 0 18px 40px -28px rgba(10,31,61,0.25); }
 .tab-nums { font-variant-numeric: tabular-nums; }
 
-/* Subtle dot grid for hero — barely visible */
+/* Subtle dot grid for hero, barely visible */
 .grid-bg {
   background-image: radial-gradient(circle, rgba(15,15,15,0.04) 1px, transparent 1px);
   background-size: 28px 28px;
 }
+
+/* Long-form essay typography (notes) */
+.prose-essay > * + * { margin-top: 1.4em; }
+.prose-essay p { color: #0F0F0F; font-size: 17px; line-height: 1.78; }
+.prose-essay h2 { font-family: var(--font-newsreader), Georgia, serif; font-style: italic; font-size: 28px; line-height: 1.2; margin-top: 2.4em; color: #0F0F0F; }
+.prose-essay em { color: #0A1F3D; font-style: italic; }
+.prose-essay strong { color: #0F0F0F; }
 
 @media (prefers-reduced-motion: reduce) {
   *,*::before,*::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }

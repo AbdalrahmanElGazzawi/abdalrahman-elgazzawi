@@ -51,7 +51,8 @@ export const metadata: Metadata = {
     images: [site.ogImage],
   },
   robots: { index: true, follow: true },
-  alternates: { canonical: site.url },
+  // No canonical here: it would be inherited by every page. Pages set their own
+  // via pageMetadata() (src/lib/metadata.ts); the homepage sets "/".
 };
 
 const personJsonLd = {
@@ -69,7 +70,7 @@ const personJsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${newsreader.variable}`}>
+    <html lang="en" data-scroll-behavior="smooth" className={`${inter.variable} ${newsreader.variable}`}>
       <head>
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <script
