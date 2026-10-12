@@ -92,6 +92,9 @@ optional message log · Vercel Analytics + Speed Insights enabled.
   visit `/api/og` in your browser to preview.
 - **Add a downloadable file:** drop it into `public/downloads/` and add an
   entry to `downloads` in `src/content/site.ts`.
+- **Update a CV:** edit the `.docx` in `public/downloads/`, then export it to
+  PDF with the same file name (the current PDFs were exported from
+  LibreOffice Writer). `/resume` redirects to the General CV PDF.
 
 ## Things deliberately left for v2
 

@@ -16,33 +16,7 @@ export const site = {
  location: "Based in Cairo, Egypt · Open to Riyadh, GCC, Remote & Global",
 };
 
-export const hero = {
- eyebrow: "Cairo · Available now",
- headline: ["I run commercial", "partnerships and", "campaigns."],
- sub: "For brands, agencies, teams, and entertainment businesses. Recent work has included Aramco, PepsiCo, KIA, Samsung, Adidas, Mastercard, Sony, NVIDIA, Honor, Unilever, and Mentos. Ten plus years in the room.",
- meta: "Based in Cairo. Open to Riyadh, GCC, remote, and global.",
- cta: {
- primary: { label: "Download General CV", href: "/downloads/Abdalrahman_ElGazzawi_General_CV.pdf" },
- secondary: { label: "Download Esports CV", href: "/downloads/Abdalrahman_ElGazzawi_Esports_CV.pdf" },
- tertiary: { label: "View case studies", href: "/#work" },
- quaternary:{ label: "Contact me", href: "mailto:abdghazzawi1@gmail.com?subject=Commercial%20partnerships%20%26%20campaign%20operations%20enquiry" },
- },
-};
-
 export const aboutCopy = "I am Abdalrahman. I run commercial partnerships and campaigns. I have spent the last ten years across esports, sports, entertainment, agencies, tech brands, and MENA market work. The job is the same every time: turn the commercial idea into a real proposal, a real price, a real package, and a real campaign that ships when it said it would.";
-
-export const summary = "I am a consultant and operator. My job is to turn commercial intent into shipped work across partnerships, go to market, and delivery. 778 plus commercial assets delivered with full contractual fulfillment. Campaigns that reached 5M plus viewers.";
-
-export const proof = [
- { n: "26", l: "Deal pipeline · Falcons partnerships" },
- { n: "22", l: "EWC partners across 6 tiers" },
- { n: "$1M+", l: "Strategic partnership architected" },
- { n: "778+", l: "EWC deliverables shipped" },
- { n: "5M+", l: "Viewers reached" },
- { n: "78+", l: "Brands pitched · 5 sales agencies" },
- { n: "147", l: "LEAP qualified leads · 6 clients closed" },
- { n: "~20%", l: "Portfolio revenue growth · TrueGaming" },
-];
 
 export const caseStudies = [
  {
@@ -128,18 +102,6 @@ export const caseStudies = [
  },
 ];
 
-export const archivedCaseStudies = [];
-
-export const brandLogos = [
- { name: "Saudi Aramco", src: "/img/brand-aramco.png" },
- { name: "Telecom Egypt", src: "/img/brand-telecom-egypt.png" },
- { name: "True Gaming", src: "/img/logo-truegaming.png" },
- { name: "Vanguard", src: "/img/logo-vanguard.png" },
- { name: "Mobalytics", src: "/img/logo-mobalytics.png" },
- { name: "ArabHardware", src: "/img/brand-arabhardware.png" },
- { name: "Saudi eLeague", src: "/img/brand-saudi-eleagues.png" },
-];
-
 export const experience = [
  { role: "Commercial Partnerships Consultant, Fixed-Term Contract", company: "Team Falcons", years: "Feb 2026 to May 2026 · Fixed-term", location: "Cairo · Riyadh · Remote",
  impact: "Supported partnership packaging, sponsorship activation, pricing logic, campaign operations, and commercial workflow setup.",
@@ -206,28 +168,6 @@ export const contactCtas = [
  subject: "Employer enquiry: full-time role" },
 ];
 
-export const methodologyBlurb = {
- eyebrow: "How I actually work",
- title: "Clear the mess. Ship the work.",
- body: "I do my best work when the brief is messy: clarifying priorities, structuring offers, aligning stakeholders, and getting results on time.",
- bullets: ["Name the real ask","Draw the lines","Line up the people","Ship the thing"],
-};
-
-export const tiers = [
- { phase: "I", floor: "Entry", name: "Advertising", what: "Single-asset placements.", who: "Tactical buys.", logic: "CPM/CPC floor.", bundle: "Single-channel.", governance: "Lightweight approval." },
- { phase: "II", floor: "Growth", name: "Sponsorship", what: "Multi-asset agreement.", who: "Mid-funnel.", logic: "Tiered architecture.", bundle: "Cross-channel.", governance: "Director sign-off." },
- { phase: "III", floor: "Strategic", name: "Partnership", what: "Year-round depth.", who: "Strategic brands.", logic: "Joint KPIs.", bundle: "Always-on.", governance: "C-suite sign-off." },
- { phase: "IV", floor: "Equity", name: "Title / Naming", what: "Naming rights / equity.", who: "Territory partners.", logic: "Exclusivity premium.", bundle: "Naming · presence.", governance: "Board approval." },
-];
-
-export const principles = [
- { n: "01", title: "Clarify before you ship.", body: "Naming the real ask is half the work." },
- { n: "02", title: "Structure beats speed.", body: "Build the offer, framework, cadence. Then move fast without commercial debt." },
- { n: "03", title: "Half commercial, half ops.", body: "Closing deals and shipping deliverables are one job." },
-];
-
-export const arc = "Café admin → BD → QA → Gaming Specialist → BD/PM → Senior Account Mgmt → Council Member → Commercial Partnerships Consultant";
-
 export const brandInvolvement = [
  { tier: "Closed / Activated", color: "gold",
  items: ["Sony INZONE","NVIDIA","KIA","Samsung","Infinix","Activision","Xsolla","ExitLag","RealMe","Huawei","Honor"] },
@@ -237,43 +177,6 @@ export const brandInvolvement = [
  items: ["EFG","Hala Partners","H&K","CSM","Ruder Finn Atteline"] },
  { tier: "Operating environments", color: "neutral",
  items: ["Team Falcons","Saudi Esports Federation","Esports World Cup","SPORTFIVE","True Gaming","GLG","Egyptian Esports Federation","Egypt Football Association","Telecom Egypt","Vanguard"] },
-];
-
-
-// AI-Augmented Operations: the differentiator
-export const aiOperations = {
- intro: "Most commercial ops is spreadsheet sprawl. I build it as live web tooling.",
- thesis: "Prompt engineering, agentic workflows, and rapid prototyping, shipped into bilingual EN/AR commercial work at Falcons, GLG, and beyond.",
- tools: [
- { slug: "claude", name: "Claude" },
- { slug: "openai", name: "ChatGPT" },
- { slug: "vercel", name: "Vercel" },
- { slug: "supabase", name: "Supabase" },
- ],
- shipped: [
- { label: "Falcons Pricing Web", url: null, note: "Internal quote portal · bilingual EN/AR" },
- { label: "Master Commercial OS v2", url: null, note: "38-tab pricing + rights packaging governance" },
- ],
-};
-
-export const federationAdvisory = {
- intro: "Federation-tier engagements where the brief is commercial intelligence and structural design.",
- items: [
- { org: "GLG (Gerson Lehrman Group)", tag: "Council Member · Since 2025", role: "Subject-matter expert", body: "On-call for institutional investors and global enterprises.", meta: "Paid expert engagements", colorClass: "gold" },
- { org: "Egypt Football Association × FIFAe", tag: "2026 cycle · co-author", role: "Commercial + marketing architect", body: "Co-authored the 2026 commercial, marketing, and master plans for Egypt's FIFAe presence.", meta: "Signed MA Agreement", colorClass: "green" },
- { org: "Egyptian Esports Federation", tag: "Advisory · 2026", role: "Strategic advisor", body: "Advisory on commercial packaging, partnership architecture, ENC.", meta: "Part-time advisory", colorClass: "neutral" },
- ],
-};
-
-export const selectedProjects = [
- { era: "Falcons · 2026", title: "Partner trackers + rate-card structures", body: "Reusable operating assets.", tag: "Operating model" },
- { era: "Falcons · 2026", title: "RACI + SOPs + approval workflows", body: "Workflow design for sign-off and cadence.", tag: "Process" },
- { era: "Falcons · 2026", title: "Sony INZONE 2026 campaign operation", body: "End-to-end bilingual EN/AR creator activation.", tag: "Campaign ops" },
- { era: "SPORTFIVE · 2024", title: "Sponsor delivery SOP across EWC channels", body: "Reporting + QA cadence across 778+ deliverables.", tag: "SOP" },
- { era: "SPORTFIVE · 2024", title: "SEF IP commercial roadmap", body: "Commercialisation plan for Saudi Esports Federation IP.", tag: "Roadmap" },
- { era: "True Gaming · 2024", title: "TrueGaming Awards Event SOP", body: "Venue, logistics, sponsor integration on JIRA.", tag: "Event SOP" },
- { era: "True Gaming · 2024", title: "LEAP Expo booth strategy", body: "Booth design + lead-capture flow. 147 contacts, 6 clients.", tag: "Lead capture" },
- { era: "Telecom Egypt · 2021", title: "HSC Sponsorship Package", body: "Sponsorship package for Heliopolis Sporting Club.", tag: "Sponsorship" },
 ];
 
 export const navLinks = [
@@ -289,40 +192,3 @@ export const downloads = [
 ];
 
 export const confidentialityNote = "Selected details are sanitized for confidentiality. Internal rates and partner negotiations are intentionally omitted.";
-
-export const osStages = [
- { code: "01", k: "Intake", d: "Brief, audience, fit" },
- { code: "02", k: "Rights", d: "Talent, IP, scope" },
- { code: "03", k: "Pricing", d: "Methodology, math" },
- { code: "04", k: "Approval", d: "Matrix, sign-off" },
- { code: "05", k: "Proposal", d: "Deck, contract, pack" },
- { code: "06", k: "Delivery", d: "Activation, QA" },
- { code: "07", k: "Proof", d: "Reporting, attribution" },
- { code: "08", k: "Renewal", d: "Expand, defend" },
-];
-export const thesisFlow = ["Audience","Talent","Rights","Pricing","Partner","Activation","Proof","Renewal"];
-export const pricingEngine = {
- formula: { left: "Final Price", right: "MAX(SocialPrice, AuthorityFloor) × ConfidenceCap × (1 + RightsUplift)" },
- bases: ["CPM","CPE","Comparables","Authority","Tier baseline"],
- axes: [
- { n: "01", k: "Engagement", d: "Real interaction over follower vanity." },
- { n: "02", k: "Audience", d: "Geography, language, segment fit." },
- { n: "03", k: "Seasonality", d: "Tournament cycles, launches." },
- { n: "04", k: "Content Type", d: "Reel, post, stream, IRL." },
- { n: "05", k: "Language", d: "AR, EN, regional uplift." },
- { n: "06", k: "Authority", d: "Earned credibility." },
- { n: "07", k: "Rights", d: "Usage, exclusivity." },
- { n: "08", k: "Multi-Platform", d: "Cross-channel economics." },
- { n: "09", k: "Floor", d: "Authority-derived minimum." },
- ],
-};
-export const waysToCollaborate = {
- intro: "Four shapes of engagement, full-time leads.",
- items: [
- { label: "Full-Time Roles", eyebrow: "Primary", shape: "Standard hiring process", body: "Open to senior seats in commercial partnerships, brand marketing, account management, sponsorship activation, commercial operations. MENA · GCC · EU · US · Remote." },
- { label: "Fractional / Part-Time", eyebrow: "2-3 days / week", shape: "3-month minimum", body: "Senior commercial leadership for growth-stage gaming, esports, sports, or entertainment companies." },
- { label: "Project-Based", eyebrow: "Bounded scope, fixed fee", shape: "30-90 days", body: "Sponsorship strategy, GTM build, partnership pitch architecture, bilingual EN/AR campaign design." },
- { label: "Advisory & Board", eyebrow: "Ongoing strategic counsel", shape: "Quarterly retainer", body: "MENA gaming market, esports partnerships, federation strategy. Council Member at GLG since 2025." },
- ],
- disclosure: "Rate cards and engagement terms shared in reply to direct inquiries.",
-};

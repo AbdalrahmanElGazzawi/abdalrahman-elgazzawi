@@ -38,9 +38,8 @@ export default function PressPage() {
           <aside>
             <h2 className="font-serif italic text-[24px] text-paper mb-3">Files</h2>
             <ul className="space-y-2 text-[14px]">
-              <li><a className="text-gold hover:underline" href="/downloads/Abdalrahman_ElGazzawi_Resume_2026.pdf">Résumé (PDF)</a></li>
-              <li><a className="text-gold hover:underline" href="/downloads/Abdalrahman_ElGazzawi_Portfolio_2026.pdf">Full portfolio (PDF)</a></li>
-              <li><a className="text-gold hover:underline" href="/downloads/Abdalrahman_ElGazzawi_Portfolio_OnePage.html">Single-page HTML</a></li>
+              <li><a className="text-gold hover:underline" href="/downloads/Abdalrahman_ElGazzawi_General_CV.pdf">General Commercial CV (PDF)</a></li>
+              <li><a className="text-gold hover:underline" href="/downloads/Abdalrahman_ElGazzawi_Esports_CV.pdf">Esports / Gaming CV (PDF)</a></li>
               <li><a className="text-gold hover:underline" href="/img/hero.jpg">Headshot (stage)</a></li>
               <li><a className="text-gold hover:underline" href="/img/contact.jpg">Headshot (desk)</a></li>
             </ul>

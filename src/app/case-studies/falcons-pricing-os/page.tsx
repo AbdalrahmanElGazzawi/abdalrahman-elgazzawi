@@ -7,7 +7,7 @@ const cs: CaseStudy = {
   title: "From spreadsheet logic to a quote-lifecycle product.",
   outcome: "Internal Next.js + Supabase + Vercel application turning a 15-section pricing methodology into a live quote engine with role-scoped permissions and an end-to-end audit trail.",
   role: "Product owner · Engineer · Designer",
-  timeframe: "Mar 2026 to present",
+  timeframe: "2026",
   tags: ["Next.js","Supabase","Postgres RLS","Quote lifecycle","Internal tooling"],
   context:
     "The pricing methodology and agency framework existed as documents. They worked, but every quote still ran through Google Sheets and chat threads. The translation cost, from rate-book intent to actual quote pack, was eating margin and creating drift.",

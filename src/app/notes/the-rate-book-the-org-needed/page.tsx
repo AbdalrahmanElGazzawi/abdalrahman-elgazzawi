@@ -19,7 +19,7 @@ export default function Note() {
         <div className="h-px w-16 bg-gold mt-5 mb-10" />
         <article className="prose-essay">
           <p>Most esports rate cards don’t survive contact with reality. They look fine in a slide deck, until a brand asks <em>how did you get to that number?</em> and the answer is some version of <em>it’s what we’ve always charged</em>. That isn’t a rate card; that’s a number with a price next to it.</p>
-          <p>When I joined Team Falcons in January, the org needed something different: a rate book that could survive an external audit. Defensible against the global tier-1 benchmarks (FaZe, Cloud9, T1, NRG, 100T), calibrated for MENA. Codified into product, contract, and live pipeline. Audit-ready by default.</p>
+          <p>When I joined Team Falcons, the org needed something different: a rate book that could survive an external audit. Defensible against the global tier-1 benchmarks (FaZe, Cloud9, T1, NRG, 100T), calibrated for MENA. Codified into product, contract, and live pipeline. Audit-ready by default.</p>
 
           <h2>The five base methods</h2>
           <p>The trap with single-method pricing is that no one method covers every talent. Pure CPM falls apart for streamers (engagement isn’t views). Pure comparables fall apart in markets without comparables. Pure authority pricing rewards the wrong thing.</p>
